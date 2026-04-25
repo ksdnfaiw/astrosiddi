@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { useTranslation } from "@/contexts/useTranslation";
-import { Facebook, Instagram, Youtube, Phone, Mail, MapPin } from "lucide-react";
+
 
 export function Footer() {
   const { t } = useTranslation();
@@ -16,9 +16,9 @@ export function Footer() {
             <h3 className="font-cinzel text-2xl font-bold text-gold mb-4">ASTRO SIDDHI</h3>
             <p className="mb-6 max-w-sm text-sm leading-relaxed">{t("footer.tagline")}</p>
             <div className="flex space-x-4">
-              <a href="#" className="text-mutedGold hover:text-gold transition-colors"><Instagram size={20} /></a>
-              <a href="#" className="text-mutedGold hover:text-gold transition-colors"><Youtube size={20} /></a>
-              <a href="#" className="text-mutedGold hover:text-gold transition-colors"><Facebook size={20} /></a>
+              <a href="#" className="text-mutedGold hover:text-gold transition-colors">Instagram</a>
+              <a href="#" className="text-mutedGold hover:text-gold transition-colors">YouTube</a>
+              <a href="#" className="text-mutedGold hover:text-gold transition-colors">Facebook</a>
             </div>
           </div>
 
@@ -39,15 +39,15 @@ export function Footer() {
             <h4 className="font-cormorant text-xl text-gold mb-4 font-semibold tracking-wide">Contact Us</h4>
             <ul className="space-y-3 text-sm">
               <li className="flex items-start">
-                <MapPin size={16} className="text-gold mr-2 mt-0.5 shrink-0" />
+                <span className="text-gold mr-2 shrink-0">📍</span>
                 <span>Hyderabad / Bengaluru</span>
               </li>
               <li className="flex items-center">
-                <Phone size={16} className="text-gold mr-2 shrink-0" />
+                <span className="text-gold mr-2 shrink-0">📞</span>
                 <span>+91 XXXXX XXXXX</span>
               </li>
               <li className="flex items-center">
-                <Mail size={16} className="text-gold mr-2 shrink-0" />
+                <span className="text-gold mr-2 shrink-0">✉️</span>
                 <span>contact@astrosiddhi.com</span>
               </li>
             </ul>
