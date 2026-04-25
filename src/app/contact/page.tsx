@@ -12,10 +12,10 @@ const contactSchema = z.object({
   email: z.string().email("Invalid email"),
   language_pref: z.enum(["English", "Telugu"]),
   service: z.string().min(1, "Service selection is required"),
-  dob: z.string(),
-  tob: z.string(),
-  pob: z.string(),
-  message: z.string(),
+  dob: z.string().optional(),
+  tob: z.string().optional(),
+  pob: z.string().optional(),
+  message: z.string().optional(),
 });
 
 type ContactFormValues = z.infer<typeof contactSchema>;
@@ -35,15 +35,21 @@ export default function Contact() {
   const onSubmit = async (data: ContactFormValues) => {
     setIsSubmitting(true);
     try {
-      // Mocking submission since DB might not be connected yet
-      // const { error } = await supabase.from('contact_submissions').insert([data]);
-      // if (error) throw error;
+      const message = `*New Consultation Enquiry*%0A
+*Name*: ${data.name}%0A
+*Phone*: ${data.phone}%0A
+*Email*: ${data.email}%0A
+*Service*: ${data.service}%0A
+*Language*: ${data.language_pref}%0A
+*DOB*: ${data.dob || "N/A"}%0A
+*TOB*: ${data.tob || "N/A"}%0A
+*POB*: ${data.pob || "N/A"}%0A
+*Message*: ${data.message || "N/A"}`;
+
+      window.open(`https://wa.me/919652412221?text=${message}`, '_blank');
       
-      console.log(data);
-      setTimeout(() => {
-        setIsSuccess(true);
-        setIsSubmitting(false);
-      }, 1000);
+      setIsSuccess(true);
+      setIsSubmitting(false);
     } catch (error) {
       console.error(error);
       setIsSubmitting(false);
@@ -95,8 +101,42 @@ export default function Contact() {
               </div>
             </div>
 
-            <button type="submit" disabled={isSubmitting} className="w-full bg-gold text-midnight font-bold py-3 rounded hover:bg-saffron transition-colors">
-              {isSubmitting ? "Sending..." : "🔱 Send My Request"}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label className="block text-sm font-medium mb-1">Date of Birth</label>
+                <input type="date" {...register("dob")} className="w-full border p-2 rounded text-black" />
+              </div>
+              <div>
+                <label className="block text-sm font-medium mb-1">Time of Birth</label>
+                <input type="time" {...register("tob")} className="w-full border p-2 rounded text-black" />
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label className="block text-sm font-medium mb-1">Place of Birth</label>
+                <input {...register("pob")} className="w-full border p-2 rounded text-black" />
+              </div>
+              <div>
+                <label className="block text-sm font-medium mb-1">Service Required</label>
+                <select {...register("service")} className="w-full border p-2 rounded text-black">
+                  <option value="Vedic Horoscope Reading">Vedic Horoscope Reading</option>
+                  <option value="Kundali Matching">Kundali Matching</option>
+                  <option value="Career & Business Astrology">Career & Business Astrology</option>
+                  <option value="Love & Relationship Guidance">Love & Relationship Guidance</option>
+                  <option value="Vastu Shastra Consultation">Vastu Shastra Consultation</option>
+                  <option value="Dosha Parihara & Remedies">Dosha Parihara & Remedies</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium mb-1">Your Message</label>
+              <textarea {...register("message")} rows={4} className="w-full border p-2 rounded text-black"></textarea>
+            </div>
+
+            <button type="submit" disabled={isSubmitting} className="w-full bg-[#25D366] text-white font-bold py-3 rounded hover:bg-[#128C7E] transition-colors flex justify-center items-center">
+              {isSubmitting ? "Opening WhatsApp..." : "Send on WhatsApp"}
             </button>
           </form>
         )}

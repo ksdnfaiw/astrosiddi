@@ -1,0 +1,15 @@
+**New Consultation Enquiry Template**
+
+*Name*: [Full Name]
+*Phone*: [Phone Number]
+*Email*: [Email Address]
+*Service*: [Selected Service, e.g., Vedic Horoscope Reading]
+*Language*: [Preferred Language: English / Telugu]
+
+*Birth Details*
+*DOB*: [Date of Birth]
+*TOB*: [Time of Birth]
+*POB*: [Place of Birth]
+
+*Message / Notes*: 
+[User's Custom Message]

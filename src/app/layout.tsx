@@ -4,6 +4,7 @@ import "./globals.css";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 
 const cinzel = Cinzel_Decorative({
   weight: ["400", "700"],
@@ -52,6 +53,7 @@ export default function RootLayout({
           <main className="min-h-screen">
             {children}
           </main>
+          <WhatsAppButton />
           <Footer />
         </LanguageProvider>
       </body>
