@@ -66,7 +66,7 @@ export default function Home() {
               </Link>
             </div>
             <div className="relative">
-              <img src="/astrologer.png" alt="Sri Raghavendra Siddhanti Garu" className="w-full h-96 object-cover rounded-lg shadow-xl" />
+              <img src="/astrologer.png" alt="Sri Raghavendra Siddhanti Garu" className="w-full h-auto object-contain rounded-lg shadow-xl" />
               <div className="absolute -bottom-6 -left-6 bg-deepPurple text-ivory p-6 rounded-lg shadow-xl">
                 <p className="font-cinzel text-3xl text-gold font-bold mb-1">25+</p>
                 <p className="text-sm uppercase tracking-wider">{t("stats.exp.label")}</p>
