@@ -33,7 +33,7 @@ const notoTelugu = Noto_Sans_Telugu({
 export const metadata: Metadata = {
   title: {
     template: "%s | Astro Siddhi",
-    default: "Astro Siddhi | Best Astrologer in Hyderabad & Bangalore",
+    default: "Astro Siddhi | Best Astrologer in Vizag & Hyderabad",
   },
   description: "Astro Siddhi offers expert Vedic astrology, horoscope reading, Kundali matching, Vastu Shastra, and spiritual remedies.",
 };

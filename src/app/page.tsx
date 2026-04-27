@@ -13,7 +13,7 @@ export default function Home() {
     <div className="flex flex-col min-h-screen">
       {/* HERO SECTION */}
       <section className="relative pt-20 pb-32 overflow-hidden bg-deepPurple text-ivory">
-        <div className="absolute inset-0 bg-[url('/placeholder-om.svg')] opacity-5 bg-center bg-no-repeat bg-contain"></div>
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1518133910546-b6c2fb7d79e3?q=80&w=2070')] opacity-10 bg-cover bg-center mix-blend-overlay"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
             <span className="inline-block py-1 px-3 rounded-full bg-gold/20 text-gold text-sm font-semibold tracking-wider mb-6">
@@ -66,7 +66,7 @@ export default function Home() {
               </Link>
             </div>
             <div className="relative">
-              <img src="/astrologer.png" alt="Sri Raghavendra Siddhanti Garu" className="w-full h-auto object-contain rounded-lg shadow-xl" />
+              <img src="https://images.unsplash.com/photo-1583083527882-4bee9aba2eea?q=80&w=1977" alt="Sri Raghavendra Siddhanti Garu" className="w-full h-auto object-cover rounded-lg shadow-xl aspect-[4/5]" />
               <div className="absolute -bottom-6 -left-6 bg-deepPurple text-ivory p-6 rounded-lg shadow-xl">
                 <p className="font-cinzel text-3xl text-gold font-bold mb-1">25+</p>
                 <p className="text-sm uppercase tracking-wider">{t("stats.exp.label")}</p>

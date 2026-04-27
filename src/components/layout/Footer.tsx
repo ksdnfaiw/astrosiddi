@@ -48,15 +48,11 @@ export function Footer() {
             <ul className="space-y-3 text-sm">
               <li className="flex items-start">
                 <span className="text-gold mr-2 shrink-0">📍</span>
-                <span>Hyderabad / Bengaluru</span>
+                <span>Vizag & Hyderabad</span>
               </li>
               <li className="flex items-center">
                 <span className="text-gold mr-2 shrink-0">📞</span>
-                <span>+91 XXXXX XXXXX</span>
-              </li>
-              <li className="flex items-center">
-                <span className="text-gold mr-2 shrink-0">✉️</span>
-                <span>contact@astrosiddhi.com</span>
+                <span>+91 96524 12221</span>
               </li>
             </ul>
           </div>
