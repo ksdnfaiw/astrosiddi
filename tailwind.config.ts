@@ -17,9 +17,17 @@ const config: Config = {
         mutedGold: '#D4A853',
       },
       fontFamily: {
-        cinzel: ['var(--font-cinzel)', 'serif'],
-        cormorant: ['var(--font-cormorant)', 'serif'],
-        jost: ['var(--font-jost)', 'sans-serif'],
+        poppins: ['var(--font-poppins)', 'sans-serif'],
+        // To revert back to elegant fonts, uncomment the lines below and comment out the Poppins overrides
+        // cinzel: ['var(--font-cinzel)', 'serif'],
+        // cormorant: ['var(--font-cormorant)', 'serif'],
+        // jost: ['var(--font-jost)', 'sans-serif'],
+        
+        // Overrides for full Poppins usage:
+        cinzel: ['var(--font-poppins)', 'sans-serif'],
+        cormorant: ['var(--font-poppins)', 'sans-serif'],
+        jost: ['var(--font-poppins)', 'sans-serif'],
+        
         notoTelugu: ['var(--font-noto-telugu)', 'sans-serif'],
       },
       animation: {

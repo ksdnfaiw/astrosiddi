@@ -76,7 +76,7 @@ export const translations = {
     "footer.cta.body": "Your first step toward clarity starts with one conversation. Book a free 15-minute introductory consultation today.",
     "footer.cta.btn": "Book Free Consultation 🔱",
     "footer.tagline": "Astro Siddhi — Ancient Wisdom for Modern Lives",
-    "footer.copyright": "© 2025 Astro Siddhi. All Rights Reserved. | Crafted with 🔱",
+    "footer.copyright": "Astro Siddhi. All Rights Reserved. | Crafted with 🔱",
     "footer.privacy": "Privacy Policy"
   },
   te: {
@@ -156,7 +156,7 @@ export const translations = {
     "footer.cta.body": "స్పష్టత వైపు మీ మొదటి అడుగు ఒక సంభాషణతో ప్రారంభమవుతుంది. ఈరోజే ఉచిత 15 నిమిషాల పరిచయ సంప్రదింపును బుక్ చేసుకోండి.",
     "footer.cta.btn": "ఉచిత సంప్రదింపు బుక్ చేయండి 🔱",
     "footer.tagline": "అష్ట్రో సిద్ధి — ఆధునిక జీవితానికి పురాతన జ్ఞానం",
-    "footer.copyright": "© 2025 అష్ట్రో సిద్ధి. సర్వ హక్కులు ప్రత్యేకించబడినవి. | 🔱 తో రూపొందించబడింది",
+    "footer.copyright": "అష్ట్రో సిద్ధి. సర్వ హక్కులు ప్రత్యేకించబడినవి. | 🔱 తో రూపొందించబడింది",
     "footer.privacy": "గోప్యతా విధానం"
   }
 };
