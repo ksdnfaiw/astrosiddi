@@ -5,6 +5,7 @@ import { LanguageProvider } from "@/contexts/LanguageContext";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
+import { LocalBusinessSchema } from "@/components/ui/SchemaMarkup";
 
 const cinzel = Cinzel_Decorative({
   weight: ["400", "700"],
@@ -31,9 +32,9 @@ const notoTelugu = Noto_Sans_Telugu({
 export const metadata: Metadata = {
   title: {
     template: "%s | Astro Siddhi",
-    default: "Astro Siddhi | Best Astrologer in Vizag & Hyderabad",
+    default: "Astro Siddhi | Best Astrologer in Visakhapatnam",
   },
-  description: "Astro Siddhi offers expert Vedic astrology, horoscope reading, Kundali matching, Vastu Shastra, and spiritual remedies.",
+  description: "Astro Siddhi is a 25+ year veteran-led Vedic astrology practice serving Visakhapatnam. Book expert Kundali Matching, Vastu consultation, and Career Astrology in English & Telugu.",
   verification: {
     google: "b4m1oPJc3QUjrVq2TDre7kZ3y8Wn7zhex8JtAHx8CnU",
   },
@@ -51,6 +52,7 @@ export default function RootLayout({
       >
         <LanguageProvider>
           <Navbar />
+          <LocalBusinessSchema />
           <main className="min-h-screen">
             {children}
           </main>

@@ -8,9 +8,9 @@ export const translations = {
     "nav.book": "Book Free Consultation",
     "logo.tagline": "ज्योतिषम् | జ్యోతిష్యం",
 
-    "hero.badge": "✦ 25+ Years of Vedic Wisdom ✦",
-    "hero.h1": "The Stars Speak.\nWill You Listen?",
-    "hero.sub": "Unlock the ancient wisdom of Vedic Astrology with Astro Siddhi. Trusted by 15,000+ souls seeking clarity in love, career, health, and destiny — now available in Telugu & English.",
+    "hero.badge": "✦ 25+ Years of Vedic Wisdom in Visakhapatnam ✦",
+    "hero.h1": "Meet the Best Astrologer in Visakhapatnam",
+    "hero.sub": "Unlock ancient wisdom with Astro Siddhi, a 25-year veteran-led Vedic astrology practice. Trusted by 15,000+ souls seeking clarity in love, career, health, and destiny — now available in Telugu & English.",
     "hero.cta.primary": "🔱 Book Your Consultation",
     "hero.cta.secondary": "View Services",
     "hero.trust.clients": "15,000+ Happy Clients",
@@ -22,7 +22,7 @@ export const translations = {
 
     "about.teaser.label": "Who We Are",
     "about.teaser.h2": "Rooted in Tradition. Grounded in Truth.",
-    "about.teaser.body": "At Astro Siddhi, we carry the unbroken lineage of South Indian Vedic astrology — Jyotish Shastra practised with precision, compassion, and spiritual integrity. Our consultations go beyond prediction. We offer guidance, remedies, and clarity that transform lives. Every reading is personalized. Every remedy is practical. Every session is a step toward your best destiny.",
+    "about.teaser.body": "At Astro Siddhi, we carry the unbroken lineage of South Indian Vedic astrology. As a 25-year veteran-led business serving Visakhapatnam, we offer expert Kundali Matching, Vastu Consultation, and Career Astrology in both Telugu and English. Our guidance goes beyond prediction to offer remedies that transform lives.",
     "about.teaser.link": "Discover Our Story →",
 
     "services.label": "Our Sacred Services",

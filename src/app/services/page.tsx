@@ -18,11 +18,18 @@ export default function Services() {
       {/* SERVICES LIST */}
       <section className="py-24 max-w-5xl mx-auto px-4">
         <div className="space-y-12">
-          {[1, 2, 3, 4, 5, 6].map((num) => (
-            <div key={num} className="bg-white p-8 rounded-lg shadow-sm border border-gold/10">
-              <h2 className="font-cinzel text-3xl font-bold text-gold mb-3">{t(`services.card${num}.title` as any)}</h2>
-              <p className="text-lg leading-relaxed text-midnight/80">{t(`services.card${num}.desc` as any)}</p>
-            </div>
+          {[
+            { num: 1, path: "/contact" },
+            { num: 2, path: "/services/kundali-matching" },
+            { num: 3, path: "/services/career-astrology" },
+            { num: 4, path: "/contact" },
+            { num: 5, path: "/services/vastu-visakhapatnam" },
+            { num: 6, path: "/contact" }
+          ].map((service) => (
+            <Link href={service.path} key={service.num} className="bg-white p-8 rounded-lg shadow-sm border border-gold/10 hover:border-gold/50 transition-colors block">
+              <h2 className="font-cinzel text-3xl font-bold text-gold mb-3">{t(`services.card${service.num}.title` as any)}</h2>
+              <p className="text-lg leading-relaxed text-midnight/80">{t(`services.card${service.num}.desc` as any)}</p>
+            </Link>
           ))}
         </div>
 

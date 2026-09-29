@@ -3,6 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { useTranslation } from "@/contexts/useTranslation";
+import Image from "next/image";
 import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
 import { motion } from "framer-motion";
 
@@ -66,7 +67,13 @@ export default function Home() {
               </Link>
             </div>
             <div className="relative">
-              <img src="https://images.unsplash.com/photo-1583083527882-4bee9aba2eea?q=80&w=1977" alt="Sri Raghavendra Siddhanti Garu" className="w-full h-auto object-cover rounded-lg shadow-xl aspect-[4/5]" />
+              <Image 
+                src="https://images.unsplash.com/photo-1583083527882-4bee9aba2eea?q=80&w=1977" 
+                alt="Sri Raghavendra Siddhanti Garu - Best Astrologer in Visakhapatnam" 
+                width={800} 
+                height={1000} 
+                className="w-full h-auto object-cover rounded-lg shadow-xl aspect-[4/5]" 
+              />
               <div className="absolute -bottom-6 -left-6 bg-deepPurple text-ivory p-6 rounded-lg shadow-xl">
                 <p className="font-cinzel text-3xl text-gold font-bold mb-1">25+</p>
                 <p className="text-sm uppercase tracking-wider">{t("stats.exp.label")}</p>
@@ -86,15 +93,22 @@ export default function Home() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Service Cards */}
-            {[1, 2, 3, 4, 5, 6].map((num) => (
-              <div key={num} className="bg-deepPurple border border-gold/20 p-8 rounded hover:border-gold/50 transition-colors group">
+            {[
+              { num: 1, path: "/contact" },
+              { num: 2, path: "/services/kundali-matching" },
+              { num: 3, path: "/services/career-astrology" },
+              { num: 4, path: "/contact" },
+              { num: 5, path: "/services/vastu-visakhapatnam" },
+              { num: 6, path: "/contact" }
+            ].map((service) => (
+              <Link href={service.path} key={service.num} className="bg-deepPurple border border-gold/20 p-8 rounded hover:border-gold/50 transition-colors group block">
                 <h3 className="font-cormorant text-2xl text-gold font-bold mb-4 font-notoTelugu group-hover:text-saffron transition-colors">
-                  {t(`services.card${num}.title` as any)}
+                  {t(`services.card${service.num}.title` as any)}
                 </h3>
                 <p className="text-ivory/70 leading-relaxed font-notoTelugu">
-                  {t(`services.card${num}.desc` as any)}
+                  {t(`services.card${service.num}.desc` as any)}
                 </p>
-              </div>
+              </Link>
             ))}
           </div>
           
