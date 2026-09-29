@@ -36,6 +36,9 @@ export const metadata: Metadata = {
     default: "Astro Siddhi | Best Astrologer in Vizag & Hyderabad",
   },
   description: "Astro Siddhi offers expert Vedic astrology, horoscope reading, Kundali matching, Vastu Shastra, and spiritual remedies.",
+  verification: {
+    google: "b4m1oPJc3QUjrVq2TDre7kZ3y8Wn7zhex8JtAHx8CnU",
+  },
 };
 
 export default function RootLayout({
