@@ -19,13 +19,11 @@ const cormorant = Cormorant_Garamond({
 });
 
 const jost = Jost({
-  weight: ["400", "500", "600", "700"],
   subsets: ["latin"],
   variable: "--font-jost",
 });
 
 const notoTelugu = Noto_Sans_Telugu({
-  weight: ["400", "500", "600", "700"],
   subsets: ["telugu"],
   variable: "--font-noto-telugu",
 });
