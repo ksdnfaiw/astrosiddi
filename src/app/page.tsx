@@ -239,9 +239,10 @@ export default function Home() {
             >
               <div className="absolute inset-0 bg-gold/20 rounded-2xl -rotate-3 scale-105 transition-transform duration-700 hover:rotate-0"></div>
               <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-gold/10 bg-midnight">
-                <ImagePlaceholder
-                  className="w-full aspect-[3/4] sm:aspect-square lg:aspect-[3/4] object-cover mix-blend-luminosity hover:mix-blend-normal transition-all duration-700"
-                  text="Sri Raghavendra Siddhanti Garu"
+                <img
+                  src="/English%20design_page-0001.jpg"
+                  alt="Sri Raghavendra Siddhanti Garu"
+                  className="w-full object-contain mix-blend-luminosity hover:mix-blend-normal transition-all duration-700"
                 />
                 
                 {/* Overlay gradient */}
@@ -276,15 +277,24 @@ export default function Home() {
             <h2 className="font-cinzel text-4xl sm:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-ivory via-gold to-ivory">{t("services.h2")}</h2>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {[1, 2, 3, 4, 5, 6].map((num) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-8">
+            {[
+              { title: "Kundali Matching", desc: "Marriage Compatibility" },
+              { title: "Love & Relationship", desc: "Solutions for relationship issues" },
+              { title: "Planetary Dosha Remedies", desc: "Effective Pariharam" },
+              { title: "Vashikaran", desc: "Attraction & Harmony" },
+              { title: "House & Property", desc: "Vastu Solutions" },
+              { title: "Health & Wellness", desc: "Guidance for well-being" },
+              { title: "Career & Business", desc: "Astrological Guidance" },
+              { title: "Foreign Travel", desc: "Settled Abroad Yogas" }
+            ].map((service, idx) => (
               <motion.div 
-                key={num}
+                key={idx}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: num * 0.1 }}
-                className="group relative bg-midnight/50 backdrop-blur-md border border-gold/10 p-8 sm:p-10 rounded-2xl hover:bg-midnight transition-all duration-500 overflow-hidden"
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                className="group relative bg-midnight/50 backdrop-blur-md border border-gold/10 p-8 sm:p-10 rounded-2xl hover:bg-midnight transition-all duration-500 overflow-hidden flex flex-col"
               >
                 <div className="absolute top-0 right-0 p-6 opacity-5 group-hover:opacity-10 transition-opacity duration-500 group-hover:scale-110 transform">
                   <Star className="w-24 h-24 text-gold" />
@@ -294,12 +304,12 @@ export default function Home() {
                   <Sparkles className="w-5 h-5" />
                 </div>
                 
-                <h3 className="font-cinzel text-2xl font-bold mb-4 text-ivory group-hover:text-gold transition-colors duration-300 relative z-10">
-                  {t(`services.card${num}.title`)}
+                <h3 className="font-cinzel text-xl font-bold mb-4 text-ivory group-hover:text-gold transition-colors duration-300 relative z-10">
+                  {service.title}
                 </h3>
                 
-                <p className="text-ivory/60 leading-relaxed font-cormorant text-lg mb-8 relative z-10">
-                  {t(`services.card${num}.desc`)}
+                <p className="text-ivory/60 leading-relaxed font-cormorant text-lg mb-8 relative z-10 flex-grow">
+                  {service.desc}
                 </p>
 
                 <div className="mt-auto flex items-center gap-2 text-gold text-sm font-semibold tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-all duration-300 -translate-x-4 group-hover:translate-x-0 relative z-10">

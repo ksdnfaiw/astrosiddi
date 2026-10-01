@@ -74,9 +74,9 @@ export default function Contact() {
             <h1 className="font-cinzel text-5xl sm:text-6xl md:text-7xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-ivory via-gold to-ivory">Begin Your Journey</h1>
             <p className="text-xl md:text-2xl opacity-80 font-cormorant font-medium mb-8">Your first consultation is just one message away.</p>
             <p className="text-gold/80 text-xs sm:text-sm uppercase tracking-[0.2em] font-semibold flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4">
-              <span className="flex items-center gap-1"><MapPin className="w-4 h-4" /> Visakhapatnam</span>
+              <span className="flex items-center gap-1"><MapPin className="w-4 h-4" /> MVP Colony, Visakhapatnam</span>
               <span className="hidden sm:inline">&middot;</span>
-              <span>Serving Hyderabad</span>
+              <a href="https://www.google.com/maps?q=17.7424617,83.3292402&z=17&hl=en" target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors underline-offset-4 hover:underline">View on Map</a>
               <span className="hidden sm:inline">&middot;</span>
               <span>Online Worldwide</span>
             </p>
@@ -121,15 +121,15 @@ export default function Contact() {
                 </div>
               </a>
               
-              <div className="flex items-start gap-4 group">
+              <a href="https://www.google.com/maps?q=17.7424617,83.3292402&z=17&hl=en" target="_blank" rel="noopener noreferrer" className="flex items-start gap-4 group">
                 <div className="w-12 h-12 rounded-full bg-gold/10 text-gold flex items-center justify-center group-hover:bg-gold group-hover:text-midnight transition-colors shrink-0">
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div>
                   <h4 className="font-bold text-sm uppercase tracking-wider mb-1">Location</h4>
-                  <p className="text-midnight/70 font-cormorant text-lg">Visakhapatnam, AP<br/>Online consultations available globally</p>
+                  <p className="text-midnight/70 font-cormorant text-lg">MVP Colony Double Road,<br/>Opp. Axis Bank, Visakhapatnam, AP</p>
                 </div>
-              </div>
+              </a>
             </div>
           </motion.div>
 
