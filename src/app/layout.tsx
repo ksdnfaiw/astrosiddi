@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Cinzel_Decorative, Cormorant_Garamond, Jost, Noto_Sans_Telugu } from "next/font/google";
+import { Cinzel_Decorative, Cormorant_Garamond, Jost, Noto_Sans_Telugu, Poppins } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { Navbar } from "@/components/layout/Navbar";
@@ -29,14 +29,27 @@ const notoTelugu = Noto_Sans_Telugu({
   variable: "--font-noto-telugu",
 });
 
+const poppins = Poppins({
+  weight: ["300", "400", "500", "600", "700"],
+  subsets: ["latin"],
+  variable: "--font-poppins",
+});
+
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.astrosiddhi.com"),
   title: {
     template: "%s | Astro Siddhi",
-    default: "Astro Siddhi | Best Astrologer in Visakhapatnam",
+    default: "Best Astrologer in Visakhapatnam (Vizag) | Astro Siddhi",
   },
-  description: "Astro Siddhi is a 25+ year veteran-led Vedic astrology practice serving Visakhapatnam. Book expert Kundali Matching, Vastu consultation, and Career Astrology in English & Telugu.",
-  verification: {
-    google: "b4m1oPJc3QUjrVq2TDre7kZ3y8Wn7zhex8JtAHx8CnU",
+  description: "Astro Siddhi is a trusted Vedic astrologer in Visakhapatnam offering horoscope reading, Kundali matching, Vastu Shastra, and spiritual remedies, also serving Hyderabad.",
+  keywords: ["astrologer in Visakhapatnam", "best astrologer in Vizag", "Vedic astrology Vizag", "Kundali matching Visakhapatnam", "Vastu consultant Vizag", "astrologer Hyderabad"],
+  openGraph: {
+    title: "Best Astrologer in Visakhapatnam (Vizag) | Astro Siddhi",
+    description: "Trusted Vedic astrology, horoscope reading, Kundali matching, and Vastu Shastra consultations in Visakhapatnam.",
+    url: "https://www.astrosiddhi.com",
+    siteName: "Astro Siddhi",
+    locale: "en_IN",
+    type: "website",
   },
 };
 
@@ -48,7 +61,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${cinzel.variable} ${cormorant.variable} ${jost.variable} ${notoTelugu.variable} antialiased bg-ivory text-midnight`}
+        className={`${cinzel.variable} ${cormorant.variable} ${jost.variable} ${notoTelugu.variable} ${poppins.variable} antialiased bg-ivory text-midnight font-poppins overflow-x-hidden`}
       >
         <LanguageProvider>
           <Navbar />
