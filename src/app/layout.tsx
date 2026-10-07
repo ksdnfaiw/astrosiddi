@@ -36,6 +36,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/' },
   metadataBase: new URL("https://www.astrosiddhi.com"),
   title: {
     template: "%s | Astro Siddhi",

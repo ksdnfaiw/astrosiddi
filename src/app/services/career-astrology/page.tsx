@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/services/career-astrology' },
   title: "Career Astrology Telugu | Job & Business Timing Predictions",
   description: "Accurate career astrology in Telugu and English. Discover your best career path, job timing, and business success with our 25-year experienced astrologer.",
 };
