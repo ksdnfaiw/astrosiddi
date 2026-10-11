@@ -6,6 +6,8 @@ import { useTranslation } from "@/contexts/useTranslation";
 import Image from "next/image";
 import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
 import { Testimonials } from "@/components/sections/Testimonials";
+import { GoogleReviews } from "@/components/sections/GoogleReviews";
+import { MapsSection } from "@/components/sections/MapsSection";
 import { motion } from "framer-motion";
 import { Star, Award, Globe, Languages, ArrowRight, Sparkles, ChevronRight, CheckCircle2 } from "lucide-react";
 
@@ -365,7 +367,9 @@ export default function Home() {
         </div>
       </section>
 
+      <GoogleReviews />
       <Testimonials />
+      <MapsSection />
     </div>
   );
 }

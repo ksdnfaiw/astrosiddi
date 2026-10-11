@@ -76,7 +76,7 @@ export default function Contact() {
             <p className="text-gold/80 text-xs sm:text-sm uppercase tracking-[0.2em] font-semibold flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4">
               <span className="flex items-center gap-1"><MapPin className="w-4 h-4" /> MVP Colony, Visakhapatnam</span>
               <span className="hidden sm:inline">&middot;</span>
-              <a href="https://www.google.com/maps?q=17.7424617,83.3292402&z=17&hl=en" target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors underline-offset-4 hover:underline">View on Map</a>
+              <a href="https://www.google.com/maps/place/Sri+Raghavendra+Jyothishalayam,+P8RQ%2B3P4,+MVP+Double+Rd,+Sector+10,+MVP+Colony,+Visakhapatnam,+Andhra+Pradesh+530017/@17.740137,83.3393431,17z/" target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors underline-offset-4 hover:underline">View on Map</a>
               <span className="hidden sm:inline">&middot;</span>
               <span>Online Worldwide</span>
             </p>
@@ -121,13 +121,13 @@ export default function Contact() {
                 </div>
               </a>
               
-              <a href="https://www.google.com/maps?q=17.7424617,83.3292402&z=17&hl=en" target="_blank" rel="noopener noreferrer" className="flex items-start gap-4 group">
+              <a href="https://www.google.com/maps/place/Sri+Raghavendra+Jyothishalayam,+P8RQ%2B3P4,+MVP+Double+Rd,+Sector+10,+MVP+Colony,+Visakhapatnam,+Andhra+Pradesh+530017/@17.740137,83.3393431,17z/" target="_blank" rel="noopener noreferrer" className="flex items-start gap-4 group">
                 <div className="w-12 h-12 rounded-full bg-gold/10 text-gold flex items-center justify-center group-hover:bg-gold group-hover:text-midnight transition-colors shrink-0">
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div>
                   <h4 className="font-bold text-sm uppercase tracking-wider mb-1">Location</h4>
-                  <p className="text-midnight/70 font-cormorant text-lg">MVP Colony Double Road,<br/>Opp. Axis Bank, Visakhapatnam, AP</p>
+                  <p className="text-midnight/70 font-cormorant text-lg">P8RQ+3P4, MVP Double Rd, Sector 10,<br/>Opp. Axis Bank, MVP Colony, Visakhapatnam, AP 530017</p>
                 </div>
               </a>
             </div>

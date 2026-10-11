@@ -41,8 +41,8 @@ export function Footer() {
             <ul className="space-y-5 text-sm font-cormorant text-base">
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-gold shrink-0 mt-0.5" />
-                <span className="leading-relaxed">MVP Colony Double Road,<br/>Opposite Axis Bank,<br/>Visakhapatnam, Andhra Pradesh<br/>
-                <a href="https://www.google.com/maps?q=17.7424617,83.3292402&z=17&hl=en" target="_blank" rel="noopener noreferrer" className="text-gold hover:underline text-sm inline-flex items-center gap-1 mt-1">View on Map</a>
+                <span className="leading-relaxed">P8RQ+3P4, MVP Double Rd, Sector 10,<br/>MVP Colony, Visakhapatnam, AP 530017<br/>
+                <a href="https://www.google.com/maps/place/Sri+Raghavendra+Jyothishalayam,+P8RQ%2B3P4,+MVP+Double+Rd,+Sector+10,+MVP+Colony,+Visakhapatnam,+Andhra+Pradesh+530017/@17.740137,83.3393431,17z/" target="_blank" rel="noopener noreferrer" className="text-gold hover:underline text-sm inline-flex items-center gap-1 mt-1">View on Google Maps</a>
                 </span>
               </li>
               <li className="flex items-center gap-3">
