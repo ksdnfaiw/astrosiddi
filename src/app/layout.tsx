@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Cinzel_Decorative, Cormorant_Garamond, Jost, Noto_Sans_Telugu, Poppins } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "@/contexts/LanguageContext";
@@ -77,6 +78,23 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        {/* Google tag (gtag.js) */}
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=AW-18499886007"
+          strategy="afterInteractive"
+        />
+        <Script id="google-ads-gtag" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'AW-18499886007');
+          `}
+        </Script>
+      </head>
       <body
         className={`${cinzel.variable} ${cormorant.variable} ${jost.variable} ${notoTelugu.variable} ${poppins.variable} antialiased bg-ivory text-midnight font-poppins overflow-x-hidden`}
       >
