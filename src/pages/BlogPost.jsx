@@ -3,15 +3,15 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowLeft, Clock, Calendar, Bookmark, HelpCircle, CheckCircle2, AlertTriangle, Lightbulb, MapPin, Sparkles } from "lucide-react";
-import { BlogPost, getRelatedPosts } from "@/data/blogPosts";
+import { Bookmark, AlertTriangle, Lightbulb, Sparkles } from "lucide-react";
+import { BLOG_POSTS, getRelatedPosts } from "@/data/blogPosts";
 import { AuthorBadge } from "@/components/blog/AuthorBadge";
 import { SocialShare } from "@/components/blog/SocialShare";
 import { WhatsAppConsultationCard } from "@/components/blog/WhatsAppConsultationCard";
 import { FaqAccordion } from "@/components/blog/FaqAccordion";
 import { VizagTrustBanner } from "@/components/blog/VizagTrustBanner";
 
-export default function BlogPostView({ post }: { post: BlogPost }) {
+export default function BlogPostView({ post = BLOG_POSTS[0] }) {
   if (!post) return null;
 
   const related = getRelatedPosts(post.slug, 3);

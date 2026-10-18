@@ -21,7 +21,9 @@ export function AuthorBadge({
             <span className="font-semibold text-xs sm:text-sm text-midnight">
               {author}
             </span>
-            <UserCheck className="w-4 h-4 text-emerald-600 flex-shrink-0" title="Verified Astrological Reviewer" />
+            <span title="Verified Astrological Reviewer">
+              <UserCheck className="w-4 h-4 text-emerald-600 flex-shrink-0" />
+            </span>
           </div>
           <div className="text-[11px] text-midnight/60 flex items-center gap-2 mt-0.5">
             <span className="flex items-center gap-1">

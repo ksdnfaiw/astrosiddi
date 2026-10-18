@@ -3,14 +3,14 @@
 import React, { useState, useMemo } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Sparkles, BookOpen, Clock, Calendar, ArrowRight, User, MapPin, Search, Tag } from "lucide-react";
-import { BLOG_POSTS, BlogPost } from "@/data/blogPosts";
+import { Sparkles, BookOpen, Clock, ArrowRight, Search } from "lucide-react";
+import { BLOG_POSTS } from "@/data/blogPosts";
 
 const CATEGORIES = ["All", "Vastu Shastra", "Kundali Matching", "Career Astrology", "Numerology", "Vedic Astrology"];
 
-export default function BlogList({ initialPosts = BLOG_POSTS }: { initialPosts?: BlogPost[] }) {
-  const [selectedCategory, setSelectedCategory] = useState<string>("All");
-  const [searchQuery, setSearchQuery] = useState<string>("");
+export default function BlogList({ initialPosts = BLOG_POSTS }) {
+  const [selectedCategory, setSelectedCategory] = useState("All");
+  const [searchQuery, setSearchQuery] = useState("");
 
   const filteredPosts = useMemo(() => {
     return initialPosts.filter((post) => {
@@ -19,7 +19,7 @@ export default function BlogList({ initialPosts = BLOG_POSTS }: { initialPosts?:
         searchQuery.trim() === "" ||
         post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
         post.summary.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        post.tags.some((t) => t.toLowerCase().includes(searchQuery.toLowerCase()));
+        (post.tags && post.tags.some((t) => t.toLowerCase().includes(searchQuery.toLowerCase())));
 
       return matchesCategory && matchesSearch;
     });
