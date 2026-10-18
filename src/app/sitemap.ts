@@ -1,10 +1,19 @@
 import { MetadataRoute } from 'next';
+import { getAllPosts } from '@/data/blogPosts';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.astrosiddhi.com';
   const currentDate = new Date();
 
-  return [
+  const posts = getAllPosts();
+  const blogRoutes: MetadataRoute.Sitemap = posts.map((post) => ({
+    url: `${baseUrl}/blog/${post.slug}`,
+    lastModified: new Date(post.modifiedDate || post.publishDate),
+    changeFrequency: 'weekly',
+    priority: 0.8,
+  }));
+
+  const staticRoutes: MetadataRoute.Sitemap = [
     {
       url: `${baseUrl}`,
       lastModified: currentDate,
@@ -42,24 +51,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/blog/best-astrologer-in-visakhapatnam`,
-      lastModified: new Date('2026-10-14'),
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/blog/kundali-matching-marriage-telugu-vedic-astrology`,
-      lastModified: new Date('2026-10-14'),
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/blog/vastu-shastra-guide-homes-flats-visakhapatnam`,
-      lastModified: new Date('2026-10-14'),
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    {
       url: `${baseUrl}/about`,
       lastModified: currentDate,
       changeFrequency: 'monthly',
@@ -78,4 +69,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.3,
     },
   ];
+
+  return [...staticRoutes, ...blogRoutes];
 }

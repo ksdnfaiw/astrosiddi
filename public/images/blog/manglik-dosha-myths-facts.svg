@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0D0A1E" />
+      <stop offset="50%" stop-color="#300A18" />
+      <stop offset="100%" stop-color="#0D0A1E" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <!-- Mars Red Planetary Shield -->
+  <g transform="translate(600, 230)">
+    <circle cx="0" cy="0" r="100" fill="#E53E3E" fill-opacity="0.25" stroke="#E53E3E" stroke-width="2" />
+    <circle cx="0" cy="0" r="70" fill="#C53030" fill-opacity="0.4" />
+    <text x="0" y="10" font-family="serif" font-size="32" fill="#FFFDF5" text-anchor="middle" font-weight="bold">KUJA</text>
+    <text x="0" y="38" font-family="sans-serif" font-size="16" fill="#F5A623" text-anchor="middle">MARS / ANGARAKA</text>
+  </g>
+  <!-- Balancing Scales / Harmony Vector -->
+  <line x1="380" y1="230" x2="820" y2="230" stroke="#F5A623" stroke-width="2" stroke-opacity="0.7" />
+  <circle cx="380" cy="230" r="12" fill="#F5A623" />
+  <circle cx="820" cy="230" r="12" fill="#F5A623" />
+  <text x="600" y="475" font-family="sans-serif" font-size="34" fill="#FFFDF5" text-anchor="middle" font-weight="bold">MANGLIK DOSHA: 5 BIGGEST MYTHS VS. VEDIC FACTS</text>
+  <text x="600" y="515" font-family="sans-serif" font-size="20" fill="#D4A853" text-anchor="middle">12 Shastric Cancellation Rules &amp; True Kuja Dosha Nivarana</text>
+</svg>
