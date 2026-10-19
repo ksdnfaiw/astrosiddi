@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Script from "next/script";
 import { CheckCircle2, Phone, MessageSquare, ArrowLeft, Clock, MapPin, Sparkles, ShieldCheck } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -14,6 +15,15 @@ export const metadata: Metadata = {
 export default function SuccessPage() {
   return (
     <div className="flex flex-col min-h-screen bg-ivory text-midnight">
+      {/* Event snippet for Contact conversion page */}
+      <Script id="google-ads-contact-conversion" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('event', 'conversion', {'send_to': 'AW-18499886007/oeaGCJH076EdELe3t_VE'});
+        `}
+      </Script>
+
       {/* Hero / Confirmation Section */}
       <section className="relative py-24 sm:py-32 bg-gradient-to-b from-midnight via-deepPurple to-midnight text-ivory border-b border-gold/20 overflow-hidden text-center">
         <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#F5A623_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none" />
