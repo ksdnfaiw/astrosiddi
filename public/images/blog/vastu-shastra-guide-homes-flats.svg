@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0D0A1E" />
+      <stop offset="50%" stop-color="#14221A" />
+      <stop offset="100%" stop-color="#0D0A1E" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <circle cx="600" cy="220" r="100" fill="#25D366" fill-opacity="0.15" stroke="#F5A623" stroke-width="2" />
+  <text x="600" y="235" font-family="serif" font-size="34" fill="#F5A623" text-anchor="middle" font-weight="bold">వాస్తు</text>
+  <text x="600" y="460" font-family="sans-serif" font-size="34" fill="#FFFDF5" text-anchor="middle" font-weight="bold">VASTU SHASTRA FOR HOMES &amp; FLATS IN VIZAG</text>
+  <text x="600" y="500" font-family="sans-serif" font-size="20" fill="#D4A853" text-anchor="middle">Coastal Principles &amp; Non-Demolition Remedies • Astro Siddhi</text>
+</svg>

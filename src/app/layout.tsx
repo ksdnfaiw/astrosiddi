@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Cinzel_Decorative, Cormorant_Garamond, Jost, Noto_Sans_Telugu, Poppins } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "@/contexts/LanguageContext";
@@ -36,20 +37,37 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/' },
   metadataBase: new URL("https://www.astrosiddhi.com"),
   title: {
     template: "%s | Astro Siddhi",
-    default: "Best Astrologer in Visakhapatnam (Vizag) | Astro Siddhi",
+    default: "Best Astrologer in Visakhapatnam (Vizag) | Sri Raghavendra Jyothishalayam - Astro Siddhi",
   },
-  description: "Astro Siddhi is a trusted Vedic astrologer in Visakhapatnam offering horoscope reading, Kundali matching, Vastu Shastra, and spiritual remedies, also serving Hyderabad.",
-  keywords: ["astrologer in Visakhapatnam", "best astrologer in Vizag", "Vedic astrology Vizag", "Kundali matching Visakhapatnam", "Vastu consultant Vizag", "astrologer Hyderabad"],
+  description: "Sri Raghavendra Jyothishalayam (Astro Siddhi) is a 25-year trusted Vedic astrology practice in MVP Colony, Visakhapatnam. Rated 4.9★ on Google across 414+ reviews for horoscope reading, Kundali matching, and Vastu.",
+  keywords: [
+    "Sri Raghavendra Jyothishalayam",
+    "Sri Raghavendra Jyothishalayam Visakhapatnam",
+    "astrologer in MVP Colony Visakhapatnam",
+    "best astrologer in Visakhapatnam",
+    "best astrologer in Vizag",
+    "Vedic astrology Vizag",
+    "Kundali matching Visakhapatnam",
+    "Vastu consultant Vizag",
+    "astrologer MVP Colony",
+    "Sri Raghavendra Siddhanti Garu",
+    "Astro Siddhi",
+    "Astro Siddhi Visakhapatnam"
+  ],
   openGraph: {
-    title: "Best Astrologer in Visakhapatnam (Vizag) | Astro Siddhi",
-    description: "Trusted Vedic astrology, horoscope reading, Kundali matching, and Vastu Shastra consultations in Visakhapatnam.",
+    title: "Best Astrologer in Visakhapatnam (Vizag) | Sri Raghavendra Jyothishalayam - Astro Siddhi",
+    description: "Trusted Vedic astrology, horoscope reading, Kundali matching, and Vastu Shastra consultations in MVP Colony, Visakhapatnam. Rated 4.9★ on Google.",
     url: "https://www.astrosiddhi.com",
-    siteName: "Astro Siddhi",
+    siteName: "Astro Siddhi - Sri Raghavendra Jyothishalayam",
     locale: "en_IN",
     type: "website",
+  },
+  verification: {
+    google: "j095-6EOwSoBFQ7_Qxv3GGHkB2RUkmjN_q6D6-v_O2o",
   },
 };
 
@@ -60,6 +78,23 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        {/* Google tag (gtag.js) */}
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=AW-18499886007"
+          strategy="afterInteractive"
+        />
+        <Script id="google-ads-gtag" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'AW-18499886007');
+          `}
+        </Script>
+      </head>
       <body
         className={`${cinzel.variable} ${cormorant.variable} ${jost.variable} ${notoTelugu.variable} ${poppins.variable} antialiased bg-ivory text-midnight font-poppins overflow-x-hidden`}
       >

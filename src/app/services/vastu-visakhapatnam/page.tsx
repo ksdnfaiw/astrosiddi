@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/services/vastu-visakhapatnam' },
   title: "Best Vastu Consultant in Visakhapatnam | Astro Siddhi",
   description: "Consult the best Vastu consultant in Visakhapatnam. Align your home or office with the five elements for harmony, health, and prosperity.",
 };

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0D0A1E" />
+      <stop offset="50%" stop-color="#2A1035" />
+      <stop offset="100%" stop-color="#0D0A1E" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <!-- Traditional South Indian Kundali Chart Diamond Grid -->
+  <rect x="425" y="80" width="350" height="350" fill="none" stroke="#F5A623" stroke-width="2.5" stroke-opacity="0.8" />
+  <line x1="425" y1="80" x2="775" y2="430" stroke="#F5A623" stroke-width="2" stroke-opacity="0.5" />
+  <line x1="425" y1="430" x2="775" y2="80" stroke="#F5A623" stroke-width="2" stroke-opacity="0.5" />
+  <polygon points="600,80 775,255 600,430 425,255" fill="none" stroke="#FF6B00" stroke-width="2" />
+  <!-- Telugu Glyphs / Decorative Accents -->
+  <circle cx="600" cy="255" r="45" fill="#F5A623" fill-opacity="0.15" stroke="#F5A623" stroke-width="1.5" />
+  <text x="600" y="262" font-family="serif" font-size="28" fill="#F5A623" text-anchor="middle" font-weight="bold">శ్రీ</text>
+  <!-- Text Overlay -->
+  <text x="600" y="495" font-family="sans-serif" font-size="34" fill="#FFFDF5" text-anchor="middle" font-weight="bold">TELUGU KUNDALI MATCHING &amp; ASHTAKOOTA</text>
+  <text x="600" y="535" font-family="sans-serif" font-size="20" fill="#D4A853" text-anchor="middle">Jathaka Poritham, Rajju Dosha &amp; Vedic Truths • Astro Siddhi</text>
+</svg>

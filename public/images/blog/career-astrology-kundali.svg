@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0D0A1E" />
+      <stop offset="50%" stop-color="#1B1438" />
+      <stop offset="100%" stop-color="#0D0A1E" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <!-- Ascending Growth Graph and 10th House Sun Emblem -->
+  <g transform="translate(600, 240)">
+    <circle cx="0" cy="0" r="110" fill="#F5A623" fill-opacity="0.1" stroke="#F5A623" stroke-width="2" />
+    <!-- Radiating Sun Rays -->
+    <line x1="0" y1="-140" x2="0" y2="-120" stroke="#FF6B00" stroke-width="4" />
+    <line x1="0" y1="120" x2="0" y2="140" stroke="#FF6B00" stroke-width="4" />
+    <line x1="-140" y1="0" x2="-120" y2="0" stroke="#FF6B00" stroke-width="4" />
+    <line x1="120" y1="0" x2="140" y2="0" stroke="#FF6B00" stroke-width="4" />
+    <text x="0" y="10" font-family="serif" font-size="28" fill="#F5A623" text-anchor="middle" font-weight="bold">10TH HOUSE</text>
+    <text x="0" y="40" font-family="sans-serif" font-size="16" fill="#D4A853" text-anchor="middle">KARMA BHAVA</text>
+  </g>
+  <path d="M 320 370 Q 500 320 680 220 T 920 120" fill="none" stroke="#25D366" stroke-width="4" stroke-linecap="round" />
+  <circle cx="920" cy="120" r="7" fill="#25D366" />
+  <text x="600" y="475" font-family="sans-serif" font-size="34" fill="#FFFDF5" text-anchor="middle" font-weight="bold">CAREER ASTROLOGY: 10TH HOUSE &amp; PROMOTION TIMING</text>
+  <text x="600" y="515" font-family="sans-serif" font-size="20" fill="#D4A853" text-anchor="middle">Job vs Business, D10 Dasamsa Chart &amp; Saturn Transits • Astro Siddhi</text>
+</svg>

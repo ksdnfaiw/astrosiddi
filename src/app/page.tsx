@@ -6,6 +6,8 @@ import { useTranslation } from "@/contexts/useTranslation";
 import Image from "next/image";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { HeroSection } from "@/components/sections/HeroSection";
+import { GoogleReviews } from "@/components/sections/GoogleReviews";
+import { MapsSection } from "@/components/sections/MapsSection";
 import { motion } from "framer-motion";
 import { Star, ChevronRight, CheckCircle2, Sparkles, ArrowRight } from "lucide-react";
 
@@ -200,7 +202,9 @@ export default function Home() {
         </div>
       </section>
 
+      <GoogleReviews />
       <Testimonials />
+      <MapsSection />
     </div>
   );
 }

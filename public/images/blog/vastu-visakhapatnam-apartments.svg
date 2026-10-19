@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0D0A1E" />
+      <stop offset="50%" stop-color="#0F2438" />
+      <stop offset="100%" stop-color="#0D0A1E" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <!-- High Rise Tower Outline & Coastal Waves -->
+  <g transform="translate(600, 240)">
+    <!-- Tower -->
+    <rect x="-60" y="-120" width="120" height="190" fill="none" stroke="#F5A623" stroke-width="2" />
+    <line x1="-30" y1="-120" x2="-30" y2="70" stroke="#F5A623" stroke-width="1" stroke-opacity="0.4" />
+    <line x1="0" y1="-120" x2="0" y2="70" stroke="#F5A623" stroke-width="1" stroke-opacity="0.4" />
+    <line x1="30" y1="-120" x2="30" y2="70" stroke="#F5A623" stroke-width="1" stroke-opacity="0.4" />
+    <!-- Floor Grid lines -->
+    <line x1="-60" y1="-80" x2="60" y2="-80" stroke="#F5A623" stroke-width="1" stroke-opacity="0.4" />
+    <line x1="-60" y1="-40" x2="60" y2="-40" stroke="#F5A623" stroke-width="1" stroke-opacity="0.4" />
+    <line x1="-60" y1="0" x2="60" y2="0" stroke="#F5A623" stroke-width="1" stroke-opacity="0.4" />
+    <line x1="-60" y1="40" x2="60" y2="40" stroke="#F5A623" stroke-width="1" stroke-opacity="0.4" />
+    <!-- Coastal Wave -->
+    <path d="M -220 80 Q -110 50 0 80 T 220 80" fill="none" stroke="#00B4D8" stroke-width="3" />
+  </g>
+  <text x="600" y="475" font-family="sans-serif" font-size="34" fill="#FFFDF5" text-anchor="middle" font-weight="bold">VASTU TIPS FOR VISAKHAPATNAM APARTMENTS</text>
+  <text x="600" y="515" font-family="sans-serif" font-size="20" fill="#D4A853" text-anchor="middle">Madhurawada, MVP Colony, Beach Road &amp; High-Rise Living Solutions</text>
+</svg>

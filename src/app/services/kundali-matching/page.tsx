@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/services/kundali-matching' },
   title: "Kundali Matching Online | Vedic Astrology Compatibility",
   description: "Expert Kundali matching online. Scientifically verified compatibility analysis for marriage by a 25-year veteran Vedic astrologer.",
 };
