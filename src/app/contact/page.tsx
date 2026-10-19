@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
@@ -22,6 +23,7 @@ const contactSchema = z.object({
 type ContactFormValues = z.infer<typeof contactSchema>;
 
 export default function Contact() {
+  const router = useRouter();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
@@ -51,6 +53,8 @@ export default function Contact() {
       
       setIsSuccess(true);
       setIsSubmitting(false);
+      // Redirect to /success for Google Ads Page Load conversion tracking
+      router.push("/success");
     } catch (error) {
       console.error(error);
       setIsSubmitting(false);
