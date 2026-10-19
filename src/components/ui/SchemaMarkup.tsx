@@ -4,21 +4,23 @@ export const LocalBusinessSchema = () => {
   const schema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": "Astro Siddhi",
+    "name": "Sri Raghavendra Astrology",
     "image": "https://astrosiddi.com/icon.svg",
     "@id": "https://astrosiddi.com",
     "url": "https://astrosiddi.com",
-    "telephone": "+919014163994", // Placeholder, waiting for client
+    "telephone": ["+919652412221", "+919555192221"],
     "address": {
       "@type": "PostalAddress",
+      "streetAddress": "Door 1-83-43, HIG 204/4, MVP Colony Double Road, Above Karur Vysya Bank",
       "addressLocality": "Visakhapatnam",
-      "addressRegion": "AP",
+      "postalCode": "530017",
+      "addressRegion": "Andhra Pradesh",
       "addressCountry": "IN"
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": 17.6868,
-      "longitude": 83.2185
+      "latitude": 17.7424,
+      "longitude": 83.3292
     },
     "openingHoursSpecification": {
       "@type": "OpeningHoursSpecification",

@@ -31,7 +31,7 @@ const config: Config = {
         notoTelugu: ['var(--font-noto-telugu)', 'sans-serif'],
       },
       animation: {
-        marquee: 'marquee 25s linear infinite',
+        marquee: 'marquee 85s linear infinite',
       },
       keyframes: {
         marquee: {

@@ -4,189 +4,22 @@ import React from "react";
 import Link from "next/link";
 import { useTranslation } from "@/contexts/useTranslation";
 import Image from "next/image";
-import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
 import { Testimonials } from "@/components/sections/Testimonials";
+import { HeroSection } from "@/components/sections/HeroSection";
 import { motion } from "framer-motion";
-import { Star, Award, Globe, Languages, ArrowRight, Sparkles, ChevronRight, CheckCircle2 } from "lucide-react";
+import { Star, ChevronRight, CheckCircle2, Sparkles, ArrowRight } from "lucide-react";
 
 export default function Home() {
   const { t } = useTranslation();
 
   return (
     <div className="flex flex-col min-h-screen bg-ivory">
-      {/* HERO SECTION */}
-      <section className="relative pt-32 pb-40 overflow-hidden bg-midnight text-ivory flex items-center min-h-[90vh]">
-        {/* Background elements */}
-        <div className="absolute inset-0 z-0 bg-midnight overflow-hidden">
-          {/* Deep gradient overlay for cinematic feel */}
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-gold/10 via-midnight to-midnight opacity-80"></div>
-          
-          {/* Subtle star dust pattern */}
-          <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-30 mix-blend-screen"></div>
-          
-          {/* Glowing bottom-left and top-right ambient orbs */}
-          <div className="absolute -bottom-1/4 -left-1/4 w-[800px] h-[800px] bg-gold/10 blur-[150px] rounded-full pointer-events-none"></div>
-          <div className="absolute -top-1/4 -right-1/4 w-[600px] h-[600px] bg-saffron/5 blur-[120px] rounded-full pointer-events-none"></div>
-
-          {/* Abstract Geometric Circles (Right aligned) */}
-          <motion.div 
-            animate={{ rotate: 360 }}
-            transition={{ duration: 120, repeat: Infinity, ease: "linear" }}
-            className="absolute top-[10%] right-0 translate-x-1/4 w-[620px] h-[620px] sm:w-[800px] sm:h-[800px] pointer-events-none opacity-[0.15] flex items-center justify-center"
-          >
-            <svg className="w-full h-full" viewBox="-100 -100 200 200" fill="none">
-              <g stroke="currentColor" className="text-gold" strokeWidth="0.7">
-                <circle r="90"></circle>
-                <circle r="70"></circle>
-                <circle r="50"></circle>
-                <circle r="30"></circle>
-                <line x1="0" y1="0" x2="90" y2="0"></line>
-                <line x1="0" y1="0" x2="77.942286" y2="45"></line>
-                <line x1="0" y1="0" x2="45" y2="77.942286"></line>
-                <line x1="0" y1="0" x2="0" y2="90"></line>
-                <line x1="0" y1="0" x2="-45" y2="77.942286"></line>
-                <line x1="0" y1="0" x2="-77.942286" y2="45"></line>
-                <line x1="0" y1="0" x2="-90" y2="0"></line>
-                <line x1="0" y1="0" x2="-77.942286" y2="-45"></line>
-                <line x1="0" y1="0" x2="-45" y2="-77.942286"></line>
-                <line x1="0" y1="0" x2="0" y2="-90"></line>
-                <line x1="0" y1="0" x2="45" y2="-77.942286"></line>
-                <line x1="0" y1="0" x2="77.942286" y2="-45"></line>
-                <circle cx="60" cy="0" r="15"></circle>
-                <circle cx="42.4264" cy="42.4264" r="15"></circle>
-                <circle cx="0" cy="60" r="15"></circle>
-                <circle cx="-42.4264" cy="42.4264" r="15"></circle>
-                <circle cx="-60" cy="0" r="15"></circle>
-                <circle cx="-42.4264" cy="-42.4264" r="15"></circle>
-                <circle cx="0" cy="-60" r="15"></circle>
-                <circle cx="42.4264" cy="-42.4264" r="15"></circle>
-              </g>
-            </svg>
-          </motion.div>
-          
-          {/* Extremely subtle floating particles */}
-          <div className="absolute inset-0 pointer-events-none">
-            {[...Array(20)].map((_, i) => (
-              <motion.div
-                key={i}
-                className="absolute rounded-full bg-gold"
-                style={{
-                  top: `${Math.random() * 100}%`,
-                  left: `${Math.random() * 100}%`,
-                  width: `${Math.random() * 3 + 1}px`,
-                  height: `${Math.random() * 3 + 1}px`,
-                }}
-                animate={{
-                  opacity: [0, Math.random() * 0.5 + 0.2, 0],
-                  scale: [0.5, 1.5, 0.5],
-                  y: [0, -30, 0]
-                }}
-                transition={{
-                  duration: 4 + Math.random() * 6,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: Math.random() * 4,
-                }}
-              />
-            ))}
-          </div>
-
-          {/* Shining glowing stars with cross beams */}
-          <div className="absolute inset-0 pointer-events-none overflow-hidden">
-            {[...Array(25)].map((_, i) => (
-              <motion.div
-                key={`star-${i}`}
-                className="absolute flex items-center justify-center"
-                style={{
-                  top: `${Math.random() * 100}%`,
-                  left: `${Math.random() * 100}%`,
-                }}
-                animate={{
-                  opacity: [0, 0.8, 0],
-                  scale: [0.5, 1.2, 0.5],
-                  rotate: [0, 45, 90]
-                }}
-                transition={{
-                  duration: 5 + Math.random() * 5,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: Math.random() * 5,
-                }}
-              >
-                {/* Subtle outer cross */}
-                <div className="absolute w-[1px] h-12 bg-gradient-to-b from-transparent via-gold/60 to-transparent blur-[0.5px]"></div>
-                <div className="absolute h-[1px] w-12 bg-gradient-to-r from-transparent via-gold/60 to-transparent blur-[0.5px]"></div>
-                {/* Core bright cross */}
-                <div className="absolute w-[2px] h-6 bg-gradient-to-b from-transparent via-ivory to-transparent blur-[1px]"></div>
-                <div className="absolute h-[2px] w-6 bg-gradient-to-r from-transparent via-ivory to-transparent blur-[1px]"></div>
-                {/* Intense central glow */}
-                <div className="absolute w-1.5 h-1.5 bg-white rounded-full shadow-[0_0_15px_4px_rgba(255,255,255,0.9)] blur-[1px]"></div>
-                <div className="absolute w-3 h-3 bg-gold/50 rounded-full blur-[4px]"></div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full mt-10 lg:mt-0">
-          <div className="max-w-4xl mx-auto text-center">
-            <motion.div 
-              initial={{ opacity: 0, y: 30 }} 
-              animate={{ opacity: 1, y: 0 }} 
-              transition={{ duration: 0.8, ease: "easeOut" }}
-            >
-              <div className="flex justify-center mb-8">
-                <span className="inline-flex items-center gap-2 py-1.5 px-5 rounded-full bg-gold/10 border border-gold/30 text-gold text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase backdrop-blur-sm">
-                  <Sparkles className="w-4 h-4" />
-                  {t("hero.badge")}
-                </span>
-              </div>
-              
-              <h1 className="font-cinzel text-4xl sm:text-5xl md:text-7xl lg:text-[5rem] font-bold mb-8 leading-[1.1] tracking-tight drop-shadow-lg text-transparent bg-clip-text bg-gradient-to-b from-ivory to-ivory/70 whitespace-pre-line">
-                {t("hero.h1")}
-              </h1>
-              
-              <p className="max-w-2xl mx-auto text-lg sm:text-xl md:text-2xl text-ivory/80 mb-12 leading-relaxed font-cormorant font-medium">
-                {t("hero.sub")}
-              </p>
-              
-              <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 mb-20">
-                <Link href="/contact" className="group relative px-8 py-4 bg-gold hover:bg-saffron text-midnight font-bold rounded-full shadow-[0_0_40px_rgba(245,166,35,0.3)] transition-all duration-300 text-sm sm:text-base uppercase tracking-wider w-full sm:w-auto text-center flex items-center justify-center gap-2 overflow-hidden">
-                  <span className="relative z-10">{t("hero.cta.primary")}</span>
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform relative z-10" />
-                  <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"></div>
-                </Link>
-                <Link href="/services" className="px-8 py-4 bg-transparent border border-ivory/30 text-ivory hover:bg-ivory/10 font-bold rounded-full transition-all duration-300 text-sm sm:text-base uppercase tracking-wider w-full sm:w-auto text-center backdrop-blur-sm">
-                  {t("hero.cta.secondary")}
-                </Link>
-              </div>
-              
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-10 border-t border-ivory/10">
-                {[
-                  { icon: Star, text: t("hero.trust.clients") },
-                  { icon: Award, text: t("hero.trust.experience") },
-                  { icon: Globe, text: t("hero.trust.online") },
-                  { icon: Languages, text: t("hero.trust.languages") }
-                ].map((item, idx) => (
-                  <motion.div 
-                    key={idx}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.4 + (idx * 0.1) }}
-                    className="flex flex-col items-center gap-3"
-                  >
-                    <item.icon className="w-6 h-6 text-gold mb-1 opacity-80" />
-                    <span className="text-xs sm:text-sm font-medium text-ivory/70 uppercase tracking-widest">{item.text}</span>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
+      {/* CINEMATIC VEDIC ASTROLOGY HERO SECTION */}
+      <HeroSection />
 
       {/* MARQUEE */}
-      <div className="bg-gradient-to-r from-gold via-saffron to-gold text-midnight py-4 overflow-hidden whitespace-nowrap shadow-inner relative z-20">
-        <div className="animate-marquee inline-flex items-center gap-8 font-semibold tracking-[0.2em] uppercase text-sm">
+      <div className="marquee-container group bg-gradient-to-r from-gold via-saffron to-gold text-midnight py-4 overflow-hidden whitespace-nowrap shadow-inner relative z-20 cursor-pointer select-none">
+        <div className="marquee-track animate-marquee inline-flex items-center gap-8 font-semibold tracking-[0.2em] uppercase text-sm">
           {[...Array(6)].map((_, i) => (
             <React.Fragment key={i}>
               <span>{t("marquee.text")}</span>
@@ -239,11 +72,13 @@ export default function Home() {
               className="relative"
             >
               <div className="absolute inset-0 bg-gold/20 rounded-2xl -rotate-3 scale-105 transition-transform duration-700 hover:rotate-0"></div>
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-gold/10 bg-midnight">
-                <img
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-gold/10 bg-midnight aspect-[16/10]">
+                <Image
                   src="/English%20design_page-0001.jpg"
                   alt="Sri Raghavendra Siddhanti Garu"
-                  className="w-full object-contain mix-blend-luminosity hover:mix-blend-normal transition-all duration-700"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-contain mix-blend-luminosity hover:mix-blend-normal transition-all duration-700"
                 />
                 
                 {/* Overlay gradient */}

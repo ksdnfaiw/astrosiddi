@@ -1,6 +1,6 @@
 "use client";
 
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState } from 'react';
 
 type Language = 'en' | 'te';
 
@@ -13,20 +13,25 @@ interface LanguageContextType {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
-  const [language, setLanguage] = useState<Language>('en');
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    const saved = localStorage.getItem('language') as Language;
-    if (saved === 'en' || saved === 'te') {
-      setLanguage(saved);
+  const [language, setLanguage] = useState<Language>(() => {
+    if (typeof window !== 'undefined') {
+      try {
+        const saved = localStorage.getItem('language') as Language;
+        if (saved === 'en' || saved === 'te') return saved;
+      } catch {
+        // Fallback for SSR or storage disabled
+      }
     }
-    setMounted(true);
-  }, []);
+    return 'en';
+  });
 
   const handleSetLanguage = (lang: Language) => {
     setLanguage(lang);
-    localStorage.setItem('language', lang);
+    try {
+      localStorage.setItem('language', lang);
+    } catch {
+      // Fallback
+    }
   };
 
   // Basic translation function placeholder. We will import translations.
