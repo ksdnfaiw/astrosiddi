@@ -123,13 +123,13 @@ Before releasing the Moon Sign Calculator and Kundli Generator to public search 
    - These will be added to `tests/fixtures/vectors.json`. Once verified, toggling `moonSignReleased: true` in `src/config/tools.ts` will open them to search indexing and the sitemap.
 2. **Contemporary Telugu Jyothisham Book Recommendations**:
    - Confirm or provide specific contemporary Telugu authors/publications favored by Sri Raghavendra Siddhanti garu for inclusion in `/blog/telugu-jyothisham-books`.
-3. **Founder Review Attribution**:
-   - Confirm whether the "Reviewed by Sri Raghavendra Siddhanti garu" byline should appear on the tool pages.
-4. **Telugu Linguistic Review**:
-   - Review Telugu script spelling of Rashis, Nakshatras, and Padas in the calculator results cards.
-5. **"Trikon" Keyword Evaluation Outcome**:
-   - SERP verification revealed "trikon" queries in India predominantly target geometry tutorials ("triangle" in Hindi/Marathi) and an entertainment movie release.
-   - Per strategy rules, a standalone `/blog/trikona-houses-in-kundli` was skipped to prevent ranking irrelevance. Trikona houses (1st, 5th, 9th) are covered naturally within the Kundli generator and career astrology guides.
+3. **Founder Review Attribution (Resolved)**:
+   - **Decision: "No"** (Confirmed by client). The "Reviewed by Sri Raghavendra Siddhanti garu" byline is omitted from the tool results cards.
+4. **"Trikon" Keyword Evaluation Outcome (Resolved)**:
+   - Live SERP verification confirmed search intent in India is overwhelmingly non-astrological (geometry in Hindi/Marathi and an entertainment movie).
+   - **Decision: Skipped** (Confirmed by client). Standalone `/blog/trikona-houses-in-kundli` omitted; Trikona houses (1st, 5th, 9th) are addressed organically within the Kundli generator and career astrology guides.
+5. **Pending Client Test Charts (For Phase 2/3 Release)**:
+   - Provide 5–10 verified birth charts with confirmed Chandra Rashi, Nakshatra, and Pada to unlock `/tools/moon-sign-calculator` and `/tools/kundli-generator` from `noindex` into the public sitemap.
 
 ---
 
