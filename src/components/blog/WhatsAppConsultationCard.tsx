@@ -1,5 +1,5 @@
 import React from "react";
-import { MessageSquare, Star, MapPin, Calendar, CheckCircle2 } from "lucide-react";
+import { MessageSquare, Star, MapPin, CheckCircle2 } from "lucide-react";
 
 export function WhatsAppConsultationCard({
   serviceContext = "Vedic Astrology & Vastu Consultation"

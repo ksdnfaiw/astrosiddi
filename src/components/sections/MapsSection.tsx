@@ -20,8 +20,8 @@ export function MapsSection() {
 
   return (
     <section id="location-map" className="py-24 sm:py-32 bg-deepPurple text-ivory relative overflow-hidden">
-      {/* Background stardust & ambient lighting */}
-      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=2070')] bg-cover bg-center opacity-[0.03] pointer-events-none"></div>
+      {/* Background ambient lighting */}
+      <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#F5A623_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none"></div>
       <div className="absolute top-1/2 left-0 w-96 h-96 bg-gold/5 rounded-full blur-[120px] pointer-events-none -translate-y-1/2"></div>
       <div className="absolute bottom-0 right-10 w-96 h-96 bg-saffron/5 rounded-full blur-[120px] pointer-events-none"></div>
 

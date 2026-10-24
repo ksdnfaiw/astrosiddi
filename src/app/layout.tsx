@@ -1,70 +1,84 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { Cinzel_Decorative, Cormorant_Garamond, Jost, Noto_Sans_Telugu, Poppins } from "next/font/google";
+import { Cinzel_Decorative, Cormorant_Garamond, Noto_Sans_Telugu, Poppins } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
-import { LocalBusinessSchema } from "@/components/ui/SchemaMarkup";
 
 const cinzel = Cinzel_Decorative({
-  weight: ["400", "700"],
+  weight: ["700"],
   subsets: ["latin"],
   variable: "--font-cinzel",
+  display: "swap",
 });
 
 const cormorant = Cormorant_Garamond({
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "600"],
   subsets: ["latin"],
   variable: "--font-cormorant",
-});
-
-const jost = Jost({
-  subsets: ["latin"],
-  variable: "--font-jost",
+  display: "swap",
 });
 
 const notoTelugu = Noto_Sans_Telugu({
   subsets: ["telugu"],
   variable: "--font-noto-telugu",
+  display: "swap",
 });
 
 const poppins = Poppins({
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["400", "600", "700"],
   subsets: ["latin"],
   variable: "--font-poppins",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  alternates: { canonical: '/' },
-  metadataBase: new URL("https://www.astrosiddhi.com"),
+  metadataBase: new URL("https://www.astrosiddi.com"),
+  alternates: {
+    canonical: "https://www.astrosiddi.com",
+  },
   title: {
     template: "%s | Astro Siddhi",
-    default: "Best Astrologer in Visakhapatnam (Vizag) | Sri Raghavendra Jyothishalayam - Astro Siddhi",
+    default: "Best Astrologer in Visakhapatnam (Vizag) | Astro Siddhi",
   },
-  description: "Sri Raghavendra Jyothishalayam (Astro Siddhi) is a 25-year trusted Vedic astrology practice in MVP Colony, Visakhapatnam. Rated 4.9★ on Google across 414+ reviews for horoscope reading, Kundali matching, and Vastu.",
+  description:
+    "Consult 25+ yr Vedic astrologer Sri Raghavendra Siddhanti in MVP Colony, Vizag for Kundali matching, horoscope & Vastu. Book your consultation today.",
   keywords: [
-    "Sri Raghavendra Jyothishalayam",
-    "Sri Raghavendra Jyothishalayam Visakhapatnam",
-    "astrologer in MVP Colony Visakhapatnam",
     "best astrologer in Visakhapatnam",
     "best astrologer in Vizag",
-    "Vedic astrology Vizag",
+    "Sri Raghavendra Jyothishalayam",
+    "Astro Siddhi",
     "Kundali matching Visakhapatnam",
     "Vastu consultant Vizag",
-    "astrologer MVP Colony",
+    "astrologer in MVP Colony Visakhapatnam",
     "Sri Raghavendra Siddhanti Garu",
-    "Astro Siddhi",
-    "Astro Siddhi Visakhapatnam"
+    "Vedic astrology Vizag",
   ],
   openGraph: {
-    title: "Best Astrologer in Visakhapatnam (Vizag) | Sri Raghavendra Jyothishalayam - Astro Siddhi",
-    description: "Trusted Vedic astrology, horoscope reading, Kundali matching, and Vastu Shastra consultations in MVP Colony, Visakhapatnam. Rated 4.9★ on Google.",
-    url: "https://www.astrosiddhi.com",
+    title: "Best Astrologer in Visakhapatnam (Vizag) | Astro Siddhi",
+    description:
+      "Consult 25+ yr Vedic astrologer Sri Raghavendra Siddhanti in MVP Colony, Vizag for Kundali matching, horoscope & Vastu. Book your consultation today.",
+    url: "https://www.astrosiddi.com",
     siteName: "Astro Siddhi - Sri Raghavendra Jyothishalayam",
     locale: "en_IN",
     type: "website",
+    images: [
+      {
+        url: "https://www.astrosiddi.com/images/blog/best-astrologer-in-visakhapatnam.svg",
+        width: 1200,
+        height: 630,
+        alt: "Astro Siddhi - Best Astrologer in Visakhapatnam",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Best Astrologer in Visakhapatnam (Vizag) | Astro Siddhi",
+    description:
+      "Consult 25+ yr Vedic astrologer Sri Raghavendra Siddhanti in MVP Colony, Vizag for Kundali matching, horoscope & Vastu. Book your consultation today.",
+    images: ["https://www.astrosiddi.com/images/blog/best-astrologer-in-visakhapatnam.svg"],
   },
   verification: {
     google: "j095-6EOwSoBFQ7_Qxv3GGHkB2RUkmjN_q6D6-v_O2o",
@@ -83,9 +97,9 @@ export default function RootLayout({
         <Script
           async
           src="https://www.googletagmanager.com/gtag/js?id=AW-18499886007"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
-        <Script id="google-ads-gtag" strategy="afterInteractive">
+        <Script id="google-ads-gtag" strategy="lazyOnload">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -96,14 +110,11 @@ export default function RootLayout({
         </Script>
       </head>
       <body
-        className={`${cinzel.variable} ${cormorant.variable} ${jost.variable} ${notoTelugu.variable} ${poppins.variable} antialiased bg-ivory text-midnight font-poppins overflow-x-hidden`}
+        className={`${cinzel.variable} ${cormorant.variable} ${notoTelugu.variable} ${poppins.variable} antialiased bg-ivory text-midnight font-poppins overflow-x-hidden`}
       >
         <LanguageProvider>
           <Navbar />
-          <LocalBusinessSchema />
-          <main className="min-h-screen">
-            {children}
-          </main>
+          <main className="min-h-screen">{children}</main>
           <WhatsAppButton />
           <Footer />
         </LanguageProvider>

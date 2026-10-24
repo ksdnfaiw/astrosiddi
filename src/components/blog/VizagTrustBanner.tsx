@@ -1,5 +1,5 @@
 import React from "react";
-import { MapPin, ShieldCheck, Clock, Award, Phone } from "lucide-react";
+import { MapPin, Award, Phone } from "lucide-react";
 
 export function VizagTrustBanner() {
   const localities = [

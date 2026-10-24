@@ -10,7 +10,7 @@ export function Testimonials() {
 
   return (
     <section className="py-32 bg-midnight text-ivory relative overflow-hidden">
-      <div className="absolute top-0 left-0 w-full h-full bg-[url('https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?q=80&w=2171')] bg-cover bg-center opacity-[0.03] pointer-events-none"></div>
+      <div className="absolute top-0 left-0 w-full h-full opacity-10 bg-[radial-gradient(#F5A623_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none"></div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-20">
@@ -43,7 +43,7 @@ export function Testimonials() {
               </div>
               
               <p className="text-ivory/80 leading-relaxed mb-8 font-cormorant text-lg italic relative z-10">
-                "{t(`testimonials.${num}.text`)}"
+                &ldquo;{t(`testimonials.${num}.text`)}&rdquo;
               </p>
               
               <div className="flex items-center gap-4 border-t border-gold/10 pt-6">

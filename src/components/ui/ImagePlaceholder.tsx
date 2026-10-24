@@ -26,7 +26,7 @@ export function ImagePlaceholder({ className = "w-full h-64", text = "Upload Ima
         <path d="M5 14C5 14 3 13 3 11C3 9 5 8 5 8" />
         <circle cx="15" cy="3" r="1" fill="#F5A623" />
       </svg>
-      <span className="font-jost text-xs text-mutedGold uppercase tracking-wider">{text}</span>
+      <span className="font-poppins text-xs text-mutedGold uppercase tracking-wider">{text}</span>
     </div>
   );
 }

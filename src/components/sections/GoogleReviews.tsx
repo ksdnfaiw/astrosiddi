@@ -17,32 +17,41 @@ const ELFSIGHT_WIDGET_ID = "a4db0604-8de7-44d7-9816-41c8a356fde7";
 
 export function GoogleReviews() {
   const { language } = useTranslation();
+  const [loadWidget, setLoadWidget] = React.useState(false);
 
   useEffect(() => {
-    // If Elfsight platform script is already on the page, re-initialize
-    if (typeof window !== "undefined" && (window as any).elfsightPlatform) {
-      try {
-        (window as any).elfsightPlatform.init();
-      } catch (e) {
-        // Safe fallback
-      }
-    }
+    const el = document.getElementById("google-reviews");
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setLoadWidget(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "300px" }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
   }, []);
 
   return (
     <section id="google-reviews" className="py-24 sm:py-32 bg-midnight text-ivory relative overflow-hidden">
-      {/* Elfsight Platform Script from official CDN */}
-      <Script
-        src="https://elfsightcdn.com/platform.js"
-        strategy="afterInteractive"
-        onLoad={() => {
-          if (typeof window !== "undefined" && (window as any).elfsightPlatform) {
-            try {
-              (window as any).elfsightPlatform.init();
-            } catch (e) {}
-          }
-        }}
-      />
+      {/* Elfsight Platform Script - loaded strictly when scrolled into view */}
+      {loadWidget && (
+        <Script
+          src="https://elfsightcdn.com/platform.js"
+          strategy="lazyOnload"
+          onLoad={() => {
+            if (typeof window !== "undefined") {
+              try {
+                const elfsightWin = window as unknown as { elfsightPlatform?: { init: () => void } };
+                elfsightWin.elfsightPlatform?.init();
+              } catch {}
+            }
+          }}
+        />
+      )}
 
       {/* Ambient background glow & stars */}
       <div className="absolute top-0 right-1/4 w-[600px] h-[600px] bg-gold/5 rounded-full blur-[140px] pointer-events-none"></div>

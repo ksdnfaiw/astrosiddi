@@ -22,7 +22,7 @@ export function Navbar() {
                 </span>
               </div>
               <span className="text-[0.65rem] sm:text-xs text-mutedGold/80 tracking-[0.3em] uppercase mt-1 pl-8">
-                {t("logo.tagline")}
+                <span lang="sa">ज्योतिषम्</span> | <span lang="te">జ్యోతిష్యం</span>
               </span>
             </Link>
           </div>

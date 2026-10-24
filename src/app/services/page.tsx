@@ -5,9 +5,15 @@ import Link from "next/link";
 import { useTranslation } from "@/contexts/useTranslation";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { motion } from "framer-motion";
-import { Eye, Heart, Home, Briefcase, Sparkles, Flame, ChevronRight, Star } from "lucide-react";
+import { Eye, Heart, Home, Briefcase, Sparkles, Flame, ChevronRight, Star, BookOpen } from "lucide-react";
 
 const SERVICE_ICONS = [Eye, Heart, Home, Briefcase, Sparkles, Flame];
+
+const SERVICE_LINKS: Record<number, { href: string; label: string }> = {
+  2: { href: "/services/kundali-matching", label: "View Kundali Matching Service" },
+  3: { href: "/services/vastu-visakhapatnam", label: "View Visakhapatnam Vastu Service" },
+  4: { href: "/services/career-astrology", label: "View Career Astrology Service" },
+};
 
 export default function Services() {
   const { t } = useTranslation();
@@ -26,7 +32,7 @@ export default function Services() {
               </span>
               <div className="w-12 h-px bg-gold/50"></div>
             </div>
-            <h1 className="font-cinzel text-5xl sm:text-6xl md:text-7xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-ivory via-gold to-ivory">Services Aligned with the Stars</h1>
+            <h1 className="font-cinzel text-5xl sm:text-6xl md:text-7xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-ivory via-gold to-ivory">Vedic Astrology Services in Visakhapatnam</h1>
             <p className="text-xl md:text-2xl opacity-80 font-cormorant font-medium max-w-2xl mx-auto leading-relaxed">
               From birth chart analysis to Vastu consultations — comprehensive Vedic guidance for every area of life.
             </p>
@@ -41,6 +47,7 @@ export default function Services() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
           {[1, 2, 3, 4, 5, 6].map((num, idx) => {
             const Icon = SERVICE_ICONS[idx];
+            const dedicated = SERVICE_LINKS[num];
             return (
               <motion.div 
                 key={num} 
@@ -56,13 +63,108 @@ export default function Services() {
                   <Icon className="w-8 h-8" strokeWidth={1.5} />
                 </div>
                 
-                <div className="relative z-10">
+                <div className="relative z-10 flex-1">
                   <h2 className="font-cinzel text-2xl sm:text-3xl font-bold text-midnight mb-4 group-hover:text-gold transition-colors">{t(`services.card${num}.title`)}</h2>
-                  <p className="text-lg leading-relaxed text-midnight/70 font-cormorant">{t(`services.card${num}.desc`)}</p>
+                  <p className="text-lg leading-relaxed text-midnight/70 font-cormorant mb-4">{t(`services.card${num}.desc`)}</p>
+                  
+                  {dedicated && (
+                    <Link
+                      href={dedicated.href}
+                      className="inline-flex items-center gap-1.5 text-xs uppercase tracking-widest font-bold text-gold hover:text-saffron transition-colors mt-2"
+                    >
+                      <span>{dedicated.label}</span>
+                      <ChevronRight className="w-4 h-4" />
+                    </Link>
+                  )}
                 </div>
               </motion.div>
             );
           })}
+        </div>
+      </section>
+
+      {/* TOPIC GUIDES (INTERNAL LINKING) */}
+      <section className="py-16 max-w-6xl mx-auto px-4 border-t border-gold/10">
+        <div className="text-center mb-12">
+          <span className="text-gold font-bold tracking-[0.2em] uppercase text-xs">Knowledge Hub</span>
+          <h2 className="font-cinzel text-3xl sm:text-4xl font-bold text-midnight mt-2">Guides &amp; Specialized Articles</h2>
+          <p className="font-cormorant text-lg text-midnight/70 max-w-2xl mx-auto mt-2">
+            In-depth guides on marriage matching, coastal Vastu, and career timing written by Sri Raghavendra Siddhanti garu.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="bg-white p-6 rounded-2xl border border-gold/15 shadow-sm hover:shadow-md transition-shadow">
+            <h3 className="font-cinzel text-lg font-bold text-midnight mb-2">Marriage &amp; Kundali</h3>
+            <p className="font-cormorant text-midnight/70 text-base mb-4">
+              Explore Telugu marriage matching traditions, Ashtakoota Gunas, and Kuja Dosha facts.
+            </p>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <Link href="/services/kundali-matching" className="text-gold hover:underline font-medium inline-flex items-center gap-1">
+                  <ChevronRight className="w-3.5 h-3.5" /> Kundali Matching Service
+                </Link>
+              </li>
+              <li>
+                <Link href="/blog/how-kundali-matching-really-works-telugu-tradition" className="text-midnight/80 hover:text-gold inline-flex items-center gap-1">
+                  <BookOpen className="w-3.5 h-3.5 text-gold/60" /> Telugu Kundali Tradition &amp; 36 Gunas
+                </Link>
+              </li>
+              <li>
+                <Link href="/blog/manglik-dosha-myths-vs-facts" className="text-midnight/80 hover:text-gold inline-flex items-center gap-1">
+                  <BookOpen className="w-3.5 h-3.5 text-gold/60" /> Manglik Dosha Myths vs. Facts
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div className="bg-white p-6 rounded-2xl border border-gold/15 shadow-sm hover:shadow-md transition-shadow">
+            <h3 className="font-cinzel text-lg font-bold text-midnight mb-2">Coastal Vastu Shastra</h3>
+            <p className="font-cormorant text-midnight/70 text-base mb-4">
+              Practical non-demolition remedies tailored specifically for Visakhapatnam apartments and flats.
+            </p>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <Link href="/services/vastu-visakhapatnam" className="text-gold hover:underline font-medium inline-flex items-center gap-1">
+                  <ChevronRight className="w-3.5 h-3.5" /> Vastu Consultant in Vizag
+                </Link>
+              </li>
+              <li>
+                <Link href="/blog/signs-you-need-vastu-correction-at-home" className="text-midnight/80 hover:text-gold inline-flex items-center gap-1">
+                  <BookOpen className="w-3.5 h-3.5 text-gold/60" /> 7 Signs You Need Vastu Correction
+                </Link>
+              </li>
+              <li>
+                <Link href="/blog/vastu-tips-visakhapatnam-apartments" className="text-midnight/80 hover:text-gold inline-flex items-center gap-1">
+                  <BookOpen className="w-3.5 h-3.5 text-gold/60" /> Vizag Coastal Flat Vastu Tips
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div className="bg-white p-6 rounded-2xl border border-gold/15 shadow-sm hover:shadow-md transition-shadow">
+            <h3 className="font-cinzel text-lg font-bold text-midnight mb-2">Career &amp; Numerology</h3>
+            <p className="font-cormorant text-midnight/70 text-base mb-4">
+              Identify optimal timing for job switches, promotion opportunities, and entrepreneurial ventures.
+            </p>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <Link href="/services/career-astrology" className="text-gold hover:underline font-medium inline-flex items-center gap-1">
+                  <ChevronRight className="w-3.5 h-3.5" /> Career Astrology Consultation
+                </Link>
+              </li>
+              <li>
+                <Link href="/blog/career-astrology-reading-kundali-for-job-business-timing" className="text-midnight/80 hover:text-gold inline-flex items-center gap-1">
+                  <BookOpen className="w-3.5 h-3.5 text-gold/60" /> Reading Kundali for Job Transitions
+                </Link>
+              </li>
+              <li>
+                <Link href="/blog/numerology-basics-birth-number-career-timing" className="text-midnight/80 hover:text-gold inline-flex items-center gap-1">
+                  <BookOpen className="w-3.5 h-3.5 text-gold/60" /> Numerology for Career &amp; Wealth
+                </Link>
+              </li>
+            </ul>
+          </div>
         </div>
       </section>
 

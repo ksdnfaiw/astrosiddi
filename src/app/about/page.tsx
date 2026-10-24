@@ -3,16 +3,21 @@
 import React from "react";
 import Link from "next/link";
 import { useTranslation } from "@/contexts/useTranslation";
-import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { motion } from "framer-motion";
 import { Users, Award, Smile, CheckCircle, ChevronRight, Sparkles } from "lucide-react";
+import { BreadcrumbSchema } from "@/components/ui/SchemaMarkup";
 
 export default function About() {
   const { t } = useTranslation();
+  const breadcrumbs = [
+    { name: "Home", url: "https://www.astrosiddi.com" },
+    { name: "About", url: "https://www.astrosiddi.com/about" },
+  ];
 
   return (
     <div className="flex flex-col min-h-screen bg-ivory text-midnight">
+      <BreadcrumbSchema items={breadcrumbs} />
       {/* HERO */}
       <section className="relative bg-midnight text-ivory py-32 border-b border-gold/10 overflow-hidden">
         <div className="absolute inset-0 bg-cover bg-center opacity-10 mix-blend-luminosity" style={{ backgroundImage: "url('/Untitled design_20260909_011322_0000_page-0001.jpg')" }}></div>
@@ -25,7 +30,9 @@ export default function About() {
               </span>
               <div className="w-12 h-px bg-gold/50"></div>
             </div>
-            <h1 className="font-cinzel text-5xl sm:text-6xl md:text-7xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-ivory via-gold to-ivory">The Soul Behind the Stars</h1>
+            <h1 className="font-cinzel text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-ivory via-gold to-ivory">
+              About Sri Raghavendra Siddhanti — Astrologer in Visakhapatnam
+            </h1>
             <p className="text-xl md:text-2xl opacity-80 font-cormorant font-medium max-w-3xl mx-auto leading-relaxed">
               Visakhapatnam&apos;s trusted Vedic astrologer, with over 25 years of dedicated practice rooted in the sacred traditions of South India.
             </p>
@@ -71,7 +78,7 @@ export default function About() {
                 </p>
                 <div className="bg-gold/10 border-l-4 border-gold p-6 rounded-r-lg mt-8">
                   <p className="font-semibold text-midnight italic m-0">
-                    "Astro Siddhi is built on one truth: the stars do not control your fate — they illuminate the path. You choose the direction."
+                    &quot;Astro Siddhi is built on one truth: the stars do not control your fate — they illuminate the path. You choose the direction.&quot;
                   </p>
                 </div>
               </div>

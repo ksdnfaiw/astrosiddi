@@ -15,7 +15,7 @@ export function SocialShare({
   const encodedTitle = encodeURIComponent(title);
   const encodedUrl = encodeURIComponent(url);
 
-  const shareWhatsApp = `https://wa.me/?text=${encodedTitle}%20-%20${encodedUrl}`;
+  const shareWhatsApp = `https://wa.me/919652412221?text=${encodedTitle}%20-%20${encodedUrl}`;
   const shareTwitter = `https://twitter.com/intent/tweet?text=${encodedTitle}&url=${encodedUrl}`;
   const shareFacebook = `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`;
 

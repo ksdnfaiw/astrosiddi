@@ -1,14 +1,43 @@
 import type { Metadata } from "next";
+import { BreadcrumbSchema } from "@/components/ui/SchemaMarkup";
 
 export const metadata: Metadata = {
-  alternates: { canonical: '/privacy' },
+  alternates: { canonical: "https://www.astrosiddi.com/privacy" },
   title: "Privacy Policy",
-  description: "Privacy Policy for Astro Siddhi's astrology consultation services in Visakhapatnam and Hyderabad.",
+  description:
+    "Privacy policy for Astro Siddhi Vedic astrology in Visakhapatnam. Learn how we safeguard your birth details, contact data, and consultation privacy.",
+  openGraph: {
+    title: "Privacy Policy | Astro Siddhi",
+    description: "Privacy Policy and birth detail safeguarding practices for Astro Siddhi.",
+    url: "https://www.astrosiddi.com/privacy",
+    siteName: "Astro Siddhi",
+    type: "website",
+    images: [
+      {
+        url: "https://www.astrosiddi.com/images/blog/best-astrologer-in-visakhapatnam.svg",
+        width: 1200,
+        height: 630,
+        alt: "Privacy Policy - Astro Siddhi",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Privacy Policy | Astro Siddhi",
+    description: "Privacy Policy and birth data safeguarding practices for Astro Siddhi.",
+    images: ["https://www.astrosiddi.com/images/blog/best-astrologer-in-visakhapatnam.svg"],
+  },
 };
 
 export default function PrivacyPage() {
+  const breadcrumbs = [
+    { name: "Home", url: "https://www.astrosiddi.com" },
+    { name: "Privacy Policy", url: "https://www.astrosiddi.com/privacy" },
+  ];
+
   return (
     <div className="bg-ivory">
+      <BreadcrumbSchema items={breadcrumbs} />
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <h1 className="font-cinzel text-3xl md:text-4xl font-bold text-deepPurple mb-4">Privacy Policy</h1>
         <p className="text-sm text-midnight/60 mb-10">Last updated: September 27, 2026</p>
@@ -56,7 +85,6 @@ export default function PrivacyPage() {
             <p>
               We retain your information only as long as necessary to provide our services and respond to your
               enquiries. You may request that we delete your information at any time by contacting us.
-
             </p>
           </section>
 
@@ -65,8 +93,8 @@ export default function PrivacyPage() {
             <p>
               If you have any questions about this Privacy Policy or your personal information, please contact
               us at{" "}
-              <a href="mailto:contact@astrosiddhi.com" className="text-gold underline">
-                contact@astrosiddhi.com
+              <a href="mailto:contact@astrosiddi.com" className="text-gold underline">
+                contact@astrosiddi.com
               </a>
               .
             </p>

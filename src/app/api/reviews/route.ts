@@ -64,14 +64,14 @@ export async function GET() {
     if (data.status === "OK" && data.result) {
       const place = data.result;
       const reviews: GoogleReviewItem[] = (place.reviews || []).map(
-        (rev: any, index: number) => ({
+        (rev: Record<string, unknown>, index: number) => ({
           id: `rev-${index}-${rev.time || Date.now()}`,
-          authorName: rev.author_name || "Google Reviewer",
-          authorPhoto: rev.profile_photo_url || "",
+          authorName: (rev.author_name as string) || "Google Reviewer",
+          authorPhoto: (rev.profile_photo_url as string) || "",
           rating: Number(rev.rating) || 5,
-          relativeTime: rev.relative_time_description || "Recently",
-          text: rev.text || "",
-          time: rev.time,
+          relativeTime: (rev.relative_time_description as string) || "Recently",
+          text: (rev.text as string) || "",
+          time: rev.time as number | undefined,
         })
       );
 
@@ -99,7 +99,8 @@ export async function GET() {
         message: `Google API responded with ${data.status}: ${data.error_message || "Unable to retrieve reviews"}`,
       });
     }
-  } catch (error: any) {
+  } catch (error: unknown) {
+    const errorMsg = error instanceof Error ? error.message : "Failed to fetch reviews";
     console.error("Failed to fetch Google Reviews:", error);
     return NextResponse.json(
       {
@@ -107,7 +108,7 @@ export async function GET() {
         hasApiKey: true,
         ...baseResponse,
         reviews: [],
-        error: error.message || "Failed to fetch reviews",
+        error: errorMsg,
       },
       { status: 500 }
     );

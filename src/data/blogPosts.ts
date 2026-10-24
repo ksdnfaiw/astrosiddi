@@ -57,7 +57,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "coastal flat vastu remedies",
       "vastu dosha symptoms"
     ],
-    metaDescription: "Experiencing sudden financial blocks or health issues? Discover 7 telltale signs you need Vastu correction at home and non-demolition remedies from Vizag experts.",
+    metaDescription: "Experiencing financial blocks or illness? Discover 7 signs you need Vastu correction at home and non-demolition remedies in Vizag. Read our guide.",
     publishDate: "2026-10-18T09:00:00+05:30",
     modifiedDate: "2026-10-18T10:30:00+05:30",
     author: "Astro Siddhi Editorial Team — Reviewed by 25+ Year Veteran Vedic Astrologer",
@@ -165,7 +165,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "jathaka poritham visakhapatnam",
       "rajju dosha remedies telugu"
     ],
-    metaDescription: "Understand authentic Telugu Kundali matching (Jathaka Poritham). Learn what Guna Milan scores mean, Kuja Dosha facts, and veteran remedies in Visakhapatnam.",
+    metaDescription: "Learn authentic Telugu Kundali matching (Jathaka Poritham), 36 Guna scores, Kuja Dosha facts, and remedies from Vizag astrologers. Explore the guide.",
     publishDate: "2026-10-18T09:15:00+05:30",
     modifiedDate: "2026-10-18T10:45:00+05:30",
     author: "Astro Siddhi Editorial Team — Reviewed by 25+ Year Veteran Vedic Astrologer",
@@ -241,7 +241,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "destiny number career growth",
       "vedic numerology timing"
     ],
-    metaDescription: "Unlock career clarity using Vedic numerology. Calculate your Root Number (Mulank) to discover auspicious periods for job changes and business growth.",
+    metaDescription: "Unlock career success with Vedic numerology. Calculate your Root Number (Mulank) and identify auspicious timing for job growth. Start reading now.",
     publishDate: "2026-10-18T09:30:00+05:30",
     modifiedDate: "2026-10-18T11:00:00+05:30",
     author: "Astro Siddhi Editorial Team — Reviewed by 25+ Year Veteran Vedic Astrologer",
@@ -337,7 +337,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "d10 dasamsa career chart",
       "sade sati career success"
     ],
-    metaDescription: "Facing career stagnation or considering a business venture? Learn how the 10th house, Saturn, and Jupiter transits indicate optimal career moves.",
+    metaDescription: "Facing career stagnation or planning a venture? Learn how the 10th house and planetary transits indicate optimal job timing. Discover remedies today.",
     publishDate: "2026-10-18T09:45:00+05:30",
     modifiedDate: "2026-10-18T11:15:00+05:30",
     author: "Astro Siddhi Editorial Team — Reviewed by 25+ Year Veteran Vedic Astrologer",
@@ -408,7 +408,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "chevvai dosham facts",
       "kuja dosha nivarana visakhapatnam"
     ],
-    metaDescription: "Terrified of Manglik Dosha? Discover ancient cancellation rules (Kuja Dosha Nivarana) and evidence-based Vedic remedies from a 25-year practitioner in Vizag.",
+    metaDescription: "Worried about Manglik Dosha? Discover ancient cancellation rules (Kuja Dosha Nivarana) and practical Vedic remedies from Vizag experts. Read more.",
     publishDate: "2026-10-18T10:00:00+05:30",
     modifiedDate: "2026-10-18T11:30:00+05:30",
     author: "Astro Siddhi Editorial Team — Reviewed by 25+ Year Veteran Vedic Astrologer",
@@ -510,7 +510,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "madhurawada flat vastu",
       "high rise vastu remedies vizag"
     ],
-    metaDescription: "Living in an apartment in Madhurawada, MVP Colony, or Beach Road? Here are crucial Vastu guidelines tailored specifically for coastal Vizag high-rise homes.",
+    metaDescription: "Living in a Vizag flat? Discover vital coastal Vastu tips for sea winds, balconies, and room placement in MVP Colony apartments. Read the full guide.",
     publishDate: "2026-10-18T10:30:00+05:30",
     modifiedDate: "2026-10-18T11:45:00+05:30",
     author: "Astro Siddhi Editorial Team — Reviewed by 25+ Year Veteran Vedic Astrologer",
@@ -587,7 +587,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "Best Astrologer in Visakhapatnam (Vizag): Complete Guide to Genuine Vedic Consultations",
     targetKeyword: "best astrologer in visakhapatnam",
     secondaryKeywords: ["best astrologer in vizag", "top astrologer in vizag", "famous astrologer in MVP colony", "genuine vedic astrologer visakhapatnam"],
-    metaDescription: "Looking for the best astrologer in Visakhapatnam? Discover how 25+ years veteran Sri Raghavendra Siddhanti Garu at MVP Colony delivers accurate horoscope readings and remedies.",
+    metaDescription: "Looking for the best astrologer in Visakhapatnam? Discover how 25+ yr veteran Sri Raghavendra Siddhanti delivers Vedic guidance. Book a consult.",
     publishDate: "2026-10-14T09:00:00+05:30",
     modifiedDate: "2026-10-14T10:30:00+05:30",
     author: "Astro Siddhi Editorial Team — Reviewed by 25+ Year Veteran Vedic Astrologer",
@@ -630,7 +630,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "Kundali Matching for Marriage in Telugu Vedic Tradition: Ashta Koota, Kuja Dosha & Remedies",
     targetKeyword: "kundali matching telugu tradition",
     secondaryKeywords: ["jathaka poritham telugu", "ashtakoota guna milan vizag", "telugu wedding horoscope matching"],
-    metaDescription: "Understand the true science of horoscope matching (జాతక పొంతన) in Telugu weddings. Detailed breakdown of 36 Gunas, Kuja Dosha exceptions, and Vedic remedies.",
+    metaDescription: "Understand Telugu horoscope matching (జాతక పొంతన) for marriage: 36 Gunas, Kuja Dosha exceptions, and practical remedies. Read the complete guide.",
     publishDate: "2026-10-12T09:00:00+05:30",
     modifiedDate: "2026-10-12T10:30:00+05:30",
     author: "Astro Siddhi Editorial Team — Reviewed by 25+ Year Veteran Vedic Astrologer",
@@ -668,7 +668,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "Vastu Shastra for Coastal Homes & Modern Flats in Visakhapatnam: Principles & Non-Demolition Remedies",
     targetKeyword: "vastu shastra visakhapatnam",
     secondaryKeywords: ["vastu consultant vizag", "flats vastu in vizag", "non demolition vastu vizag"],
-    metaDescription: "Comprehensive Vastu guide tailored for Visakhapatnam's coastal topography. Learn how to optimize Ishanya, Nairuthi, and Agneya in flats without breaking walls.",
+    metaDescription: "Coastal Vastu guide for Visakhapatnam homes: optimize Ishanya, Nairuthi, and Agneya in flats without breaking walls. Read our practical advice.",
     publishDate: "2026-10-10T09:00:00+05:30",
     modifiedDate: "2026-10-10T10:30:00+05:30",
     author: "Astro Siddhi Editorial Team — Reviewed by 25+ Year Veteran Vedic Astrologer",
@@ -716,8 +716,63 @@ export function getPostsByCategory(category: string): BlogPost[] {
   return BLOG_POSTS.filter((p) => p.category === category);
 }
 
+const CLUSTER_MAP: Record<string, string[]> = {
+  "signs-you-need-vastu-correction-at-home": [
+    "vastu-tips-visakhapatnam-apartments",
+    "vastu-shastra-guide-homes-flats-visakhapatnam",
+    "best-astrologer-in-visakhapatnam",
+  ],
+  "vastu-tips-visakhapatnam-apartments": [
+    "signs-you-need-vastu-correction-at-home",
+    "vastu-shastra-guide-homes-flats-visakhapatnam",
+    "best-astrologer-in-visakhapatnam",
+  ],
+  "vastu-shastra-guide-homes-flats-visakhapatnam": [
+    "signs-you-need-vastu-correction-at-home",
+    "vastu-tips-visakhapatnam-apartments",
+    "best-astrologer-in-visakhapatnam",
+  ],
+  "how-kundali-matching-really-works-telugu-tradition": [
+    "kundali-matching-marriage-telugu-vedic-astrology",
+    "manglik-dosha-myths-vs-facts",
+    "career-astrology-reading-kundali-for-job-business-timing",
+  ],
+  "kundali-matching-marriage-telugu-vedic-astrology": [
+    "how-kundali-matching-really-works-telugu-tradition",
+    "manglik-dosha-myths-vs-facts",
+    "career-astrology-reading-kundali-for-job-business-timing",
+  ],
+  "manglik-dosha-myths-vs-facts": [
+    "how-kundali-matching-really-works-telugu-tradition",
+    "kundali-matching-marriage-telugu-vedic-astrology",
+    "best-astrologer-in-visakhapatnam",
+  ],
+  "career-astrology-reading-kundali-for-job-business-timing": [
+    "numerology-basics-birth-number-career-timing",
+    "best-astrologer-in-visakhapatnam",
+    "how-kundali-matching-really-works-telugu-tradition",
+  ],
+  "numerology-basics-birth-number-career-timing": [
+    "career-astrology-reading-kundali-for-job-business-timing",
+    "best-astrologer-in-visakhapatnam",
+    "signs-you-need-vastu-correction-at-home",
+  ],
+  "best-astrologer-in-visakhapatnam": [
+    "career-astrology-reading-kundali-for-job-business-timing",
+    "how-kundali-matching-really-works-telugu-tradition",
+    "vastu-tips-visakhapatnam-apartments",
+  ],
+};
+
 export function getRelatedPosts(currentSlug: string, count: number = 3): BlogPost[] {
-  const current = getPostBySlug(currentSlug);
-  if (!current) return BLOG_POSTS.slice(0, count);
-  return BLOG_POSTS.filter((p) => p.slug !== currentSlug && (p.category === current.category || true)).slice(0, count);
+  const clusterSlugs = CLUSTER_MAP[currentSlug];
+  if (clusterSlugs) {
+    const clusterPosts = clusterSlugs
+      .map((slug) => BLOG_POSTS.find((p) => p.slug === slug))
+      .filter((p): p is BlogPost => Boolean(p));
+    if (clusterPosts.length >= count) {
+      return clusterPosts.slice(0, count);
+    }
+  }
+  return BLOG_POSTS.filter((p) => p.slug !== currentSlug).slice(0, count);
 }

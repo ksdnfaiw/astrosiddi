@@ -2,8 +2,8 @@ import { MetadataRoute } from 'next';
 import { getAllPosts } from '@/data/blogPosts';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://www.astrosiddhi.com';
-  const currentDate = new Date();
+  const baseUrl = 'https://www.astrosiddi.com';
+  const currentDate = new Date('2026-10-23T00:00:00Z');
 
   const posts = getAllPosts();
   const blogRoutes: MetadataRoute.Sitemap = posts.map((post) => ({
@@ -30,7 +30,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/services/kundali-matching`,
       lastModified: currentDate,
       changeFrequency: 'weekly',
-      priority: 0.9,
+      priority: 0.85,
     },
     {
       url: `${baseUrl}/services/career-astrology`,
@@ -42,7 +42,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/services/vastu-visakhapatnam`,
       lastModified: currentDate,
       changeFrequency: 'weekly',
-      priority: 0.9,
+      priority: 0.85,
     },
     {
       url: `${baseUrl}/blog`,
@@ -64,6 +64,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/privacy`,
+      lastModified: currentDate,
+      changeFrequency: 'yearly',
+      priority: 0.3,
+    },
+    {
+      url: `${baseUrl}/terms`,
       lastModified: currentDate,
       changeFrequency: 'yearly',
       priority: 0.3,

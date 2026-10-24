@@ -1,14 +1,25 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import Script from "next/script";
-import { getPostBySlug, getAllPosts, BlogPost } from "@/data/blogPosts";
-import BlogPostView from "@/pages/BlogPost";
+import { getPostBySlug, getAllPosts } from "@/data/blogPosts";
+import BlogPostView from "@/views/BlogPost";
 
 interface PageProps {
   params: {
     slug: string;
   };
 }
+
+const BLOG_SEO_TITLES: Record<string, string> = {
+  "signs-you-need-vastu-correction-at-home": "Signs You Need Vastu Correction at Home",
+  "how-kundali-matching-really-works-telugu-tradition": "How Telugu Kundali Matching Works",
+  "numerology-basics-birth-number-career-timing": "Numerology Basics for Career & Wealth",
+  "career-astrology-reading-kundali-for-job-business-timing": "Career Astrology: Job & Business Timing",
+  "manglik-dosha-myths-vs-facts": "Manglik Dosha Myths vs Facts in Marriage",
+  "vastu-tips-visakhapatnam-apartments": "Vastu Tips for Visakhapatnam Apartments",
+  "best-astrologer-in-visakhapatnam": "Best Astrologer in Visakhapatnam Guide",
+  "kundali-matching-marriage-telugu-vedic-astrology": "Kundali Matching Telugu Marriage Guide",
+  "vastu-shastra-guide-homes-flats-visakhapatnam": "Vizag Vastu Guide for Homes & Flats",
+};
 
 export async function generateStaticParams() {
   const posts = getAllPosts();
@@ -21,18 +32,21 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const post = getPostBySlug(params.slug);
   if (!post) {
     return {
-      title: "Article Not Found | Astro Siddhi",
+      title: "Article Not Found",
       description: "The requested astrological guide was not found.",
     };
   }
 
-  const siteUrl = "https://www.astrosiddhi.com";
+  const siteUrl = "https://www.astrosiddi.com";
   const canonicalUrl = `${siteUrl}/blog/${post.slug}`;
-  // Ensure title is concise and under 60 characters for optimal SERP display
-  const truncatedTitle = post.title.length > 55 ? `${post.title.slice(0, 52)}...` : post.title;
+  // Title template in layout will append " | Astro Siddhi" (15 chars)
+  // SEO title is ≤ 42 chars so final title is ≤ 57 characters
+  const seoTitle =
+    BLOG_SEO_TITLES[post.slug] ||
+    (post.title.length > 42 ? `${post.title.slice(0, 39)}...` : post.title);
 
   return {
-    title: `${truncatedTitle} | Astro Siddhi`,
+    title: seoTitle,
     description: post.metaDescription,
     keywords: [post.targetKeyword, ...post.secondaryKeywords, ...post.tags],
     alternates: {
@@ -50,7 +64,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       },
     },
     openGraph: {
-      title: `${post.title} | Astro Siddhi`,
+      title: `${seoTitle} | Astro Siddhi`,
       description: post.metaDescription,
       url: canonicalUrl,
       siteName: "Astro Siddhi",
@@ -70,7 +84,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     },
     twitter: {
       card: "summary_large_image",
-      title: `${post.title} | Astro Siddhi`,
+      title: `${seoTitle} | Astro Siddhi`,
       description: post.metaDescription,
       images: [`${siteUrl}${post.featuredImage}`],
     },
@@ -84,13 +98,14 @@ export default function BlogPostPage({ params }: PageProps) {
     notFound();
   }
 
-  const siteUrl = "https://www.astrosiddhi.com";
+  const siteUrl = "https://www.astrosiddi.com";
   const pageUrl = `${siteUrl}/blog/${post.slug}`;
 
   // 1. Article / BlogPosting Schema
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
+    "@id": `${pageUrl}#article`,
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": pageUrl,
@@ -101,12 +116,13 @@ export default function BlogPostPage({ params }: PageProps) {
     "datePublished": post.publishDate,
     "dateModified": post.modifiedDate,
     "author": {
-      "@type": "Organization",
-      "name": post.author,
-      "url": siteUrl,
+      "@type": "Person",
+      "name": "Sri Raghavendra Siddhanti Garu",
+      "url": `${siteUrl}/about`,
     },
     "publisher": {
       "@type": "Organization",
+      "@id": `${siteUrl}/#business`,
       "name": "Astro Siddhi",
       "url": siteUrl,
       "logo": {
@@ -143,7 +159,7 @@ export default function BlogPostPage({ params }: PageProps) {
     ],
   };
 
-  // 3. FAQPage Schema
+  // 3. FAQPage Schema (only rendered if FAQs are present on page)
   const faqSchema =
     post.faqs && post.faqs.length > 0
       ? {
@@ -159,41 +175,6 @@ export default function BlogPostPage({ params }: PageProps) {
           })),
         }
       : null;
-
-  // 4. LocalBusiness Schema (Visakhapatnam Sri Raghavendra Jyothishalayam)
-  const localBusinessSchema = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Astro Siddhi - Sri Raghavendra Jyothishalayam",
-    "image": `${siteUrl}/icon.svg`,
-    "telephone": "+919652412221",
-    "priceRange": "₹₹",
-    "url": siteUrl,
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "P8RQ+3P4, MVP Double Rd, Sector 10, MVP Colony",
-      "addressLocality": "Visakhapatnam",
-      "addressRegion": "Andhra Pradesh",
-      "postalCode": "530017",
-      "addressCountry": "IN",
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 17.740137,
-      "longitude": 83.3393431,
-    },
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-      "opens": "09:00",
-      "closes": "20:00",
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": "414",
-    },
-  };
 
   return (
     <>
@@ -211,10 +192,6 @@ export default function BlogPostPage({ params }: PageProps) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
         />
       )}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
-      />
 
       <BlogPostView post={post} />
     </>

@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { MessageSquare } from "lucide-react";
 
 export function WhatsAppButton() {
   const whatsappUrl = "https://wa.me/919652412221?text=Hi%20Astro%20Siddhi,%20I%20would%20like%20to%20book%20a%20consultation%20in%20Visakhapatnam.";

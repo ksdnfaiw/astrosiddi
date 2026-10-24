@@ -15,7 +15,7 @@ export default function BlogPostView({ post = BLOG_POSTS[0] }) {
   if (!post) return null;
 
   const related = getRelatedPosts(post.slug, 3);
-  const currentUrl = `https://www.astrosiddhi.com/blog/${post.slug}`;
+  const currentUrl = `https://www.astrosiddi.com/blog/${post.slug}`;
   const formattedDate = new Date(post.publishDate).toLocaleDateString("en-US", {
     month: "long",
     day: "numeric",
@@ -205,6 +205,45 @@ export default function BlogPostView({ post = BLOG_POSTS[0] }) {
             <FaqAccordion faqs={post.faqs} />
           </div>
         )}
+
+        {/* Contextual Inbound Service Box */}
+        <div className="my-8 p-6 rounded-2xl bg-white border border-gold/25 shadow-md flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+          <div className="space-y-1">
+            <span className="text-gold font-bold text-xs uppercase tracking-wider">Expert Consultation</span>
+            <h3 className="font-cinzel text-lg sm:text-xl font-bold text-midnight">
+              Need Personalized Guidance on {post.category}?
+            </h3>
+            <p className="text-xs sm:text-sm text-midnight/80 font-cormorant leading-relaxed">
+              Consult Sri Raghavendra Siddhanti garu in MVP Colony, Visakhapatnam. Explore our{" "}
+              <Link
+                href={
+                  post.category === "Vastu Shastra"
+                    ? "/services/vastu-visakhapatnam"
+                    : post.category === "Kundali Matching"
+                    ? "/services/kundali-matching"
+                    : "/services/career-astrology"
+                }
+                className="text-gold font-bold underline hover:text-saffron"
+              >
+                {post.category === "Vastu Shastra"
+                  ? "Visakhapatnam Vastu Consultation"
+                  : post.category === "Kundali Matching"
+                  ? "Kundali Matching Service"
+                  : "Career Astrology Service"}
+              </Link>{" "}
+              or browse{" "}
+              <Link href="/services" className="text-gold font-bold underline hover:text-saffron">
+                all Vedic astrology services
+              </Link>.
+            </p>
+          </div>
+          <Link
+            href="/contact"
+            className="shrink-0 px-6 py-3 rounded-full bg-gold hover:bg-saffron text-midnight font-bold text-xs uppercase tracking-widest shadow-md transition-all"
+          >
+            Book Consultation
+          </Link>
+        </div>
 
         {/* Hyper-Local Vizag Trust Banner */}
         <VizagTrustBanner />

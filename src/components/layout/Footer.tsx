@@ -52,7 +52,7 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-gold shrink-0" />
-                <a href="mailto:info@astrosiddhi.com" className="hover:text-gold transition-colors">info@astrosiddhi.com</a>
+                <a href="mailto:info@astrosiddi.com" className="hover:text-gold transition-colors">info@astrosiddi.com</a>
               </li>
             </ul>
           </div>
