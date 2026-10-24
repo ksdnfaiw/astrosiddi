@@ -14,9 +14,13 @@ Founded by Sri Raghavendra Siddhanti garu, Astro Siddhi delivers classical South
 - Vastu Consultant in Visakhapatnam (https://www.astrosiddi.com/services/vastu-visakhapatnam): Practical non-demolition Vastu remedies for coastal high-rise apartments and residential homes.
 - Career Astrology (https://www.astrosiddi.com/services/career-astrology): 10th house analysis for job transitions, promotion timing, and business ventures.
 - Blog & Knowledge Hub (https://www.astrosiddi.com/blog): In-depth guides on Vedic astrology, Telugu marriage customs, Numerology, and coastal Vastu principles.
+- Free Tools Hub (https://www.astrosiddi.com/tools): Free Vedic astrology and numerology calculators operating client-side with zero birth data storage.
+- Numerology Calculator (https://www.astrosiddi.com/tools/numerology-calculator): Free calculator for Mulank (Psychic Number), Bhagyank (Destiny Number), and Western Life Path.
+- How to Calculate Moon Sign Guide (https://www.astrosiddi.com/blog/how-to-calculate-your-moon-sign): Step-by-step Chandra Rashi guide, Lahiri Ayanamsa sidereal vs tropical difference, and Sade Sati timeline.
+- Telugu Jyothisham Books Guide (https://www.astrosiddi.com/blog/telugu-jyothisham-books): Verified classical astrology treatises and Panchangam reading resources in Telugu.
 - Contact & Bookings (https://www.astrosiddi.com/contact): In-person consultation bookings at MVP Colony, Vizag or WhatsApp video consultations worldwide.
 - Terms of Service (https://www.astrosiddi.com/terms): Guidance disclaimer and consultation policies.
-- Privacy Policy (https://www.astrosiddi.com/privacy): Data protection and privacy practices for birth details.
+- Privacy Policy (https://www.astrosiddi.com/privacy): Data protection and privacy practices confirming calculators run 100% in-browser with zero birth data logged.
 
 ## Details & Service Area
 - Languages: English, Telugu (తెలుగు)

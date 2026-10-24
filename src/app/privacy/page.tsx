@@ -81,15 +81,21 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="font-cormorant text-2xl font-semibold text-deepPurple mb-2">5. Data Retention</h2>
+            <h2 className="font-cormorant text-2xl font-semibold text-deepPurple mb-2">5. Free Calculators and Client-Side Privacy</h2>
             <p>
-              We retain your information only as long as necessary to provide our services and respond to your
-              enquiries. You may request that we delete your information at any time by contacting us.
+              Our online calculators (including the Numerology Birth Date Calculator, Moon Sign Calculator, and Kundli Generator) execute 100% locally within your device&apos;s web browser. We do NOT collect, transmit, log, or store your birth date, birth time, or geographic coordinates on any external server or database. We track anonymous, non-personally identifiable usage events in Google Analytics 4 (such as <code>tool_used</code>, <code>result_viewed</code>, and <code>cta_click</code>) purely for performance optimization.
             </p>
           </section>
 
           <section>
-            <h2 className="font-cormorant text-2xl font-semibold text-deepPurple mb-2">6. Contact Us</h2>
+            <h2 className="font-cormorant text-2xl font-semibold text-deepPurple mb-2">6. Data Retention</h2>
+            <p>
+              For clients who reach out via our booking form or WhatsApp, we retain your information only as long as necessary to provide our astrological services and respond to your enquiries. You may request that we delete your contact records at any time by reaching out.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="font-cormorant text-2xl font-semibold text-deepPurple mb-2">7. Contact Us</h2>
             <p>
               If you have any questions about this Privacy Policy or your personal information, please contact
               us at{" "}

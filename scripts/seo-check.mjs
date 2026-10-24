@@ -13,6 +13,10 @@ const ROUTES = [
   { route: '/contact', file: '.next/server/app/contact.html' },
   { route: '/privacy', file: '.next/server/app/privacy.html' },
   { route: '/terms', file: '.next/server/app/terms.html' },
+  { route: '/tools', file: '.next/server/app/tools.html' },
+  { route: '/tools/numerology-calculator', file: '.next/server/app/tools/numerology-calculator.html' },
+  { route: '/tools/moon-sign-calculator', file: '.next/server/app/tools/moon-sign-calculator.html', isGated: true },
+  { route: '/tools/kundli-generator', file: '.next/server/app/tools/kundli-generator.html', isGated: true },
   { route: '/blog', file: '.next/server/app/blog.html' },
   { route: '/blog/signs-you-need-vastu-correction-at-home', file: '.next/server/app/blog/signs-you-need-vastu-correction-at-home.html' },
   { route: '/blog/how-kundali-matching-really-works-telugu-tradition', file: '.next/server/app/blog/how-kundali-matching-really-works-telugu-tradition.html' },
@@ -23,6 +27,8 @@ const ROUTES = [
   { route: '/blog/best-astrologer-in-visakhapatnam', file: '.next/server/app/blog/best-astrologer-in-visakhapatnam.html' },
   { route: '/blog/kundali-matching-marriage-telugu-vedic-astrology', file: '.next/server/app/blog/kundali-matching-marriage-telugu-vedic-astrology.html' },
   { route: '/blog/vastu-shastra-guide-homes-flats-visakhapatnam', file: '.next/server/app/blog/vastu-shastra-guide-homes-flats-visakhapatnam.html' },
+  { route: '/blog/how-to-calculate-your-moon-sign', file: '.next/server/app/blog/how-to-calculate-your-moon-sign.html' },
+  { route: '/blog/telugu-jyothisham-books', file: '.next/server/app/blog/telugu-jyothisham-books.html' },
 ];
 
 function decodeHtml(html) {
@@ -190,6 +196,12 @@ if (fs.existsSync(sitemapPath)) {
   assert(!sitemapXml.includes('astrosiddhi.com'), `sitemap.xml has no astrosiddhi.com typos`, 'sitemap.xml');
   assert(sitemapXml.includes('https://www.astrosiddi.com/terms'), `sitemap.xml includes /terms`, 'sitemap.xml');
   assert(sitemapXml.includes('https://www.astrosiddi.com/services/kundali-matching'), `sitemap.xml includes service routes`, 'sitemap.xml');
+  assert(sitemapXml.includes('https://www.astrosiddi.com/tools'), `sitemap.xml includes /tools hub`, 'sitemap.xml');
+  assert(sitemapXml.includes('https://www.astrosiddi.com/tools/numerology-calculator'), `sitemap.xml includes /tools/numerology-calculator`, 'sitemap.xml');
+  assert(sitemapXml.includes('https://www.astrosiddi.com/blog/how-to-calculate-your-moon-sign'), `sitemap.xml includes moon sign guide`, 'sitemap.xml');
+  assert(sitemapXml.includes('https://www.astrosiddi.com/blog/telugu-jyothisham-books'), `sitemap.xml includes telugu books guide`, 'sitemap.xml');
+  assert(!sitemapXml.includes('https://www.astrosiddi.com/tools/moon-sign-calculator'), `sitemap.xml excludes gated moon-sign-calculator`, 'sitemap.xml');
+  assert(!sitemapXml.includes('https://www.astrosiddi.com/tools/kundli-generator'), `sitemap.xml excludes gated kundli-generator`, 'sitemap.xml');
 }
 
 // Robots

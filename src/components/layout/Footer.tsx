@@ -31,6 +31,8 @@ export function Footer() {
               <li><Link href="/" className="hover:text-gold transition-colors inline-flex items-center gap-2 group"><span className="w-1 h-1 bg-gold/50 rounded-full group-hover:w-2 transition-all"></span> {t("nav.home")}</Link></li>
               <li><Link href="/about" className="hover:text-gold transition-colors inline-flex items-center gap-2 group"><span className="w-1 h-1 bg-gold/50 rounded-full group-hover:w-2 transition-all"></span> {t("nav.about")}</Link></li>
               <li><Link href="/services" className="hover:text-gold transition-colors inline-flex items-center gap-2 group"><span className="w-1 h-1 bg-gold/50 rounded-full group-hover:w-2 transition-all"></span> {t("nav.services")}</Link></li>
+              <li><Link href="/tools" className="hover:text-gold transition-colors inline-flex items-center gap-2 group"><span className="w-1 h-1 bg-gold/50 rounded-full group-hover:w-2 transition-all"></span> Free Tools</Link></li>
+              <li><Link href="/tools/numerology-calculator" className="hover:text-gold transition-colors inline-flex items-center gap-2 group"><span className="w-1 h-1 bg-gold/50 rounded-full group-hover:w-2 transition-all"></span> Numerology Calculator</Link></li>
               <li><Link href="/blog" className="hover:text-gold transition-colors inline-flex items-center gap-2 group"><span className="w-1 h-1 bg-gold/50 rounded-full group-hover:w-2 transition-all"></span> {t("nav.blog")}</Link></li>
               <li><Link href="/contact" className="hover:text-gold transition-colors inline-flex items-center gap-2 group"><span className="w-1 h-1 bg-gold/50 rounded-full group-hover:w-2 transition-all"></span> {t("nav.contact")}</Link></li>
             </ul>

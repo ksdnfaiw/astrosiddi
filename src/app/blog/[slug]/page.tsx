@@ -19,6 +19,8 @@ const BLOG_SEO_TITLES: Record<string, string> = {
   "best-astrologer-in-visakhapatnam": "Best Astrologer in Visakhapatnam Guide",
   "kundali-matching-marriage-telugu-vedic-astrology": "Kundali Matching Telugu Marriage Guide",
   "vastu-shastra-guide-homes-flats-visakhapatnam": "Vizag Vastu Guide for Homes & Flats",
+  "how-to-calculate-your-moon-sign": "How to Calculate Moon Sign Guide",
+  "telugu-jyothisham-books": "Telugu Jyothisham Books Guide",
 };
 
 export async function generateStaticParams() {

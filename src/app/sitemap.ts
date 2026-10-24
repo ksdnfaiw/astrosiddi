@@ -1,9 +1,10 @@
 import { MetadataRoute } from 'next';
 import { getAllPosts } from '@/data/blogPosts';
+import { ASTRO_TOOLS_CONFIG } from '@/config/tools';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.astrosiddi.com';
-  const currentDate = new Date('2026-10-23T00:00:00Z');
+  const currentDate = new Date('2026-10-24T00:00:00Z');
 
   const posts = getAllPosts();
   const blogRoutes: MetadataRoute.Sitemap = posts.map((post) => ({
@@ -19,6 +20,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: currentDate,
       changeFrequency: 'daily',
       priority: 1.0,
+    },
+    {
+      url: `${baseUrl}/tools`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/tools/numerology-calculator`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.85,
     },
     {
       url: `${baseUrl}/services`,
@@ -76,5 +89,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  return [...staticRoutes, ...blogRoutes];
+  const gatedToolRoutes: MetadataRoute.Sitemap = [];
+  if (ASTRO_TOOLS_CONFIG.moonSignReleased) {
+    gatedToolRoutes.push({
+      url: `${baseUrl}/tools/moon-sign-calculator`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.85,
+    });
+  }
+  if (ASTRO_TOOLS_CONFIG.kundliReleased) {
+    gatedToolRoutes.push({
+      url: `${baseUrl}/tools/kundli-generator`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.85,
+    });
+  }
+
+  return [...staticRoutes, ...gatedToolRoutes, ...blogRoutes];
 }
+

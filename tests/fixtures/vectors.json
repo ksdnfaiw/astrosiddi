@@ -1,0 +1,115 @@
+{
+  "description": "Astrological calibration test fixtures for Astrosiddi tools. Awaiting 5-10 professional horoscope vectors from Sri Raghavendra Siddhanti garu to unlock public indexing.",
+  "accuracyGateStatus": {
+    "requiredVerifiedVectors": 5,
+    "currentVerifiedVectors": 1,
+    "gatePassed": false,
+    "status": "Gated - Tools remain noindex until client provides 5-10 verified Kundali records"
+  },
+  "numerologyVectors": [
+    {
+      "id": "num-1",
+      "dob": "1990-07-29",
+      "day": 29,
+      "month": 7,
+      "year": 1990,
+      "expectedMulank": 2,
+      "expectedBhagyank": 1,
+      "expectedLifePath": 1,
+      "notes": "Verified baseline test vector specified in engineering prompt"
+    },
+    {
+      "id": "num-2",
+      "dob": "1985-11-22",
+      "day": 22,
+      "month": 11,
+      "year": 1985,
+      "expectedMulank": 4,
+      "expectedBhagyank": 2,
+      "expectedLifePath": 11,
+      "notes": "Master number test vector (Life Path 11)"
+    },
+    {
+      "id": "num-3",
+      "dob": "1995-05-05",
+      "day": 5,
+      "month": 5,
+      "year": 1995,
+      "expectedMulank": 5,
+      "expectedBhagyank": 7,
+      "expectedLifePath": 7,
+      "notes": "Single digit day & month vector"
+    }
+  ],
+  "moonSignVectors": [
+    {
+      "id": "astro-ref-1",
+      "label": "Reference Chart 1 (29 Jul 1990 12:00 IST, Visakhapatnam)",
+      "date": "1990-07-29",
+      "time": "12:00",
+      "timezone": "Asia/Kolkata",
+      "tzOffsetMinutes": 330,
+      "expectedTropicalSign": "Scorpio",
+      "expectedSiderealSign": "Libra",
+      "expectedSiderealTelugu": "తుల (Tula)",
+      "expectedNakshatra": "Swati",
+      "expectedPada": 1,
+      "source": "Ephemeris Reference Calculation"
+    },
+    {
+      "id": "client-vector-1",
+      "label": "[PENDING CLIENT INPUT 1] Sri Raghavendra Jyothishalayam Test Chart A",
+      "date": "TODO",
+      "time": "TODO",
+      "timezone": "Asia/Kolkata",
+      "expectedSiderealSign": "TODO",
+      "expectedNakshatra": "TODO",
+      "expectedPada": 0,
+      "source": "Awaiting Certified Kundali Record from Sri Raghavendra Siddhanti garu"
+    },
+    {
+      "id": "client-vector-2",
+      "label": "[PENDING CLIENT INPUT 2] Sri Raghavendra Jyothishalayam Test Chart B",
+      "date": "TODO",
+      "time": "TODO",
+      "timezone": "Asia/Kolkata",
+      "expectedSiderealSign": "TODO",
+      "expectedNakshatra": "TODO",
+      "expectedPada": 0,
+      "source": "Awaiting Certified Kundali Record from Sri Raghavendra Siddhanti garu"
+    },
+    {
+      "id": "client-vector-3",
+      "label": "[PENDING CLIENT INPUT 3] Sri Raghavendra Jyothishalayam Test Chart C",
+      "date": "TODO",
+      "time": "TODO",
+      "timezone": "Asia/Kolkata",
+      "expectedSiderealSign": "TODO",
+      "expectedNakshatra": "TODO",
+      "expectedPada": 0,
+      "source": "Awaiting Certified Kundali Record from Sri Raghavendra Siddhanti garu"
+    },
+    {
+      "id": "client-vector-4",
+      "label": "[PENDING CLIENT INPUT 4] Sri Raghavendra Jyothishalayam Test Chart D",
+      "date": "TODO",
+      "time": "TODO",
+      "timezone": "Asia/Kolkata",
+      "expectedSiderealSign": "TODO",
+      "expectedNakshatra": "TODO",
+      "expectedPada": 0,
+      "source": "Awaiting Certified Kundali Record from Sri Raghavendra Siddhanti garu"
+    },
+    {
+      "id": "client-vector-5",
+      "label": "[PENDING CLIENT INPUT 5] Sri Raghavendra Jyothishalayam Test Chart E",
+      "date": "TODO",
+      "time": "TODO",
+      "timezone": "Asia/Kolkata",
+      "expectedSiderealSign": "TODO",
+      "expectedNakshatra": "TODO",
+      "expectedPada": 0,
+      "source": "Awaiting Certified Kundali Record from Sri Raghavendra Siddhanti garu"
+    }
+  ]
+}

@@ -261,7 +261,12 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         id: "calculating-mulank-and-bhagyank",
         title: "How to Calculate Your Root Number (Mulank) and Destiny Number (Bhagyank)",
-        content: `The mathematical calculation is straightforward:\n\n- **Root Number (Mulank)**: Single-digit sum of your day of birth. If born on the 14th of any month: 1 + 4 = 5 (Mercury).\n- **Destiny Number (Bhagyank)**: Single-digit sum of your complete birth date (Day + Month + Year). For example, 14-08-1992: 1 + 4 + 0 + 8 + 1 + 9 + 9 + 2 = 34 -> 3 + 4 = 7 (Ketu).\n\nYour Mulank represents your internal engine, instincts, and immediate workplace reactions. Your Bhagyank dictates how the world receives your efforts and the overarching life lessons you encounter after age 32.`
+        content: `The mathematical calculation is straightforward:\n\n- **Root Number (Mulank)**: Single-digit sum of your day of birth. If born on the 14th of any month: 1 + 4 = 5 (Mercury).\n- **Destiny Number (Bhagyank)**: Single-digit sum of your complete birth date (Day + Month + Year). For example, 14-08-1992: 1 + 4 + 0 + 8 + 1 + 9 + 9 + 2 = 34 -> 3 + 4 = 7 (Ketu).\n\nYour Mulank represents your internal engine, instincts, and immediate workplace reactions. Your Bhagyank dictates how the world receives your efforts and the overarching life lessons you encounter after age 32.`,
+        callout: {
+          type: 'tip',
+          title: 'Calculate Your Numbers Instantly',
+          text: 'Skip manual arithmetic: use our free [Numerology Birth Date Calculator](/tools/numerology-calculator) to view your Mulank, Bhagyank, and Western Life Path with step-by-step reduction and ruling planet meanings.'
+        }
       },
       {
         id: "numbers-1-to-9-career-guide",
@@ -700,6 +705,157 @@ export const BLOG_POSTS: BlogPost[] = [
         answer: "High moisture and salt in the air can create Tamasic density if Northeast ventilation is restricted. Regular rock-salt cleaning and proper airflow restore balance."
       }
     ]
+  },
+  {
+    slug: "how-to-calculate-your-moon-sign",
+    title: "How to Calculate Your Moon Sign: Vedic Chandra Rashi Guide",
+    targetKeyword: "how to calculate moon sign",
+    secondaryKeywords: [
+      "how to know moon sign",
+      "moon chart calculator",
+      "chandra rashi calculation",
+      "vedic vs western moon sign"
+    ],
+    metaDescription: "Learn how to calculate your Vedic moon sign (Chandra Rashi). Understand sidereal vs tropical zodiac, ephemeris calculations, and next steps for your chart.",
+    publishDate: "2026-10-24T09:00:00+05:30",
+    modifiedDate: "2026-10-24T09:00:00+05:30",
+    author: "Astro Siddhi Editorial Team",
+    readTime: "7 min read",
+    featuredImage: "/images/blog/career-kundali.svg",
+    altText: "Vedic Chandra Rashi wheel illustrating lunar longitude and Nakshatra calculation",
+    category: "Vedic Astrology",
+    badge: "🌙 Chandra Shastra",
+    tags: ["Moon Sign", "Chandra Rashi", "Vedic Astrology", "Nakshatras", "Sade Sati"],
+    summary: "Master the exact astronomical principles behind Chandra Rashi (Vedic Moon sign). Learn why sidereal zodiac differs from tropical astrology by ~24 degrees, why precision ephemeris software is essential, and how your lunar sign shapes Sade Sati and emotional karma.",
+    sections: [
+      {
+        id: "what-is-chandra-rashi",
+        title: "What is Chandra Rashi (Vedic Moon Sign)?",
+        content: `In Vedic astrology (Jyotish Shastra), your Moon Sign—known in Sanskrit as Chandra Rashi (చంద్ర రాశి)—is the foundational pillar of personal chart evaluation. While popular Western horoscopes emphasize the Sun sign (which reflects the external ego and general identity), Vedic wisdom prioritizes the Moon above all other grahas.\n\nThe Moon represents the Manas (the perceptual, receptive mind), your emotional temperaments, unconscious habits, intuitive capacity, and mental well-being. Because the Moon reflects the light of the Sun just as the mind reflects sensory experiences, the sign and constellation (Nakshatra) occupied by the Moon at your exact birth second determines how you perceive life, handle stress, and relate to others.`
+      },
+      {
+        id: "vedic-vs-western-moon-sign",
+        title: "Vedic (Sidereal) vs Western (Tropical) Moon Sign: The 24° Difference",
+        content: `The single most common confusion among astrology seekers is finding their Moon sign in one zodiac sign on Western astrology apps, yet having an entirely different Moon sign in Vedic astrology. This difference is rooted in astronomy:\n\n1. **The Tropical Zodiac (Western/Sayana)**: Anchors 0° Aries to the Vernal Equinox (the first day of spring). Because of Earth's axial precession (a slow wobble of the polar axis taking approximately 25,772 years), the equinox point steadily drifts backward against the fixed constellations.\n2. **The Sidereal Zodiac (Vedic/Nirayana)**: Measures planetary positions against the actual, fixed stellar constellations of the sky. The angular shift between the equinox and the fixed star Chitra (Spica) is called **Ayanamsa**.\n\nIn classical Vedic calculation, the universally accepted benchmark is the **Lahiri Ayanamsa** (Chitra Paksha Ayanamsa), which is approximately **23.85° to 24°** depending on the year of birth. Because a zodiac sign spans exactly 30°, a ~24° shift pushes roughly **85% of people** into the preceding zodiac sign in Vedic astrology. For instance, if your Western Moon is 15° Taurus, subtracting ~24° moves your Vedic Moon to 21° Aries (Mesha).`,
+        callout: {
+          type: "tip",
+          title: "Calculate Your True Sidereal Sign",
+          text: "Avoid manual calculation errors. Try our free [Moon Sign Calculator](/tools/moon-sign-calculator) to view both your Vedic (Lahiri Sidereal) and Western (Tropical) Moon signs alongside your Nakshatra and Pada."
+        }
+      },
+      {
+        id: "why-precision-ephemeris-is-needed",
+        title: "Why an Astronomical Ephemeris is Essential for Moon Calculation",
+        content: `While the Sun spends roughly 30 days transiting through each zodiac sign (making approximate birthdate charts possible for Sun signs), the Moon is the fastest celestial body in the solar system. The Moon orbits the Earth and completes its entire 360° zodiac circuit in roughly **27.3 days**.\n\nThis rapid velocity means:\n- The Moon spends only **~2.25 days (54 hours)** in a single zodiac sign.\n- The Moon travels through an entire **Nakshatra (13°20') in less than 24 hours**.\n- The Moon advances one **Pada (3°20') in roughly 6 hours**.\n\nBecause of complex lunar perturbations caused by the gravitational interplay between the Sun, Earth, and Moon, simple arithmetic tables cannot provide true accuracy. An authentic calculation requires a high-precision astronomical ephemeris (such as JPL or modern planetary algorithms) that converts your exact local time to Universal Time (UTC) and resolves orbital eccentricities down to the arc-second.`
+      },
+      {
+        id: "what-to-do-with-your-moon-sign",
+        title: "What to Do With Your Result: Nakshatra, Dasha & Sade Sati",
+        content: `Once your authentic Vedic Chandra Rashi and Nakshatra are calculated, what should you do with this knowledge? In traditional Jyotish practice, the Moon unlocks three core life dynamics:\n\n1. **Janma Nakshatra & Syllables (Namakarana)**: The specific quarter (Pada) of your birth star reveals your auspicious naming syllable and planetary ruler.\n2. **Vimshottari Dasha Timeline**: Your birth Nakshatra determines which planetary major period (Mahadasha) you were born under and sets your entire 120-year chronological timeline for career promotions, marriage, and spiritual milestones.\n3. **Sade Sati & Gochara (Transits)**: Sade Sati—the 7.5-year transit of Saturn through the 12th, 1st, and 2nd houses from your natal Moon—is calculated exclusively from your Chandra Rashi. Understanding where Saturn currently sits relative to your Moon allows you to take proactive, grounding remedies.\n\nFor major life decisions like marriage alliances, career relocations, or business launches, your Moon chart should be synthesized with your Ascendant (Lagna) by a seasoned practitioner.`
+      }
+    ],
+    faqs: [
+      {
+        question: "How do I calculate my moon sign if I don't know my exact birth time?",
+        answer: "Because the Moon spends approximately 2.25 days in each sign, you may still share the same sign if the Moon did not cross a boundary on your date of birth. However, your Nakshatra, Pada, and exact degree change rapidly every few hours. If your birth time is uncertain within a window of a few hours, an experienced Vedic astrologer can perform birth time rectification (Nashta Jathaka)."
+      },
+      {
+        question: "Can my Moon sign be different in Vedic and Western astrology?",
+        answer: "Yes, for approximately 85% of people, the Vedic Moon sign is one sign earlier than the Western Moon sign. This is because Vedic astrology uses the sidereal zodiac (which accounts for the ~24° Lahiri Ayanamsa precession of equinoxes), whereas Western astrology uses the tropical zodiac."
+      },
+      {
+        question: "Why is the Moon sign considered more important than the Sun sign in India?",
+        answer: "In classical Vedic philosophy, the Moon represents the Manas (mind, emotional perception, and subconscious processing), which directly governs human experience, stress resilience, and relationships. The Sun represents the Atma (the soul/ego), which is transcendent and less volatile."
+      },
+      {
+        question: "What is the difference between Rashi and Nakshatra?",
+        answer: "The zodiac is divided into 12 Rashis (signs of 30° each) and 27 Nakshatras (lunar constellations of 13°20' each). Each Rashi contains exactly 2.25 Nakshatras (or 9 Padas). While Rashi gives your broad emotional framework, your Nakshatra reveals your deeper subconscious temperament and Vimshottari Dasha timeline."
+      },
+      {
+        question: "How does my Moon sign affect Sade Sati?",
+        answer: "Sade Sati occurs when transit Saturn (Shani Bhagavan) passes through the sign immediately prior to your Moon sign, your Moon sign itself, and the sign immediately following it. Because Saturn takes 2.5 years per sign, this entire cycle spans 7.5 years."
+      }
+    ]
+  },
+  {
+    slug: "telugu-jyothisham-books",
+    title: "Telugu Jyothisham Books: Authentic Study Guide for Beginners",
+    targetKeyword: "telugu jyothisham books",
+    secondaryKeywords: [
+      "telugu astrology books",
+      "best jyothisham books in telugu",
+      "panchangam telugu books",
+      "jyothisham learning books"
+    ],
+    metaDescription: "Explore verified Telugu jyothisham books for beginners, panchangam calculation, and Jathaka evaluation. Recommended classical texts and practical guide.",
+    publishDate: "2026-10-24T09:00:00+05:30",
+    modifiedDate: "2026-10-24T09:00:00+05:30",
+    author: "Astro Siddhi Editorial Team",
+    readTime: "7 min read",
+    featuredImage: "/images/blog/kundali-matching.svg",
+    altText: "Classical Vedic Telugu astrology palm-leaf manuscripts and Jyotish scripture books",
+    category: "Vedic Astrology",
+    badge: "📚 Shastra Grantha",
+    tags: ["Telugu Jyothisham", "Astrology Books", "Vedic Shastra", "Panchangam", "Jathakam"],
+    summary: "Discover verified, authentic Telugu jyothisham books for foundational study, Panchangam reading, and classical horoscope evaluation. A structured guide for Telugu students seeking genuine Shastric wisdom.",
+    sections: [
+      {
+        id: "how-to-choose-jyothisham-book",
+        title: "How to Choose an Authentic Telugu Jyothisham Book",
+        content: `Learning Vedic astrology (Jyothisham) in Telugu offers direct access to nuanced Sanskrit concepts translated by revered scholars of the Telugu astrological tradition. However, beginners often feel overwhelmed by the vast sea of marketplace publications.\n\nTo build genuine astrological proficiency, your reading journey should progress systematically through three distinct stages:\n\n1. **Beginner Foundations (ప్రాథమిక జ్ఞానము)**: Books covering the 12 Rashis, 9 Grahas, 27 Nakshatras, planetary exaltation/debilitation, and friendly/enemy relationships.\n2. **Panchangam Interpretation (పంచాంగ దర్శనం)**: Texts that teach you how to decode the five limbs of time—Tithi, Vara, Nakshatra, Yoga, and Karana—for calculating auspicious Muhurthams and understanding daily cosmic weather.\n3. **Jathakam & Predictive Shastra (జాతక ఫల శాస్త్రము)**: Advanced classical treatises explaining Bhava Karakatwas (house significations), Dasha systems, planetary Yogas, and transit synthesis.`
+      },
+      {
+        id: "verified-classical-telugu-books",
+        title: "Verified Classical Jyotish Treatises with Telugu Translations",
+        content: `In adherence to strict editorial integrity, we list only authoritative classical works whose titles, authors, and reputable Telugu commentaries are historically verified. These scriptures form the bedrock of traditional practice in Andhra Pradesh and Telangana:`,
+        subsections: [
+          {
+            subtitle: "Brihat Parasara Hora Sastra (బృహత్ పరాశర హోరా శాస్త్రము)",
+            text: "Authored by Sage Parasara, this is the foundational textbook of Indian predictive astrology. It covers planetary strengths (Shadbala), 16 divisional charts (Shodashavargas), planetary combinations (Yogas), and the Vimshottari Dasha system. Renowned Telugu editions with detailed bhashyam (commentary) are published by classical publishers such as Mohan Publications, Rajahmundry and Gollapudi Veeraswamy Sannidhanam."
+          },
+          {
+            subtitle: "Jataka Parijata (జాతక పారిజాతము)",
+            text: "Composed by Sri Vaidyanatha Dikshita, this classic text synthesizes essential verses from ancient masters. It provides precise rules for analyzing planetary dignities, longevity (Ayurdaya), Raja Yogas, and bhava evaluations. Authoritative Telugu translations are widely referenced by practicing scholars across Godavari and Visakhapatnam regions."
+          },
+          {
+            subtitle: "Phaladeepika (ఫలదీపిక)",
+            text: "Authored by Mantreswara, Phaladeepika is cherished for its crystal-clear predictive methodology. It provides comprehensive guidance on transit effects (Gochara Phalam), Ashtakavarga, cancellation of debilitation (Neechabhanga), and marital compatibility."
+          },
+          {
+            subtitle: "Kalamrita (కాలామృతము)",
+            text: "The definitive regional classical guide for Muhurtha Shastra and Panchangam application. It details exact rules for Gruhapravesham, Vivaha Muhurtham (wedding timing), and dosha cancellation principles specifically observed in Telugu traditions."
+          }
+        ],
+        callout: {
+          type: "info",
+          title: "Editorial Verification Notice",
+          text: "Additional contemporary Telugu instructional titles and Sri Raghavendra Siddhanti garu's recommended study syllabus are currently undergoing formal editorial review [Needs client input] and will be published upon practitioner confirmation."
+        }
+      },
+      {
+        id: "digital-tools-and-study-practice",
+        title: "Combining Shastric Reading with Practical Chart Calculation",
+        content: `Reading classical texts is only half the journey; the true art of Jyotisham requires observing theoretical rules across real birth charts. In earlier centuries, students spent hours computing planetary longitudes manually using ephemeris tables.\n\nToday, you can accelerate your learning by combining classical study with modern digital calculation:\n- Verify planetary longitudes and Nakshatra Padas using our free [Moon Sign Calculator](/tools/moon-sign-calculator).\n- Explore vibrational numerology and psychic numbers with our [Numerology Birth Date Calculator](/tools/numerology-calculator).\n- For complex family charts or difficult planetary transits, seek direct mentorship or consult with an experienced veteran astrologer in Visakhapatnam.`
+      }
+    ],
+    faqs: [
+      {
+        question: "Which Telugu book is best for absolute beginners in astrology?",
+        answer: "Beginners should start with foundational introductory manuals explaining the 12 Rashis, 9 planets, and basic Panchangam limbs before attempting classical treatises like Brihat Parasara Hora Sastra."
+      },
+      {
+        question: "Can I learn Panchangam reading directly from Telugu books?",
+        answer: "Yes, classical works like Kalamrita and introductory Panchangam guidebooks explain the exact mathematical calculation and interpretation of Tithi, Vara, Nakshatra, Yoga, and Karana."
+      },
+      {
+        question: "Where can I find authentic Telugu astrology scriptures?",
+        answer: "Verified classical texts with Telugu commentary are traditionally published by historic houses in Andhra Pradesh such as Mohan Publications and Gollapudi Veeraswamy Sannidhanam in Rajahmundry, as well as leading Vedic cultural bookshops in Visakhapatnam and Hyderabad."
+      },
+      {
+        question: "Why do classical texts emphasize learning Sanskrit terms alongside Telugu?",
+        answer: "Most core predictive formulas and slokas originated in Sanskrit. Telugu commentaries preserve the original Sanskrit root terms (such as Karaka, Bhava, and Drishti) while providing clear Telugu explanations for everyday interpretation."
+      }
+    ]
   }
 ];
 
@@ -749,18 +905,28 @@ const CLUSTER_MAP: Record<string, string[]> = {
   ],
   "career-astrology-reading-kundali-for-job-business-timing": [
     "numerology-basics-birth-number-career-timing",
+    "how-to-calculate-your-moon-sign",
     "best-astrologer-in-visakhapatnam",
-    "how-kundali-matching-really-works-telugu-tradition",
   ],
   "numerology-basics-birth-number-career-timing": [
     "career-astrology-reading-kundali-for-job-business-timing",
+    "how-to-calculate-your-moon-sign",
     "best-astrologer-in-visakhapatnam",
-    "signs-you-need-vastu-correction-at-home",
   ],
   "best-astrologer-in-visakhapatnam": [
+    "telugu-jyothisham-books",
     "career-astrology-reading-kundali-for-job-business-timing",
     "how-kundali-matching-really-works-telugu-tradition",
-    "vastu-tips-visakhapatnam-apartments",
+  ],
+  "how-to-calculate-your-moon-sign": [
+    "career-astrology-reading-kundali-for-job-business-timing",
+    "numerology-basics-birth-number-career-timing",
+    "telugu-jyothisham-books",
+  ],
+  "telugu-jyothisham-books": [
+    "how-to-calculate-your-moon-sign",
+    "how-kundali-matching-really-works-telugu-tradition",
+    "best-astrologer-in-visakhapatnam",
   ],
 };
 

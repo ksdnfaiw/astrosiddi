@@ -11,6 +11,36 @@ import { WhatsAppConsultationCard } from "@/components/blog/WhatsAppConsultation
 import { FaqAccordion } from "@/components/blog/FaqAccordion";
 import { VizagTrustBanner } from "@/components/blog/VizagTrustBanner";
 
+function renderFormattedText(text) {
+  if (!text || typeof text !== "string") return text;
+  const parts = [];
+  const regex = /\[([^\]]+)\]\(([^)]+)\)/g;
+  let lastIndex = 0;
+  let match;
+  while ((match = regex.exec(text)) !== null) {
+    if (match.index > lastIndex) {
+      parts.push(text.slice(lastIndex, match.index));
+    }
+    const label = match[1];
+    const url = match[2];
+    parts.push(
+      <Link
+        key={match.index}
+        href={url}
+        className="text-gold font-bold underline hover:text-saffron transition-colors"
+      >
+        {label}
+      </Link>
+    );
+    lastIndex = regex.lastIndex;
+  }
+  if (lastIndex === 0) return text;
+  if (lastIndex < text.length) {
+    parts.push(text.slice(lastIndex));
+  }
+  return parts;
+}
+
 export default function BlogPostView({ post = BLOG_POSTS[0] }) {
   if (!post) return null;
 
@@ -116,7 +146,7 @@ export default function BlogPostView({ post = BLOG_POSTS[0] }) {
               </h2>
 
               <div className="whitespace-pre-line text-sm sm:text-base leading-relaxed text-midnight/85">
-                {section.content}
+                {renderFormattedText(section.content)}
               </div>
 
               {/* Subsections if any */}
@@ -129,7 +159,7 @@ export default function BlogPostView({ post = BLOG_POSTS[0] }) {
                         <span>{sub.subtitle}</span>
                       </h3>
                       <p className="text-xs sm:text-sm text-midnight/80 leading-relaxed">
-                        {sub.text}
+                        {renderFormattedText(sub.text)}
                       </p>
                     </div>
                   ))}
@@ -185,7 +215,7 @@ export default function BlogPostView({ post = BLOG_POSTS[0] }) {
                       {section.callout.title && (
                         <h4 className="font-bold text-sm mb-1">{section.callout.title}</h4>
                       )}
-                      <p className="text-xs sm:text-sm leading-relaxed">{section.callout.text}</p>
+                      <p className="text-xs sm:text-sm leading-relaxed">{renderFormattedText(section.callout.text)}</p>
                     </div>
                   </div>
                 </div>
