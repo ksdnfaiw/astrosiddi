@@ -3,7 +3,9 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { useTranslation } from "@/contexts/useTranslation";
+import Image from "next/image";
 import { Testimonials } from "@/components/sections/Testimonials";
+import { HeroSection } from "@/components/sections/HeroSection";
 import { GoogleReviews } from "@/components/sections/GoogleReviews";
 import { MapsSection } from "@/components/sections/MapsSection";
 import { HomeSchema, FaqItem } from "@/components/ui/SchemaMarkup";
@@ -59,98 +61,12 @@ export default function Home() {
       {/* Home JSON-LD Schema (WebSite, Person, LocalBusiness, FAQPage) */}
       <HomeSchema faqs={HOMEPAGE_FAQS} />
 
-      {/* HERO SECTION */}
-      <section className="relative pt-32 pb-40 overflow-hidden bg-midnight text-ivory flex items-center min-h-[90vh]">
-        {/* Background elements */}
-        <div className="absolute inset-0 z-0 bg-midnight overflow-hidden">
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-gold/10 via-midnight to-midnight opacity-80"></div>
-          <div className="absolute inset-0 opacity-20 bg-[radial-gradient(#F5A623_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none"></div>
-          <div className="absolute -bottom-1/4 -left-1/4 w-[800px] h-[800px] bg-gold/10 blur-[150px] rounded-full pointer-events-none"></div>
-          <div className="absolute -top-1/4 -right-1/4 w-[600px] h-[600px] bg-saffron/5 blur-[120px] rounded-full pointer-events-none"></div>
-
-          {/* Abstract Geometric Circles */}
-          <div
-            className="animate-[spin_120s_linear_infinite] absolute top-[10%] right-0 translate-x-1/4 w-[620px] h-[620px] sm:w-[800px] sm:h-[800px] pointer-events-none opacity-[0.15] flex items-center justify-center"
-          >
-            <svg className="w-full h-full" viewBox="-100 -100 200 200" fill="none">
-              <g stroke="currentColor" className="text-gold" strokeWidth="0.7">
-                <circle r="90"></circle>
-                <circle r="70"></circle>
-                <circle r="50"></circle>
-                <circle r="30"></circle>
-                <line x1="0" y1="0" x2="90" y2="0"></line>
-                <line x1="0" y1="0" x2="-90" y2="0"></line>
-                <line x1="0" y1="0" x2="0" y2="90"></line>
-                <line x1="0" y1="0" x2="0" y2="-90"></line>
-              </g>
-            </svg>
-          </div>
-        </div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full mt-10 lg:mt-0">
-          <div className="max-w-4xl mx-auto text-center">
-            <div>
-              <div className="flex justify-center mb-8">
-                <span className="inline-flex items-center gap-2 py-1.5 px-5 rounded-full bg-gold/10 border border-gold/30 text-gold text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase backdrop-blur-sm">
-                  <Sparkles className="w-4 h-4" />
-                  {t("hero.badge")}
-                </span>
-              </div>
-
-              <h1 className="font-cinzel text-4xl sm:text-5xl md:text-7xl lg:text-[4.5rem] font-bold mb-8 leading-[1.1] tracking-tight drop-shadow-lg text-transparent bg-clip-text bg-gradient-to-b from-ivory to-ivory/70 whitespace-pre-line">
-                Best Astrologer in Visakhapatnam (Vizag)
-              </h1>
-
-              <p className="max-w-3xl mx-auto text-lg sm:text-xl md:text-2xl text-ivory/85 mb-12 leading-relaxed font-cormorant font-medium">
-                Welcome to <strong>Astro Siddhi</strong> (Sri Raghavendra Jyothishalayam) in MVP Colony, Visakhapatnam. Guided by Sri Raghavendra Siddhanti garu with 25+ years of Vedic astrology, Kundali matching, and Vastu wisdom in Telugu and English.
-              </p>
-
-              <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 mb-20">
-                <Link
-                  href="/contact"
-                  className="group relative px-8 py-4 bg-gold hover:bg-saffron text-midnight font-bold rounded-full shadow-[0_0_40px_rgba(245,166,35,0.3)] transition-all duration-300 text-sm sm:text-base uppercase tracking-wider w-full sm:w-auto text-center flex items-center justify-center gap-2 overflow-hidden"
-                >
-                  <span className="relative z-10">{t("hero.cta.primary")}</span>
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform relative z-10" />
-                  <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"></div>
-                </Link>
-                <Link
-                  href="/services"
-                  className="px-8 py-4 bg-transparent border border-ivory/30 text-ivory hover:bg-ivory/10 font-bold rounded-full transition-all duration-300 text-sm sm:text-base uppercase tracking-wider w-full sm:w-auto text-center backdrop-blur-sm"
-                >
-                  {t("hero.cta.secondary")}
-                </Link>
-              </div>
-
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-10 border-t border-ivory/10">
-                {[
-                  { icon: Star, text: "414+ 5-Star Reviews" },
-                  { icon: Award, text: "25+ Years Experience" },
-                  { icon: Globe, text: "Online & In-Person" },
-                  { icon: Languages, text: "Telugu & English" },
-                ].map((item, idx) => (
-                  <motion.div
-                    key={idx}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.4 + idx * 0.1 }}
-                    className="flex flex-col items-center gap-3"
-                  >
-                    <item.icon className="w-6 h-6 text-gold mb-1 opacity-80" />
-                    <span className="text-xs sm:text-sm font-medium text-ivory/70 uppercase tracking-widest">
-                      {item.text}
-                    </span>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* CINEMATIC VEDIC ASTROLOGY HERO SECTION */}
+      <HeroSection />
 
       {/* MARQUEE */}
-      <div className="bg-gradient-to-r from-gold via-saffron to-gold text-midnight py-4 overflow-hidden whitespace-nowrap shadow-inner relative z-20">
-        <div className="animate-marquee inline-flex items-center gap-8 font-semibold tracking-[0.2em] uppercase text-sm">
+      <div className="marquee-container group bg-gradient-to-r from-gold via-saffron to-gold text-midnight py-4 overflow-hidden whitespace-nowrap shadow-inner relative z-20 cursor-pointer select-none">
+        <div className="marquee-track animate-marquee inline-flex items-center gap-8 font-semibold tracking-[0.2em] uppercase text-sm">
           {[...Array(6)].map((_, i) => (
             <React.Fragment key={i}>
               <span>✦ Vedic Astrology ✦ Kundali Matching ✦ Horoscope Reading ✦ Vastu Shastra ✦ Numerology ✦ Dosha Parihara ✦ Career Astrology ✦ Visakhapatnam ✦</span>
@@ -220,11 +136,13 @@ export default function Home() {
               className="relative"
             >
               <div className="absolute inset-0 bg-gold/20 rounded-2xl -rotate-3 scale-105 transition-transform duration-700 hover:rotate-0"></div>
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-gold/10 bg-midnight">
-                <img
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-gold/10 bg-midnight aspect-[16/10]">
+                <Image
                   src="/English%20design_page-0001.jpg"
                   alt="Sri Raghavendra Siddhanti Garu - Best Astrologer in Visakhapatnam"
-                  className="w-full object-contain mix-blend-luminosity hover:mix-blend-normal transition-all duration-700"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-contain mix-blend-luminosity hover:mix-blend-normal transition-all duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-midnight via-midnight/20 to-transparent opacity-80"></div>
                 <div className="absolute bottom-0 left-0 w-full p-8 sm:p-10 text-ivory">

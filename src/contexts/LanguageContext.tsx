@@ -16,10 +16,10 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const [language, setLanguage] = useState<Language>(() => {
     if (typeof window !== 'undefined') {
       try {
-        const saved = localStorage.getItem('language');
+        const saved = localStorage.getItem('language') as Language;
         if (saved === 'en' || saved === 'te') return saved;
       } catch {
-        // fallback
+        // Fallback for SSR or storage disabled
       }
     }
     return 'en';
@@ -27,7 +27,11 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
 
   const handleSetLanguage = (lang: Language) => {
     setLanguage(lang);
-    localStorage.setItem('language', lang);
+    try {
+      localStorage.setItem('language', lang);
+    } catch {
+      // Fallback
+    }
   };
 
   // Basic translation function placeholder. We will import translations.

@@ -19,3 +19,36 @@ body {
   background: var(--background);
   font-family: var(--font-poppins), sans-serif;
 }
+
+/* Service Carousel / Marquee styling (slow, smooth, pauses on hover) */
+.marquee-container {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  cursor: pointer;
+}
+
+.marquee-track {
+  display: inline-flex;
+  align-items: center;
+  animation: marquee-scroll 85s linear infinite;
+  will-change: transform;
+}
+
+/* Stop/pause carousel on hover anywhere over the container or text track */
+.marquee-container:hover .marquee-track,
+.marquee-track:hover,
+.group:hover .marquee-track,
+.group:hover [class*="animate-marquee"] {
+  animation-play-state: paused !important;
+}
+
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
