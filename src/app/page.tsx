@@ -9,6 +9,7 @@ import { HeroSection } from "@/components/sections/HeroSection";
 import { GoogleReviews } from "@/components/sections/GoogleReviews";
 import { MapsSection } from "@/components/sections/MapsSection";
 import { HomeSchema, FaqItem } from "@/components/ui/SchemaMarkup";
+import { QuickLeadForm } from "@/components/ui/QuickLeadForm";
 import { motion } from "framer-motion";
 import {
   Star,
@@ -303,6 +304,15 @@ export default function Home() {
               </p>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* QUICK CONSULTATION LEAD CAPTURE SECTION (CRO SPRINT) */}
+      <section className="py-20 bg-gradient-to-b from-ivory to-white border-t border-gold/15 relative overflow-hidden" id="quick-consultation">
+        <div className="absolute -top-24 -left-24 w-96 h-96 bg-gold/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-saffron/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
+          <QuickLeadForm sourcePage="Homepage Mid-Page Section" />
         </div>
       </section>
 

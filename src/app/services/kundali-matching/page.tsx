@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { BreadcrumbSchema } from "@/components/ui/SchemaMarkup";
+import { BreadcrumbSchema, ServiceDetailSchema } from "@/components/ui/SchemaMarkup";
+import { QuickLeadForm } from "@/components/ui/QuickLeadForm";
 import { ArrowLeft, ChevronRight, Heart, Sparkles } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -38,9 +39,30 @@ export default function KundaliMatching() {
     { name: "Kundali Matching", url: "https://www.astrosiddi.com/services/kundali-matching" },
   ];
 
+  const serviceFaqs = [
+    {
+      question: "Is online Kundali matching as accurate as an in-person reading?",
+      answer: "Yes. Planetary calculations rely on precise birth coordinates and times. Detailed charts are cast using the classical Lahiri Ayanamsa and interpreted identically whether online or in our MVP Colony clinic."
+    },
+    {
+      question: "What details are required for the consultation?",
+      answer: "Please provide the exact date of birth, time of birth, and birth city for both prospective partners. Birth chart rectification is available if exact minute is unknown."
+    },
+    {
+      question: "Are Kundali matching consultations conducted in Telugu?",
+      answer: "Yes. Sri Raghavendra Siddhanti garu conducts comprehensive consultations fluently in authentic Telugu as well as English."
+    }
+  ];
+
   return (
     <div className="flex flex-col min-h-screen bg-ivory text-midnight">
       <BreadcrumbSchema items={breadcrumbs} />
+      <ServiceDetailSchema
+        serviceName="Kundali Matching (Jathaka Poritham)"
+        serviceDescription="Traditional Vedic horoscope matching for Telugu weddings, 36 Guna Milan, Kuja Dosha analysis, and marriage compatibility in Visakhapatnam."
+        serviceUrl="https://www.astrosiddi.com/services/kundali-matching"
+        faqs={serviceFaqs}
+      />
 
       {/* Hero */}
       <section className="bg-deepPurple text-ivory py-20 border-b border-gold/20 text-center relative overflow-hidden">
@@ -137,6 +159,11 @@ export default function KundaliMatching() {
             </Link>
           </li>
         </ul>
+
+        {/* Quick Consultation Form */}
+        <div className="my-14">
+          <QuickLeadForm sourcePage="Kundali Matching Service Page" />
+        </div>
 
         <h3 className="font-cinzel text-xl font-bold text-midnight mt-10">Frequently Asked Questions</h3>
         <dl className="space-y-4 mt-4">

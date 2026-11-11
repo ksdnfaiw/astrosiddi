@@ -856,6 +856,229 @@ export const BLOG_POSTS: BlogPost[] = [
         answer: "Most core predictive formulas and slokas originated in Sanskrit. Telugu commentaries preserve the original Sanskrit root terms (such as Karaka, Bhava, and Drishti) while providing clear Telugu explanations for everyday interpretation."
       }
     ]
+  },
+  {
+    slug: "finding-best-astrologer-in-visakhapatnam",
+    title: "Finding the Best Astrologer in Visakhapatnam: In-Person vs Online Consultation Guide",
+    targetKeyword: "astrologer in visakhapatnam",
+    secondaryKeywords: [
+      "best astrologer in vizag",
+      "astrology consultation MVP colony",
+      "in person astrology vizag",
+      "online vedic consultation vizag"
+    ],
+    metaDescription: "Looking for an authentic astrologer in Visakhapatnam? Compare in-person MVP Colony visits vs online Vedic consultations with 25+ years experienced experts.",
+    publishDate: "2026-10-25T09:00:00+05:30",
+    modifiedDate: "2026-10-25T10:00:00+05:30",
+    author: "Astro Siddhi Editorial Team — Reviewed by Sri Raghavendra Siddhanti Garu",
+    readTime: "9 min read",
+    featuredImage: "/images/blog/best-astrologer-in-visakhapatnam.svg",
+    altText: "Sri Raghavendra Siddhanti examining Vedic Janma Kundali chart at Astro Siddhi consultation room in MVP Colony Visakhapatnam",
+    category: "Vedic Astrology",
+    badge: "🏛️ Local Authority Guide",
+    tags: ["Vedic Astrology", "Visakhapatnam", "MVP Colony", "In-Person Consultation", "Telugu Astrologer"],
+    summary: "Deciding between an in-person consultation in MVP Colony and a remote online Vedic reading? Discover how 25+ year veteran Sri Raghavendra Siddhanti delivers mathematical Jyotish and practical remedies.",
+    sections: [
+      {
+        id: "why-choosing-right-astrologer-matters",
+        title: "1. Why Choosing the Right Astrologer in Visakhapatnam Matters",
+        content: "Visakhapatnam is a unique confluence of historic coastal heritage and rapid modern expansion. From naval officers and steel plant technocrats to IT leaders in Rushikonda and budding entrepreneurs along the beach corridor, the life choices faced by local families are complex and fast-moving. Traditional Vedic astrology (Jyotish) is an ancient diagnostic science. By analyzing the precise planetary alignments (Graha Sthiti) at your exact moment and coordinates of birth, a seasoned Siddhanti decodes your Janma Kundali, highlighting Dasha-Bhukti timings, marriage compatibility, and career pathways.",
+        callout: {
+          type: "info",
+          title: "Authentic Vedic Compass",
+          text: "True Vedic astrology is not sensational fortune-telling. It acts as an empowering compass, revealing your karmic predispositions so you can make informed decisions with confidence."
+        }
+      },
+      {
+        id: "in-person-consultation-mvp-colony",
+        title: "2. In-Person Consultations at MVP Colony: The Grounded Experience",
+        content: "For generations across Andhra Pradesh, meeting the family Siddhanti in person has been a trusted tradition. Our consultation room in Sector 10, MVP Colony provides a serene, private environment away from daily distractions.",
+        subsections: [
+          {
+            subtitle: "Critical Matrimonial Compatibility (Jathaka Poritham)",
+            text: "When two families evaluate a prospective marriage alliance, meeting in person allows open, transparent discussions regarding Ashta Kuta scores, Kuja Dosha, and longevity without misunderstandings."
+          },
+          {
+            subtitle: "Physical Architectural Blueprint Vastu Audits",
+            text: "Reviewing architectural blueprints for an upcoming apartment or commercial floor requires physical blueprint inspection to mark non-demolition directional adjustments."
+          }
+        ]
+      },
+      {
+        id: "online-consultations-global-reach",
+        title: "3. Online Consultations: Convenience for Busy Professionals & Global Telugus",
+        content: "Modern scheduling and geographic distance often make visiting an office challenging. Astro Siddhi’s online consultation suite provides the exact same analytical rigor and personal attention via private WhatsApp video, Zoom, or secure voice sessions.",
+        subsections: [
+          {
+            subtitle: "Serving Global Telugus & the Vizag Diaspora",
+            text: "Hundreds of Telugu families in Bangalore, Hyderabad, the US, UK, and the Gulf rely on Astro Siddhi for life-path guidance and auspicious muhurats."
+          },
+          {
+            subtitle: "Mathematical Precision Across Distances",
+            text: "Because authentic Vedic Jyotish is mathematical—calculated using the classical Lahiri Ayanamsa—the chart calculations remain identical whether seated in MVP Colony or joining via encrypted video."
+          }
+        ]
+      },
+      {
+        id: "in-person-vs-online-comparison",
+        title: "4. In-Person vs. Online Consultation: Side-by-Side Comparison",
+        content: "Compare consultation modes to choose the best format for your personal or family requirements:",
+        table: {
+          headers: ["Feature / Dimension", "In-Person (MVP Colony, Vizag)", "Online (Video / WhatsApp)"],
+          rows: [
+            ["Ideal For", "Marriage alliances, family discussions, floorplans", "Busy professionals, NRIs, urgent decisions"],
+            ["Languages", "Fluent Telugu & English", "Fluent Telugu & English"],
+            ["Chart Calculation", "Lahiri (Chitra Paksha) Ephemeris", "Lahiri (Chitra Paksha) Ephemeris"],
+            ["Confidentiality", "100% Private consultation room", "Encrypted direct video/call connection"],
+            ["Remedies Provided", "Physical yantras, gemstone vetting", "Digital instructions, audio mantra guides"]
+          ]
+        }
+      },
+      {
+        id: "hallmarks-of-authentic-astrologer",
+        title: "5. Hallmarks of an Authentic Astrologer (and Red Flags to Avoid)",
+        content: "Selecting a genuine Vedic practitioner requires caution. Look for 20+ years of verifiable experience, fluency in your native language (Telugu), and practical, non-destructive remedies. Avoid practitioners who demand large sums to dispel imaginary curses or make unrealistic 100% guarantees."
+      }
+    ],
+    faqs: [
+      {
+        question: "What birth details do I need to provide before my consultation?",
+        answer: "To calculate an exact Vedic Janma Kundali, you must provide your Date of Birth, Exact Time of Birth, and Place of Birth (City/Town). If your exact minute of birth is uncertain, Guruji employs birth-time rectification techniques."
+      },
+      {
+        question: "Can I book a consultation in Telugu?",
+        answer: "Yes. Sri Raghavendra Siddhanti garu conducts consultations fluently in both authentic Telugu and English, catering to regional residents and global Telugu NRIs alike."
+      },
+      {
+        question: "How are the remedial measures (Pariharams) chosen?",
+        answer: "Our remedial guidance adheres strictly to classical Vedic texts without exploiting anxiety. Remedies primarily focus on Mantra Japa, charitable acts (Dana), and practical lifestyle alignments—never destructive architectural changes."
+      }
+    ]
+  },
+  {
+    slug: "vedic-kundali-matching-ashta-kuta-kuja-dosha",
+    title: "Vedic Kundali Matching in Visakhapatnam: Ashta Kuta & Kuja Dosha Guide",
+    targetKeyword: "kundali matching in visakhapatnam",
+    secondaryKeywords: [
+      "telugu marriage horoscope matching",
+      "kuja dosha remedies vizag",
+      "jathaka poritham andhra",
+      "ashta kuta scoring exceptions"
+    ],
+    metaDescription: "Planning a marriage in Visakhapatnam? Learn how 25-year expert Sri Raghavendra Siddhanti performs authentic Kundali matching, Kuja Dosha checks, and remedies.",
+    publishDate: "2026-10-26T09:00:00+05:30",
+    modifiedDate: "2026-10-26T10:00:00+05:30",
+    author: "Astro Siddhi Editorial Team — Reviewed by Sri Raghavendra Siddhanti Garu",
+    readTime: "8 min read",
+    featuredImage: "/images/blog/kundali-matching-telugu.svg",
+    altText: "Traditional South Indian Vedic Kundali matching horoscope comparison by Sri Raghavendra Siddhanti in Visakhapatnam",
+    category: "Kundali Matching",
+    badge: "💍 Matrimonial Guide",
+    tags: ["Kundali Matching", "Telugu Marriage", "Kuja Dosha", "Ashta Kuta", "Visakhapatnam"],
+    summary: "Discover why authentic matrimonial compatibility goes far beyond a 36-point software algorithm. Learn how seasoned Vedic astrologers evaluate Kuja Dosha cancellations and Navamsha charts.",
+    sections: [
+      {
+        id: "fallacy-of-automated-scoring",
+        title: "1. The Fallacy of Automated 36-Point Software Scores",
+        content: "Modern matchmaking software scores horoscopes strictly through the 36-point Ashta Kuta system based on Moon positions. However, classical shastras contain numerous cancellation rules (Pariharas). When both partners share friendly Ascendant lords or strong 7th houses, matches scoring under 18 points frequently lead to harmonious, enduring marriages.",
+        callout: {
+          type: "remedy",
+          title: "Comprehensive Vedic Analysis",
+          text: "Never reject an alliance purely on an automated app score. A manual review by a seasoned Siddhanti uncovers planetary friendships that automated tools miss."
+        }
+      },
+      {
+        id: "demystifying-kuja-dosha",
+        title: "2. Demystifying Kuja Dosha (Manglik) Without Panic",
+        content: "Kuja Dosha occurs when Mars occupies the 1st, 2nd, 4th, 7th, 8th, or 12th house. In authentic practice, over 70% of apparent Kuja Doshas are cancelled by Mars occupying its own signs (Aries, Scorpio), exaltation in Capricorn, or receiving beneficial aspects from Jupiter (Guru Drishti)."
+      },
+      {
+        id: "role-of-navamsha-chart",
+        title: "3. The Critical Role of the Navamsha (D-9) Chart",
+        content: "While the Rasi chart shows initial circumstances, the Navamsha chart reveals how marital harmony, emotional patience, and mutual respect unfold in the years following the wedding ceremony."
+      }
+    ],
+    faqs: [
+      {
+        question: "Can two horoscopes with an Ashta Kuta score below 18 still marry?",
+        answer: "Yes. If the lords of the birth ascendants (Lagnadhipatis) or the 7th house lords are friendly, and longevity and temperament indicators are sound in the Navamsha (D-9) chart, classical Vedic texts permit marriage even when Moon-based score totals are below 18."
+      },
+      {
+        question: "How do you verify compatibility if one partner’s birth time is uncertain?",
+        answer: "If a partner’s birth time is only known within an approximate window, Guruji employs Janma Kundali Rectification and Prashna Lagna (horary chart casting) to verify planetary positions before issuing compatibility advice."
+      },
+      {
+        question: "Are consultations conducted in Telugu?",
+        answer: "Yes. Consultations are available in both Telugu and English. Sri Raghavendra Siddhanti garu conducts comprehensive discussions in Telugu to help families comfortably navigate cultural details and wedding rituals."
+      }
+    ]
+  },
+  {
+    slug: "non-demolition-vastu-apartments-visakhapatnam",
+    title: "Non-Demolition Vastu for Flats & Apartments in Visakhapatnam",
+    targetKeyword: "vastu consultant in visakhapatnam",
+    secondaryKeywords: [
+      "apartment vastu remedies without demolition",
+      "flat entrance vastu vizag",
+      "coastal vastu balancing",
+      "south facing flat vastu remedies"
+    ],
+    metaDescription: "Looking for a top Vastu consultant in Visakhapatnam? Learn how to balance apartment entrances, kitchens, and master bedrooms without demolition or breaking walls.",
+    publishDate: "2026-10-27T09:00:00+05:30",
+    modifiedDate: "2026-10-27T10:00:00+05:30",
+    author: "Astro Siddhi Editorial Team — Reviewed by Sri Raghavendra Siddhanti Garu",
+    readTime: "8 min read",
+    featuredImage: "/images/blog/vastu-visakhapatnam-apartments.svg",
+    altText: "Floor plan blueprint audit with non-demolition Vastu remedies by Astro Siddhi consultant in Visakhapatnam",
+    category: "Vastu Shastra",
+    badge: "🏢 Flat & Apartment Guide",
+    tags: ["Vastu Shastra", "Apartment Living", "Visakhapatnam", "Non-Demolition Vastu", "Home Harmony"],
+    summary: "Discover how ancient architectural science applies to high-rise flats in Visakhapatnam. Learn non-structural remedies for entrance doors, kitchen placements, and bedroom directions.",
+    sections: [
+      {
+        id: "vastu-in-multi-story-flats",
+        title: "1. The Core Philosophy of Vastu in Multi-Story Flats",
+        content: "In modern apartments across Visakhapatnam (such as MVP Colony, Madhurawada, and Rushikonda), structural modifications are rarely feasible. Modern Vastu focuses on balancing the internal energy grid (Vastu Purusha Mandala) within your specific living unit using elemental alignment, color therapy, and geometric boundary anchors.",
+        callout: {
+          type: "tip",
+          title: "Subtle Energy Balancing",
+          text: "True Vastu operates like spatial acupuncture. Subtle energetic corrections harmonize room vibrations without the expense and disturbance of knocking down walls."
+        }
+      },
+      {
+        id: "diagnosing-key-apartment-zones",
+        title: "2. Diagnosing and Correcting Key Apartment Zones",
+        content: "We address the three most common flat layout challenges:",
+        subsections: [
+          {
+            subtitle: "Main Entrance (Dwara Vastu)",
+            text: "South or Southwest entrances can be neutralized using embedded brass or lead boundary strips under the threshold, paired with warm lighting to balance incoming prana."
+          },
+          {
+            subtitle: "Kitchen Placement (Agneya Balancing)",
+            text: "When kitchens fall in the Northeast water zone, color wave balancing—such as placing natural green or yellow stone insulators beneath gas hobs—isolates clashing elements."
+          },
+          {
+            subtitle: "Master Bedroom (Nairuthi Stability)",
+            text: "Master bedrooms placed outside the Southwest are grounded using heavy solid-wood furniture and copper pyramid anchors."
+          }
+        ]
+      }
+    ],
+    faqs: [
+      {
+        question: "Can an apartment with a South-facing entrance still bring prosperity?",
+        answer: "Yes. Classical Vastu identifies specific auspicious padas along the Southern facade. When properly corrected using non-demolition threshold balancers, South-facing homes often provide significant commercial and personal success."
+      },
+      {
+        question: "Do I need to be present in Visakhapatnam for a Vastu consultation?",
+        answer: "No. For clients purchasing properties in Visakhapatnam while living elsewhere, we conduct comprehensive Digital Blueprint Audits using builder floorplans and aerial orientation mapping."
+      },
+      {
+        question: "How quickly do the effects of Vastu remedies become noticeable?",
+        answer: "Subtle energy shifts typically manifest within 45 to 90 days following corrective adjustments, often reflected in improved sleep quality and domestic peace."
+      }
+    ]
   }
 ];
 
@@ -927,6 +1150,21 @@ const CLUSTER_MAP: Record<string, string[]> = {
     "how-to-calculate-your-moon-sign",
     "how-kundali-matching-really-works-telugu-tradition",
     "best-astrologer-in-visakhapatnam",
+  ],
+  "finding-best-astrologer-in-visakhapatnam": [
+    "best-astrologer-in-visakhapatnam",
+    "vedic-kundali-matching-ashta-kuta-kuja-dosha",
+    "non-demolition-vastu-apartments-visakhapatnam",
+  ],
+  "vedic-kundali-matching-ashta-kuta-kuja-dosha": [
+    "how-kundali-matching-really-works-telugu-tradition",
+    "kundali-matching-marriage-telugu-vedic-astrology",
+    "finding-best-astrologer-in-visakhapatnam",
+  ],
+  "non-demolition-vastu-apartments-visakhapatnam": [
+    "vastu-tips-visakhapatnam-apartments",
+    "signs-you-need-vastu-correction-at-home",
+    "finding-best-astrologer-in-visakhapatnam",
   ],
 };
 

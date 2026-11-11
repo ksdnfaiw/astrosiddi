@@ -6,6 +6,7 @@ import { LanguageProvider } from "@/contexts/LanguageContext";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
+import { LeadClickTracker } from "@/components/ui/LeadClickTracker";
 
 const cinzel = Cinzel_Decorative({
   weight: ["700"],
@@ -113,6 +114,7 @@ export default function RootLayout({
         className={`${cinzel.variable} ${cormorant.variable} ${notoTelugu.variable} ${poppins.variable} antialiased bg-ivory text-midnight font-poppins overflow-x-hidden`}
       >
         <LanguageProvider>
+          <LeadClickTracker />
           <Navbar />
           <main className="min-h-screen">{children}</main>
           <WhatsAppButton />

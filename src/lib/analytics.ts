@@ -3,7 +3,25 @@
  * Strictly adheres to privacy guidelines: NO birth dates, times, or personal details are logged.
  */
 
-type ToolEventName = "tool_used" | "result_viewed" | "cta_click";
+type ToolEventName = "tool_used" | "result_viewed" | "cta_click" | "generate_lead" | "generate_lead_click";
+
+export function trackLeadSubmission(serviceRequested: string, consultationMode: string = "Quick Lead Form") {
+  if (typeof window === "undefined" || !(window as unknown as { gtag?: (...args: unknown[]) => void }).gtag) {
+    return;
+  }
+  try {
+    const gtag = (window as unknown as { gtag: (...args: unknown[]) => void }).gtag;
+    gtag("event", "generate_lead", {
+      event_category: "Consultation Request",
+      event_label: serviceRequested,
+      service_requested: serviceRequested,
+      consultation_mode: consultationMode,
+      location: "Visakhapatnam",
+    });
+  } catch {
+    // Silently handle if analytics blocked
+  }
+}
 
 export function trackToolEvent(
   eventName: ToolEventName,

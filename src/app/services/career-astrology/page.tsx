@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { BreadcrumbSchema } from "@/components/ui/SchemaMarkup";
+import { BreadcrumbSchema, ServiceDetailSchema } from "@/components/ui/SchemaMarkup";
+import { QuickLeadForm } from "@/components/ui/QuickLeadForm";
 import { ArrowLeft, ChevronRight, Briefcase, Sparkles } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -38,9 +39,30 @@ export default function CareerAstrology() {
     { name: "Career Astrology", url: "https://www.astrosiddi.com/services/career-astrology" },
   ];
 
+  const careerFaqs = [
+    {
+      question: "Can astrology predict when I will secure employment or a promotion?",
+      answer: "Yes. By analyzing your Mahadasha, Antardasha, Dashamsha (D-10) chart, and Jupiter-Saturn transits through the 10th and 6th houses, we pinpoint favorable windows for job switches, appraisal success, and business initiatives."
+    },
+    {
+      question: "How does astrology help determine if I should do business or a job?",
+      answer: "We examine the 6th house (employment/service) versus the 7th and 3rd houses (business partnerships and risk-taking enterprise), alongside wealth combinations (Dhanya Yogas)."
+    },
+    {
+      question: "Do you provide consultations in Telugu?",
+      answer: "Yes, comprehensive career astrology consultations are conducted fluently in Telugu and English."
+    }
+  ];
+
   return (
     <div className="flex flex-col min-h-screen bg-ivory text-midnight">
       <BreadcrumbSchema items={breadcrumbs} />
+      <ServiceDetailSchema
+        serviceName="Career & Business Astrology Consultation"
+        serviceDescription="Vedic horoscope analysis for career growth, job transitions, business expansion, and wealth timing in Visakhapatnam by Sri Raghavendra Siddhanti garu."
+        serviceUrl="https://www.astrosiddi.com/services/career-astrology"
+        faqs={careerFaqs}
+      />
 
       {/* Hero */}
       <section className="bg-deepPurple text-ivory py-20 border-b border-gold/20 text-center relative overflow-hidden">
@@ -130,6 +152,11 @@ export default function CareerAstrology() {
             </Link>
           </li>
         </ul>
+
+        {/* Quick Consultation Form */}
+        <div className="my-14">
+          <QuickLeadForm sourcePage="Career Astrology Service Page" />
+        </div>
 
         <h3 className="font-cinzel text-xl font-bold text-midnight mt-10">Frequently Asked Questions</h3>
         <dl className="space-y-4 mt-4">

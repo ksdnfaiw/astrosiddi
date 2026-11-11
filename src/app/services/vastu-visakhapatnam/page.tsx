@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { BreadcrumbSchema } from "@/components/ui/SchemaMarkup";
+import { BreadcrumbSchema, ServiceDetailSchema } from "@/components/ui/SchemaMarkup";
+import { QuickLeadForm } from "@/components/ui/QuickLeadForm";
 import { ArrowLeft, ChevronRight, Home, Sparkles } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -38,9 +39,30 @@ export default function VastuConsultation() {
     { name: "Vastu Visakhapatnam", url: "https://www.astrosiddi.com/services/vastu-visakhapatnam" },
   ];
 
+  const vastuFaqs = [
+    {
+      question: "Do I have to break walls for Vastu correction in an apartment?",
+      answer: "No. In leased flats and modern apartments across Visakhapatnam, structural demolition is rarely practical or allowed. We specialize in non-demolition elemental balancing, sacred geometric yantras, threshold copper/brass strips, and color therapy."
+    },
+    {
+      question: "Do you conduct in-person property visits across Visakhapatnam?",
+      answer: "Yes, in-person site visits are available across Visakhapatnam (MVP Colony, Gajuwaka, Madhurawada, Rushikonda, and Beach Road corridor) as well as online digital blueprint audits."
+    },
+    {
+      question: "Can an apartment with a South-facing entrance be made auspicious?",
+      answer: "Yes. By identifying the exact Pada of the entrance and applying brass boundary balancers, South-facing apartments can be effectively harmonized for commercial and family success."
+    }
+  ];
+
   return (
     <div className="flex flex-col min-h-screen bg-ivory text-midnight">
       <BreadcrumbSchema items={breadcrumbs} />
+      <ServiceDetailSchema
+        serviceName="Vastu Shastra Consultation & Non-Demolition Remedies"
+        serviceDescription="Professional Vastu Shastra consultation for apartments, independent houses, and commercial spaces in Visakhapatnam by Sri Raghavendra Siddhanti garu."
+        serviceUrl="https://www.astrosiddi.com/services/vastu-visakhapatnam"
+        faqs={vastuFaqs}
+      />
 
       {/* Hero */}
       <section className="bg-deepPurple text-ivory py-20 border-b border-gold/20 text-center relative overflow-hidden">
@@ -137,6 +159,11 @@ export default function VastuConsultation() {
             </Link>
           </li>
         </ul>
+
+        {/* Quick Consultation Form */}
+        <div className="my-14">
+          <QuickLeadForm sourcePage="Vastu Visakhapatnam Service Page" />
+        </div>
 
         <h3 className="font-cinzel text-xl font-bold text-midnight mt-10">Frequently Asked Questions</h3>
         <dl className="space-y-4 mt-4">

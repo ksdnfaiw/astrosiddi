@@ -186,3 +186,89 @@ export const BreadcrumbSchema = ({ items }: { items: { name: string; url: string
     />
   );
 };
+
+export const ServiceDetailSchema = ({
+  serviceName,
+  serviceDescription,
+  serviceUrl,
+  faqs = [],
+}: {
+  serviceName: string;
+  serviceDescription: string;
+  serviceUrl: string;
+  faqs?: FaqItem[];
+}) => {
+  const graph: Record<string, unknown>[] = [
+    {
+      '@type': ['LocalBusiness', 'ProfessionalService'],
+      '@id': BUSINESS_ID,
+      'name': 'Astro Siddhi - Sri Raghavendra Jyothishalayam',
+      'alternateName': [
+        'Sri Raghavendra Jyothishalayam MVP Colony',
+        'Astro Siddhi Visakhapatnam',
+      ],
+      'image': `${CANONICAL_HOST}/icon.svg`,
+      'url': CANONICAL_HOST,
+      'telephone': '+919652412221',
+      'priceRange': '₹₹',
+      'address': {
+        '@type': 'PostalAddress',
+        'streetAddress': 'P8RQ+3P4, MVP Double Rd, Sector 10, MVP Colony',
+        'addressLocality': 'Visakhapatnam',
+        'addressRegion': 'Andhra Pradesh',
+        'postalCode': '530017',
+        'addressCountry': 'IN',
+      },
+      'geo': {
+        '@type': 'GeoCoordinates',
+        'latitude': 17.740137,
+        'longitude': 83.3393431,
+      },
+      'founder': {
+        '@type': 'Person',
+        '@id': FOUNDER_ID,
+        'name': 'Sri Raghavendra Siddhanti Garu',
+        'jobTitle': 'Senior Vedic Astrologer & Vastu Consultant',
+      },
+    },
+    {
+      '@type': 'Service',
+      '@id': `${serviceUrl}/#service`,
+      'name': serviceName,
+      'description': serviceDescription,
+      'url': serviceUrl,
+      'provider': { '@id': BUSINESS_ID },
+      'areaServed': {
+        '@type': 'City',
+        'name': 'Visakhapatnam',
+      },
+    },
+  ];
+
+  if (faqs.length > 0) {
+    graph.push({
+      '@type': 'FAQPage',
+      '@id': `${serviceUrl}/#faq`,
+      'mainEntity': faqs.map((f) => ({
+        '@type': 'Question',
+        'name': f.question,
+        'acceptedAnswer': {
+          '@type': 'Answer',
+          'text': f.answer,
+        },
+      })),
+    });
+  }
+
+  const schema = {
+    '@context': 'https://schema.org',
+    '@graph': graph,
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+};
