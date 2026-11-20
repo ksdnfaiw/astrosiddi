@@ -12,8 +12,8 @@ const handler = NextAuth({
       },
       async authorize(credentials) {
         // Simplified auth check for demo purposes
-        if (credentials?.email === "admin@astrosiddhi.com" && credentials?.password === "admin123") {
-          return { id: "1", name: "Admin", email: "admin@astrosiddhi.com" };
+        if (credentials?.email === "admin@astrosiddi.com" && credentials?.password === "admin123") {
+          return { id: "1", name: "Admin", email: "admin@astrosiddi.com" };
         }
         return null;
       }

@@ -16,6 +16,11 @@ export default function SuccessPage() {
   return (
     <div className="flex flex-col min-h-screen bg-ivory text-midnight">
       {/* Event snippet for Contact conversion page */}
+      <Script
+        id="google-ads-gtag-lib"
+        src="https://www.googletagmanager.com/gtag/js?id=AW-18499886007"
+        strategy="afterInteractive"
+      />
       <Script id="google-ads-contact-conversion" strategy="afterInteractive">
         {`
           window.dataLayer = window.dataLayer || [];
@@ -30,7 +35,7 @@ export default function SuccessPage() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gold/15 rounded-full blur-[120px] pointer-events-none" />
 
         <div className="max-w-3xl mx-auto px-4 sm:px-6 relative z-10">
-          <div className="w-20 h-20 rounded-full bg-emerald-500/20 border-2 border-emerald-400 text-emerald-400 flex items-center justify-center mx-auto mb-6 shadow-[0_0_40px_rgba(52,211,153,0.3)] animate-bounce-slow">
+          <div className="w-20 h-20 rounded-full bg-emerald-500/20 border-2 border-emerald-400 text-emerald-400 flex items-center justify-center mx-auto mb-6 shadow-[0_0_40px_rgba(52,211,153,0.3)]">
             <CheckCircle2 className="w-10 h-10" />
           </div>
 
@@ -106,9 +111,9 @@ export default function SuccessPage() {
           {/* Instant Follow-up Banner */}
           <div className="p-6 rounded-2xl bg-midnight text-ivory border border-gold/30 flex flex-col sm:flex-row items-center justify-between gap-6">
             <div className="space-y-1 text-center sm:text-left">
-              <h4 className="font-cinzel font-bold text-base sm:text-lg text-gold">
+              <h3 className="font-cinzel font-bold text-base sm:text-lg text-gold">
                 Need an Immediate Consultation?
-              </h4>
+              </h3>
               <p className="text-xs text-ivory/80">
                 You can chat directly with our Jyothishalayam team right now:
               </p>

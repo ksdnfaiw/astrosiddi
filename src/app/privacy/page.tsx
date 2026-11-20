@@ -65,8 +65,8 @@ export default function PrivacyPage() {
             <p>
               If you have any questions about this Privacy Policy or your personal information, please contact
               us at{" "}
-              <a href="mailto:contact@astrosiddhi.com" className="text-gold underline">
-                contact@astrosiddhi.com
+              <a href="mailto:contact@astrosiddi.com" className="text-gold underline">
+                contact@astrosiddi.com
               </a>
               .
             </p>

@@ -1,13 +1,15 @@
-import { MetadataRoute } from 'next'
+import { MetadataRoute } from "next";
+import { SITE_URL } from "@/lib/site";
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = 'https://astrosiddi.com'
   return {
     rules: {
-      userAgent: '*',
-      allow: '/',
-      disallow: ['/api/', '/admin/'],
+      userAgent: "*",
+      allow: "/",
+      // /success is the post-enquiry conversion page (noindex); /api and /admin are not content.
+      disallow: ["/api/", "/admin/", "/success"],
     },
-    sitemap: `${baseUrl}/sitemap.xml`,
-  }
+    sitemap: `${SITE_URL}/sitemap.xml`,
+    host: SITE_URL,
+  };
 }

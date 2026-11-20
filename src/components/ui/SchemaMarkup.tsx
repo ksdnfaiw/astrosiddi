@@ -1,120 +1,34 @@
-import React from 'react';
+import React from "react";
+import type { FaqItem } from "@/data/faqs";
+import {
+  breadcrumbSchema,
+  faqSchema,
+  localBusinessSchema,
+  servicesCatalogSchema,
+  websiteSchema,
+} from "@/lib/schema";
 
-export const LocalBusinessSchema = () => {
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Astro Siddhi",
-    "alternateName": [
-      "Sri Raghavendra Jyothishalayam",
-      "Sri Raghavendra Jyothishalayam MVP Colony",
-      "Astro Siddhi Visakhapatnam"
-    ],
-    "image": "https://astrosiddi.com/icon.svg",
-    "@id": "https://astrosiddi.com",
-    "url": "https://astrosiddi.com",
-    "telephone": ["+919652412221", "+919555192221"],
-    "priceRange": "₹₹",
-    "hasMap": "https://www.google.com/maps/place/Sri+Raghavendra+Jyothishalayam,+P8RQ%2B3P4,+MVP+Double+Rd,+Sector+10,+MVP+Colony,+Visakhapatnam,+Andhra+Pradesh+530017/@17.740137,83.3393431,17z/",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Door 1-83-43, HIG 204/4, MVP Double Rd, Sector 10, MVP Colony, Above Karur Vysya Bank",
-      "addressLocality": "Visakhapatnam",
-      "addressRegion": "Andhra Pradesh",
-      "postalCode": "530017",
-      "addressCountry": "IN"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 17.740137,
-      "longitude": 83.3393431
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": "414",
-      "bestRating": "5",
-      "worstRating": "1"
-    },
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday"
-      ],
-      "opens": "09:00",
-      "closes": "20:00"
-    },
-    "sameAs": [
-      "https://www.google.com/maps/place/Sri+Raghavendra+Jyothishalayam,+P8RQ%2B3P4,+MVP+Double+Rd,+Sector+10,+MVP+Colony,+Visakhapatnam,+Andhra+Pradesh+530017/@17.740137,83.3393431,17z/",
-      "https://www.facebook.com/astrosiddi",
-      "https://www.instagram.com/astrosiddi"
-    ],
-    "description": "25-year veteran-led Vedic astrology practice in Visakhapatnam (Sri Raghavendra Jyothishalayam). Specializing in Kundali Matching, Vastu, and Career Astrology in English and Telugu with 4.9-star rating on Google.",
-    "founder": {
-      "@type": "Person",
-      "name": "Sri Raghavendra Siddhanti Garu"
-    }
-  };
-
+/** Renders one JSON-LD block. "<" is escaped so content can never close the script tag. */
+export function JsonLd({ data }: { data: unknown }) {
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data).replace(/</g, "\\u003c") }}
     />
   );
-};
+}
 
-export const ServiceSchema = () => {
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "serviceType": "Vedic Astrology Consultations",
-    "provider": {
-      "@type": "LocalBusiness",
-      "name": "Astro Siddhi"
-    },
-    "areaServed": {
-      "@type": "City",
-      "name": "Visakhapatnam"
-    },
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Astrology Services",
-      "itemListElement": [
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Kundali Matching"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Vastu Consultation"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Career Astrology"
-          }
-        }
-      ]
-    }
-  };
+export const WebsiteSchema = () => <JsonLd data={websiteSchema()} />;
 
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-    />
-  );
-};
+/** Emit on Home and Contact (and wherever the business entity itself is described). */
+export const LocalBusinessSchema = ({ reviews = false }: { reviews?: boolean }) => (
+  <JsonLd data={localBusinessSchema({ reviews })} />
+);
+
+export const ServiceSchema = () => <JsonLd data={servicesCatalogSchema()} />;
+
+export const FaqSchema = ({ faqs }: { faqs: FaqItem[] }) => <JsonLd data={faqSchema(faqs)} />;
+
+export const BreadcrumbSchema = ({ items }: { items: { name: string; path: string }[] }) => (
+  <JsonLd data={breadcrumbSchema(items)} />
+);
