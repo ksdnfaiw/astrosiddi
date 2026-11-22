@@ -8,14 +8,19 @@ import { trackLeadSubmission } from "@/lib/analytics";
 interface QuickLeadFormProps {
   className?: string;
   sourcePage?: string;
+  serviceDefault?: string;
 }
 
-export function QuickLeadForm({ className = "", sourcePage = "Homepage" }: QuickLeadFormProps) {
+export function QuickLeadForm({
+  className = "",
+  sourcePage = "Homepage",
+  serviceDefault = "",
+}: QuickLeadFormProps) {
   const router = useRouter();
   const [formData, setFormData] = useState({
     fullName: "",
     phone: "",
-    topic: "",
+    topic: serviceDefault,
   });
 
   const [errors, setErrors] = useState<Record<string, string>>({});

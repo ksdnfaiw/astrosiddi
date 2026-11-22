@@ -4,9 +4,9 @@ import { absoluteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/contact" },
-  title: "Contact & Book Consultation | Astro Siddhi Visakhapatnam",
+  title: "Contact & Book Consultation",
   description:
-    "Book an online or in-person astrology consultation in Visakhapatnam. Connect with Sri Raghavendra Siddhanti garu for career, Kundali matching, and Vastu.",
+    "Book your astrology session with Sri Raghavendra Siddhanti in MVP Colony, Vizag or online. Contact via WhatsApp or call +91 96524 12221 today.",
   openGraph: {
     title: "Contact & Book Consultation | Astro Siddhi",
     description:

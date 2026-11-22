@@ -6,9 +6,9 @@ import { SCHEMA_IDS, SITE_URL, absoluteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/blog" },
-  title: "Vedic Astrology, Kundali Matching & Vastu Blog | Astro Siddhi Visakhapatnam",
+  title: "Vedic Astrology & Vastu Blog",
   description:
-    "Read in-depth guides on Vedic astrology, Telugu marriage Kundali matching, Numerology, and coastal Vastu Shastra by 25-year veteran Sri Raghavendra Siddhanti Garu in Visakhapatnam.",
+    "Explore authentic Vedic astrology, Telugu marriage Kundali & coastal Vastu guides from Sri Raghavendra Siddhanti in Vizag. Read our latest articles.",
   keywords: [
     "astrology blog Visakhapatnam",
     "vedic astrology articles Vizag",

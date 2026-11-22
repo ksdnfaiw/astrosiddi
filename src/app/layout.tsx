@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     default: "Best Astrologer in Visakhapatnam (Vizag) | Astro Siddhi",
   },
   description:
-    "Sri Raghavendra Jyothishalayam (Astro Siddhi) is a 25-year trusted Vedic astrology practice in MVP Colony, Visakhapatnam. Rated 4.9★ on Google across 414+ reviews for horoscope reading, Kundali matching, and Vastu.",
+    "Consult 25+ yr Vedic astrologer Sri Raghavendra Siddhanti in MVP Colony, Vizag for Kundali matching, horoscope & Vastu. Book your consultation today.",
   keywords: [
     "best astrologer in Visakhapatnam",
     "best astrologer in Vizag",

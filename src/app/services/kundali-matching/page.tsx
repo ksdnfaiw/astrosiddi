@@ -4,7 +4,7 @@ import { KUNDALI_FAQS } from "@/data/faqs";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/services/kundali-matching" },
-  title: "Kundali Matching Online | Vedic Astrology Compatibility",
+  title: "Kundali Matching for Marriage",
   description:
     "Expert Kundali matching in Visakhapatnam & online. Get 36 Guna Milan, Kuja Dosha check & marriage compatibility advice from a 25-yr veteran. Book today.",
 };

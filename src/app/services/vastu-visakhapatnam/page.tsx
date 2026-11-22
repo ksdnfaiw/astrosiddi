@@ -4,7 +4,7 @@ import { VASTU_FAQS } from "@/data/faqs";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/services/vastu-visakhapatnam" },
-  title: "Best Vastu Consultant in Visakhapatnam | Astro Siddhi",
+  title: "Best Vastu Consultant in Vizag",
   description:
     "Consult the best Vastu consultant in Visakhapatnam. Align your home or office with the five elements for harmony, health, and prosperity.",
 };
