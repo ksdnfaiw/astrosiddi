@@ -24,9 +24,9 @@ export function WhatsAppConsultationCard({
             </span>
           </div>
 
-          <h4 className="font-cinzel text-lg sm:text-xl font-bold text-ivory">
+          <h3 className="font-cinzel text-lg sm:text-xl font-bold text-ivory">
             Direct Consultation with Sri Raghavendra Siddhanti Garu
-          </h4>
+          </h3>
 
           <p className="text-xs sm:text-sm text-ivory/80 max-w-xl leading-relaxed">
             Get personalized horoscope readings, authentic Kundali matching, or non-demolition Vastu remedies. Consult in person at MVP Colony or via secure video call.

@@ -17,7 +17,30 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: var(--font-poppins), sans-serif;
+  font-family: var(--font-poppins), system-ui, sans-serif;
+}
+
+/* Scroll-reveal (see components/ui/Reveal.tsx) */
+.reveal {
+  opacity: 0;
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  will-change: opacity, transform;
+}
+.reveal-up { transform: translate3d(0, 24px, 0); }
+.reveal-left { transform: translate3d(-30px, 0, 0); }
+.reveal-right { transform: translate3d(30px, 0, 0); }
+.reveal-scale { transform: scale(0.96); }
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+  will-change: auto;
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
 
 /* Service Carousel / Marquee styling (slow, smooth, pauses on hover) */
@@ -43,6 +66,10 @@ body {
   animation-play-state: paused !important;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation: none; }
+}
+
 @keyframes marquee-scroll {
   0% {
     transform: translateX(0%);
@@ -52,3 +79,6 @@ body {
   }
 }
 
+/* Utility used by horizontally scrolling chip rows */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }

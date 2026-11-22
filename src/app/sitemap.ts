@@ -1,112 +1,58 @@
-import { MetadataRoute } from 'next';
-import { getAllPosts } from '@/data/blogPosts';
-import { ASTRO_TOOLS_CONFIG } from '@/config/tools';
+import { MetadataRoute } from "next";
+import { getAllPosts } from "@/data/blogPosts";
+import { RASHIS } from "@/data/rashis";
+import { CITIES } from "@/data/cities";
+import { absoluteUrl } from "@/lib/site";
+import { ASTRO_TOOLS_CONFIG } from "@/config/tools";
+
+/**
+ * Update when site content meaningfully changes. A stable date is more truthful than `new Date()`,
+ * which would claim every page changed on every build and teaches crawlers to ignore <lastmod>.
+ */
+const CONTENT_UPDATED = new Date("2026-11-18");
+
+type Entry = MetadataRoute.Sitemap[number];
+const entry = (path: string, priority: number, changeFrequency: Entry["changeFrequency"]): Entry => ({
+  url: absoluteUrl(path),
+  lastModified: CONTENT_UPDATED,
+  changeFrequency,
+  priority,
+});
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://www.astrosiddi.com';
-  const currentDate = new Date('2026-10-24T00:00:00Z');
-
-  const posts = getAllPosts();
-  const blogRoutes: MetadataRoute.Sitemap = posts.map((post) => ({
-    url: `${baseUrl}/blog/${post.slug}`,
-    lastModified: new Date(post.modifiedDate || post.publishDate),
-    changeFrequency: 'weekly',
-    priority: 0.8,
-  }));
-
   const staticRoutes: MetadataRoute.Sitemap = [
-    {
-      url: `${baseUrl}`,
-      lastModified: currentDate,
-      changeFrequency: 'daily',
-      priority: 1.0,
-    },
-    {
-      url: `${baseUrl}/tools`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/tools/numerology-calculator`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly',
-      priority: 0.85,
-    },
-    {
-      url: `${baseUrl}/services`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/services/kundali-matching`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly',
-      priority: 0.85,
-    },
-    {
-      url: `${baseUrl}/services/career-astrology`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly',
-      priority: 0.85,
-    },
-    {
-      url: `${baseUrl}/services/vastu-visakhapatnam`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly',
-      priority: 0.85,
-    },
-    {
-      url: `${baseUrl}/blog`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/about`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/contact`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/privacy`,
-      lastModified: currentDate,
-      changeFrequency: 'yearly',
-      priority: 0.3,
-    },
-    {
-      url: `${baseUrl}/terms`,
-      lastModified: currentDate,
-      changeFrequency: 'yearly',
-      priority: 0.3,
-    },
+    entry("/", 1.0, "weekly"),
+    entry("/services", 0.9, "weekly"),
+    entry("/services/kundali-matching", 0.9, "monthly"),
+    entry("/services/career-astrology", 0.85, "monthly"),
+    entry("/services/vastu-visakhapatnam", 0.9, "monthly"),
+    entry("/horoscope", 0.85, "monthly"),
+    entry("/tools", 0.9, "weekly"),
+    entry("/tools/numerology-calculator", 0.85, "weekly"),
+    entry("/blog", 0.9, "weekly"),
+    entry("/about", 0.8, "monthly"),
+    entry("/contact", 0.8, "monthly"),
+    entry("/privacy", 0.3, "yearly"),
+    entry("/terms", 0.3, "yearly"),
   ];
 
   const gatedToolRoutes: MetadataRoute.Sitemap = [];
   if (ASTRO_TOOLS_CONFIG.moonSignReleased) {
-    gatedToolRoutes.push({
-      url: `${baseUrl}/tools/moon-sign-calculator`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly',
-      priority: 0.85,
-    });
+    gatedToolRoutes.push(entry("/tools/moon-sign-calculator", 0.85, "weekly"));
   }
   if (ASTRO_TOOLS_CONFIG.kundliReleased) {
-    gatedToolRoutes.push({
-      url: `${baseUrl}/tools/kundli-generator`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly',
-      priority: 0.85,
-    });
+    gatedToolRoutes.push(entry("/tools/kundli-generator", 0.85, "weekly"));
   }
 
-  return [...staticRoutes, ...gatedToolRoutes, ...blogRoutes];
-}
+  const rashiRoutes = RASHIS.map((r) => entry(`/horoscope/${r.slug}`, 0.7, "monthly"));
+  const cityRoutes = CITIES.map((c) => entry(`/${c.slug}`, c.isLocal ? 0.9 : 0.75, "monthly"));
 
+  const blogRoutes: MetadataRoute.Sitemap = getAllPosts().map((post) => ({
+    url: absoluteUrl(`/blog/${post.slug}`),
+    lastModified: new Date(post.modifiedDate || post.publishDate),
+    changeFrequency: "monthly",
+    priority: 0.8,
+  }));
+
+  return [...staticRoutes, ...gatedToolRoutes, ...rashiRoutes, ...cityRoutes, ...blogRoutes];
+}

@@ -11,6 +11,7 @@ const config: Config = {
       colors: {
         gold: '#F5A623',
         saffron: '#FF6B00',
+        saffronDark: '#B34700',
         midnight: '#0D0A1E',
         deepPurple: '#1A1035',
         ivory: '#FFFDF5',

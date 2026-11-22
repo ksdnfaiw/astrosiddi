@@ -1,13 +1,17 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getPostBySlug, getAllPosts } from "@/data/blogPosts";
-import BlogPostView from "@/views/BlogPost";
+import BlogPostView from "@/components/blog/BlogPost";
+import { BreadcrumbSchema, FaqSchema, JsonLd } from "@/components/ui/SchemaMarkup";
+import { SCHEMA_IDS, SITE_URL, absoluteUrl } from "@/lib/site";
 
 interface PageProps {
   params: {
     slug: string;
   };
 }
+
+export const dynamicParams = false;
 
 const BLOG_SEO_TITLES: Record<string, string> = {
   "signs-you-need-vastu-correction-at-home": "Signs You Need Vastu Correction at Home",
@@ -24,10 +28,7 @@ const BLOG_SEO_TITLES: Record<string, string> = {
 };
 
 export async function generateStaticParams() {
-  const posts = getAllPosts();
-  return posts.map((post) => ({
-    slug: post.slug,
-  }));
+  return getAllPosts().map((post) => ({ slug: post.slug }));
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
@@ -39,21 +40,17 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     };
   }
 
-  const siteUrl = "https://www.astrosiddi.com";
-  const canonicalUrl = `${siteUrl}/blog/${post.slug}`;
-  // Title template in layout will append " | Astro Siddhi" (15 chars)
-  // SEO title is ≤ 42 chars so final title is ≤ 57 characters
+  const canonicalUrl = absoluteUrl(`/blog/${post.slug}`);
+  const imageUrl = absoluteUrl(post.featuredImage);
   const seoTitle =
     BLOG_SEO_TITLES[post.slug] ||
-    (post.title.length > 42 ? `${post.title.slice(0, 39)}...` : post.title);
+    (post.title.length > 55 ? `${post.title.slice(0, 52)}...` : post.title);
 
   return {
     title: seoTitle,
     description: post.metaDescription,
     keywords: [post.targetKeyword, ...post.secondaryKeywords, ...post.tags],
-    alternates: {
-      canonical: canonicalUrl,
-    },
+    alternates: { canonical: canonicalUrl },
     robots: {
       index: true,
       follow: true,
@@ -75,20 +72,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       modifiedTime: post.modifiedDate,
       authors: [post.author],
       tags: post.tags,
-      images: [
-        {
-          url: `${siteUrl}${post.featuredImage}`,
-          width: 1200,
-          height: 630,
-          alt: post.altText || post.title,
-        },
-      ],
+      images: [{ url: imageUrl, width: 1200, height: 630, alt: post.altText || post.title }],
     },
     twitter: {
       card: "summary_large_image",
       title: `${seoTitle} | Astro Siddhi`,
       description: post.metaDescription,
-      images: [`${siteUrl}${post.featuredImage}`],
+      images: [imageUrl],
     },
   };
 }
@@ -100,100 +90,42 @@ export default function BlogPostPage({ params }: PageProps) {
     notFound();
   }
 
-  const siteUrl = "https://www.astrosiddi.com";
-  const pageUrl = `${siteUrl}/blog/${post.slug}`;
+  const pageUrl = absoluteUrl(`/blog/${post.slug}`);
+  const [authorName, reviewNote] = post.author.split(/\s+—\s+/);
+  const wordCount = post.sections
+    .map((s) => `${s.content} ${(s.subsections ?? []).map((x) => x.text).join(" ")}`)
+    .join(" ")
+    .split(/\s+/).length;
 
-  // 1. Article / BlogPosting Schema
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "@id": `${pageUrl}#article`,
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": pageUrl,
-    },
-    "headline": post.title,
-    "description": post.metaDescription,
-    "image": [`${siteUrl}${post.featuredImage}`],
-    "datePublished": post.publishDate,
-    "dateModified": post.modifiedDate,
-    "author": {
-      "@type": "Person",
-      "name": "Sri Raghavendra Siddhanti Garu",
-      "url": `${siteUrl}/about`,
-    },
-    "publisher": {
-      "@type": "Organization",
-      "@id": `${siteUrl}/#business`,
-      "name": "Astro Siddhi",
-      "url": siteUrl,
-      "logo": {
-        "@type": "ImageObject",
-        "url": `${siteUrl}/icon.svg`,
-      },
-    },
-    "keywords": [post.targetKeyword, ...post.secondaryKeywords].join(", "),
+    mainEntityOfPage: { "@type": "WebPage", "@id": pageUrl },
+    headline: post.title.length > 110 ? `${post.title.slice(0, 107)}...` : post.title,
+    description: post.metaDescription,
+    image: [absoluteUrl(post.featuredImage)],
+    datePublished: post.publishDate,
+    dateModified: post.modifiedDate,
+    inLanguage: "en",
+    articleSection: post.category,
+    wordCount,
+    author: { "@type": "Organization", name: authorName, url: SITE_URL },
+    ...(reviewNote ? { reviewedBy: { "@type": "Person", "@id": SCHEMA_IDS.founder, name: "Sri Raghavendra Siddhanti Garu" } } : {}),
+    publisher: { "@id": SCHEMA_IDS.business },
+    keywords: [post.targetKeyword, ...post.secondaryKeywords].join(", "),
   };
-
-  // 2. BreadcrumbList Schema
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": siteUrl,
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Blog",
-        "item": `${siteUrl}/blog`,
-      },
-      {
-        "@type": "ListItem",
-        "position": 3,
-        "name": post.title,
-        "item": pageUrl,
-      },
-    ],
-  };
-
-  // 3. FAQPage Schema (only rendered if FAQs are present on page)
-  const faqSchema =
-    post.faqs && post.faqs.length > 0
-      ? {
-          "@context": "https://schema.org",
-          "@type": "FAQPage",
-          "mainEntity": post.faqs.map((faq) => ({
-            "@type": "Question",
-            "name": faq.question,
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": faq.answer,
-            },
-          })),
-        }
-      : null;
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      <JsonLd data={articleSchema} />
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Blog", path: "/blog" },
+          { name: post.title, path: `/blog/${post.slug}` },
+        ]}
       />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      {faqSchema && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-        />
-      )}
+      {post.faqs && post.faqs.length > 0 && <FaqSchema faqs={post.faqs} />}
 
       <BlogPostView post={post} />
     </>

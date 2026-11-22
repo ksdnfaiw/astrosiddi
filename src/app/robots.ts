@@ -1,20 +1,21 @@
-import { MetadataRoute } from 'next';
+import { MetadataRoute } from "next";
+import { SITE_URL } from "@/lib/site";
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = 'https://www.astrosiddi.com';
   return {
     rules: [
       {
-        userAgent: '*',
-        allow: '/',
-        disallow: ['/api/', '/admin/', '/success'],
+        userAgent: "*",
+        allow: "/",
+        disallow: ["/api/", "/admin/", "/success"],
       },
       {
-        userAgent: ['GPTBot', 'ClaudeBot', 'PerplexityBot', 'Google-Extended', 'Applebot-Extended', 'CCBot'],
-        allow: '/',
-        disallow: ['/api/', '/admin/', '/success'],
+        userAgent: ["GPTBot", "ClaudeBot", "PerplexityBot", "Google-Extended", "Applebot-Extended", "CCBot"],
+        allow: "/",
+        disallow: ["/api/", "/admin/", "/success"],
       },
     ],
-    sitemap: `${baseUrl}/sitemap.xml`,
+    sitemap: `${SITE_URL}/sitemap.xml`,
+    host: SITE_URL,
   };
 }

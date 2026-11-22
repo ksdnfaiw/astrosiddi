@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
 import { BLOG_POSTS } from "@/data/blogPosts";
-import BlogList from "@/views/BlogList";
+import BlogList from "@/components/blog/BlogList";
+import { JsonLd } from "@/components/ui/SchemaMarkup";
+import { SCHEMA_IDS, SITE_URL, absoluteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "https://www.astrosiddi.com/blog" },
-  title: "Vedic Astrology & Vastu Insights Blog",
+  alternates: { canonical: "/blog" },
+  title: "Vedic Astrology, Kundali Matching & Vastu Blog | Astro Siddhi Visakhapatnam",
   description:
-    "Explore authentic Vedic astrology, Telugu marriage Kundali & coastal Vastu guides from Sri Raghavendra Siddhanti in Vizag. Read our latest articles.",
+    "Read in-depth guides on Vedic astrology, Telugu marriage Kundali matching, Numerology, and coastal Vastu Shastra by 25-year veteran Sri Raghavendra Siddhanti Garu in Visakhapatnam.",
   keywords: [
     "astrology blog Visakhapatnam",
     "vedic astrology articles Vizag",
@@ -19,15 +21,15 @@ export const metadata: Metadata = {
     "Astro Siddhi insights",
   ],
   openGraph: {
-    title: "Vedic Astrology & Vastu Insights Blog | Astro Siddhi",
+    title: "Vedic Astrology, Kundali Matching & Vastu Blog | Astro Siddhi Visakhapatnam",
     description:
       "Authentic Vedic astrology insights, Telugu marriage matching guidance, and coastal Vastu Shastra tips from Visakhapatnam's top-rated astrologer.",
-    url: "https://www.astrosiddi.com/blog",
+    url: absoluteUrl("/blog"),
     siteName: "Astro Siddhi",
     type: "website",
     images: [
       {
-        url: "https://www.astrosiddi.com/images/blog/best-astrologer-in-visakhapatnam.svg",
+        url: absoluteUrl("/images/blog/best-astrologer-in-visakhapatnam.webp"),
         width: 1200,
         height: 630,
         alt: "Astro Siddhi Vedic Astrology and Vastu Blog Hub",
@@ -39,7 +41,7 @@ export const metadata: Metadata = {
     title: "Vedic Astrology & Vastu Insights Blog | Astro Siddhi",
     description:
       "Authentic Vedic astrology insights and coastal Vastu Shastra tips from Visakhapatnam's top-rated astrologer.",
-    images: ["https://www.astrosiddi.com/images/blog/best-astrologer-in-visakhapatnam.svg"],
+    images: [absoluteUrl("/images/blog/best-astrologer-in-visakhapatnam.webp")],
   },
 };
 
@@ -47,34 +49,24 @@ export default function BlogHubPage() {
   const blogListSchema = {
     "@context": "https://schema.org",
     "@type": "Blog",
-    "name": "Astro Siddhi Vedic Astrology & Vastu Blog",
-    "description":
+    name: "Astro Siddhi Vedic Astrology & Vastu Blog",
+    description:
       "Authentic guides on Vedic astrology, Telugu marriage Kundali matching, Numerology, and coastal Vastu Shastra for Visakhapatnam residents.",
-    "url": "https://www.astrosiddi.com/blog",
-    "publisher": {
-      "@type": "Organization",
-      "@id": "https://www.astrosiddi.com/#business",
-      "name": "Astro Siddhi",
-      "url": "https://www.astrosiddi.com",
-    },
-    "blogPost": BLOG_POSTS.map((post) => ({
+    url: absoluteUrl("/blog"),
+    publisher: { "@id": SCHEMA_IDS.business },
+    blogPost: BLOG_POSTS.map((post) => ({
       "@type": "BlogPosting",
-      "headline": post.title,
-      "url": `https://www.astrosiddi.com/blog/${post.slug}`,
-      "datePublished": post.publishDate,
-      "author": {
-        "@type": "Person",
-        "name": post.author || "Sri Raghavendra Siddhanti Garu",
-      },
+      headline: post.title,
+      url: `${SITE_URL}/blog/${post.slug}`,
+      datePublished: post.publishDate,
+      image: absoluteUrl(post.featuredImage),
+      author: { "@type": "Person", name: "Sri Raghavendra Siddhanti Garu" },
     })),
   };
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogListSchema) }}
-      />
+      <JsonLd data={blogListSchema} />
       <BlogList initialPosts={BLOG_POSTS} />
     </>
   );
