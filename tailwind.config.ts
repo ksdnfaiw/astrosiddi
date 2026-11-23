@@ -19,6 +19,7 @@ const config: Config = {
       },
       fontFamily: {
         poppins: ['var(--font-poppins)', 'sans-serif'],
+        outfit: ['"Plus Jakarta Sans"', 'Outfit', 'var(--font-poppins)', 'sans-serif'],
         // To revert back to elegant fonts, uncomment the lines below and comment out the Poppins overrides
         // cinzel: ['var(--font-cinzel)', 'serif'],
         // cormorant: ['var(--font-cormorant)', 'serif'],
