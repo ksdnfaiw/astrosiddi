@@ -90,6 +90,16 @@ export function FloatingDevotionalActions() {
     }
   }, []);
 
+  // Handle WhatsApp Click tracking for Google Ads
+  const handleWhatsAppClick = () => {
+    if (typeof window !== "undefined" && typeof (window as any).gtag === "function") {
+      (window as any).gtag("event", "whatsapp_click", {
+        event_category: "Engagement",
+        event_label: "WhatsApp Consultation Initiated",
+      });
+    }
+  };
+
   // Handle Location Click: Smooth scroll to #location-map or open Google Maps
   const handleLocationClick = (e: React.MouseEvent) => {
     const mapSection = document.getElementById("location-map");
@@ -123,6 +133,7 @@ export function FloatingDevotionalActions() {
           href={WHATSAPP_URL}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={handleWhatsAppClick}
           onMouseEnter={() => setActiveTooltip("whatsapp")}
           onMouseLeave={() => setActiveTooltip(null)}
           className="w-12 h-12 sm:w-[52px] sm:h-[52px] rounded-full bg-[#25D366] text-white flex items-center justify-center shadow-[0_4px_18px_rgba(37,211,102,0.35)] hover:shadow-[0_6px_24px_rgba(37,211,102,0.5)] hover:scale-105 active:scale-95 transition-all duration-300"
